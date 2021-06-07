@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link type="text/css" rel="stylesheet" href="{% static 'core/css/groundzero.css'%}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    {% load static %}
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <img class="Logo" src="{% static 'core/img/logotipo2.jpg'%}" width="185" height="150" alt="">
+        <a class="navbar-brand" href="#"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'inicio' %}">Inicio <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'artistas' %}">Artistas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'tipoobras' %}">Tipos de Obras</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'conceptos' %}">Conceptos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'inicarSesion' %}">Iniciar Sesión</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'soporte' %}">Soporte</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Busqueda" aria-label="Busqueda">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Busqueda</button>
+            </form>
+        </div>
+    </nav>
+    <br>
+
+    <img id="obra" src="{% static 'core/img/venus-de-milo.jpg'%}">
+    
+    <div class="container">
+        <div class="row">
+            <ul class="list-group">
+                <li class="list-group-item" style="background-color: #8B9494 ;">Información de la Escultura</li>
+                <li class="list-group-item">Nombre: Venus de Milo</li>
+                <li class="list-group-item">Autor: Alejandro de Antioquía</li>
+                <li class="list-group-item">Año: 130 a. C.-100 a. C.</li>
+            </ul>
+            <br>
+            <div>
+                <br>
+                <p id="info">
+                    La Afrodita de Milo (en griego, Αφροδίτη της Μήλου), más conocida como Venus de Milo, es una de las estatuas
+                    más representativas del periodo helenístico de la escultura griega, y una de las más famosas esculturas de
+                    la antigua Grecia. Fue creada en algún momento entre los años 130 a. C. y 100 a. C., y se cree que
+                    representa a Afrodita (denominada Venus en la mitología romana), diosa del amor y la belleza;​ mide,
+                    aproximadamente, 211 cm de alto.
+        
+                    Esta estatua fue encontrada en Milo, desenterrada por un campesino y vendida a Francia entre
+                    1819 y 1820. El precio que el campesino pedía por la escultura era demasiado alto, y Dumont d'Urville
+                    —viajero que realizó una parada en este lugar—,​ no llevaba el dinero suficiente, por lo que recurrió a un
+                    embajador francés en Constantinopla, quien accedió a comprarla. Sin embargo, anteriormente el campesino
+                    había acordado venderla a los turcos, lo que inició un conflicto por la posesión de la estatua
+                </p>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

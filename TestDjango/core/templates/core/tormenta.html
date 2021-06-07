@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tormenta</title>
+    {% load static %}
+    <link type="text/css" rel="stylesheet" href="{% static 'core/css/groundzero.css'%}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    {% load static %}
+    {% load static %}
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <img class="Logo" src="{% static 'core/img/logotipo2.jpg'%}" width="185" height="150" alt="">
+        <a class="navbar-brand" href="#"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'inicio' %}">Inicio <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'artistas' %}">Artistas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'tipoobras' %}">Tipos de Obras</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'conceptos' %}">Conceptos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'inicarSesion' %}">Iniciar Sesión</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'soporte' %}">Soporte</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Busqueda" aria-label="Busqueda">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Busqueda</button>
+            </form>
+        </div>
+    </nav>
+    <br>
+
+    <img id="obra" src="{% static 'core/img/tormenta.jpg'%}">
+
+    <div class="container">
+        <div class="row">
+            <ul class="list-group">
+                <li class="list-group-item" style="background-color: #8B9494 ;">Información de la Obra</li>
+                <li class="list-group-item">Nombre: La tormenta en el mar de Galilea</li>
+                <li class="list-group-item">Autor: Rembrant van Rijin</li>
+                <li class="list-group-item">Año: 1633</li>
+                <li class="list-group-item">Técnica: Óleo</li>
+                <li class="list-group-item">Tamaño: 160cm x 128cm</li>
+            </ul>
+            <br>
+            <div>
+                <br>
+                <p id="info">
+                    La pintura muestra uno de los primeros milagros de Jesús, concretamente el narrado en el evangelio de San
+                    Marcos, capítulo cuarto, cuando Jesús calmó las aguas en una tormenta en el Lago Galilea. Se trata de la
+                    única marina del genial pintor holandés. Es una obra de juventud en la que Rembrandt se autorretrata en una
+                    de las catorce personas que ocupan el bote, concretamente el que sujeta la cuerda del mástil y mira hacia el
+                    espectador.
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</body>
+
+</html>

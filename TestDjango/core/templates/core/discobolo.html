@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link type="text/css" rel="stylesheet" href="{% static 'core/css/groundzero.css'%}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    {% load static %}
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <img class="Logo" src="{% static 'core/img/logotipo2.jpg'%}" width="185" height="150" alt="">
+        <a class="navbar-brand" href="#"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'inicio' %}">Inicio <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'artistas' %}">Artistas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'tipoobras' %}">Tipos de Obras</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'conceptos' %}">Conceptos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'inicarSesion' %}">Iniciar Sesión</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'soporte' %}">Soporte</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Busqueda" aria-label="Busqueda">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Busqueda</button>
+            </form>
+        </div>
+    </nav>
+    <br>
+
+    <img id="obra" src="{% static 'core/img/Discobolo.jpg'%}">
+    
+    <div class="container">
+        <div class="row">
+            <ul class="list-group">
+                <li class="list-group-item" style="background-color: #8B9494 ;">Información de la Escultura</li>
+                <li class="list-group-item">Nombre: El Discóbolo</li>
+                <li class="list-group-item">Autor: Mirón de Eléuteras</li>
+                <li class="list-group-item">Año: 455 a. C.</li>
+            </ul>
+            <br>
+            <div>
+                <br>
+                <p id="info">
+                    La escultura llamada "El Discóbolo" representa a un atleta en un instante anterior al lanzamiento del disco.
+                    Una de sus copias romanas se
+                    encuentra en el Museo Británico de Londres, ya que como ocurre con muchas de las esculturas griegas más
+                    importantes, no se ha conservado la obra original, seguramente realizada en bronce. Mirón representa el
+                    cuerpo en el momento de su máxima tensión y esplendor. Sin embargo, ese gran esfuerzo no se refleja en el
+                    rostro del atleta, que muestra solo una tenue concentración. Es decir, el escultor ateniense no consigue una
+                    expresión facial acorde con el momento previo al lanzamiento.​ La torsión corporal es vigorosa; pero, al
+                    mismo tiempo, armoniosa y delicada. Todo el cuerpo está inclinado hacia delante, para producir con el
+                    balanceo posterior el impulso necesario para poder lanzar el disco.
+                </p>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

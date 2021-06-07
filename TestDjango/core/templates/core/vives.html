@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link type="text/css" rel="stylesheet" href="{% static 'core/css/groundzero.css'%}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <script src="code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    {% load static %}
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <img class="Logo" src="{% static 'core/img/logotipo2.jpg'%}" width="185" height="150" alt="">
+        <a class="navbar-brand" href="#"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'inicio' %}">Inicio <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'artistas' %}">Artistas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'tipoobras' %}">Tipos de Obras</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'conceptos' %}">Conceptos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'inicarSesion' %}">Iniciar Sesión</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'soporte' %}">Soporte</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Busqueda" aria-label="Busqueda">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Busqueda</button>
+            </form>
+        </div>
+    </nav>
+    <br>
+
+    <img id="obra" src="{% static 'core/img/tejido4.jpg'%}">
+    
+    <div class="container">
+        <div class="row">
+            <ul class="list-group">
+                <li class="list-group-item" style="background-color: #8B9494 ;">Información de la Escultura</li>
+                <li class="list-group-item">Nombre: Tiraz de Hixen o Hisam</li>
+                <li class="list-group-item">Autor: Talleres Hispanomusulmanes</li>
+                <li class="list-group-item">Año: Desconocido</li>
+            </ul>
+            <br>
+            <div>
+                <br>
+                <p id="info">
+                    De los talleres hispanomusulmanes salieron muchas piezas de este tipo considerándose como una de las más
+                    valiosas, considerada por ello paradigmática, la encontrada en la iglesia de Santa María de Rivero en San
+                    Esteban de Gormáz (Soria), y conservada en la Real Academia de la Historia; conocida bajo el nombre de Tiraz
+                    de Hixen o Hisam II; realizada con técnicas de tapicería y confeccionada en seda, oro y tafetán; su
+                    decoración, de influencia copta, como puede apreciarse si lo comparamos con la pieza perteneciente a esa
+                    cultura, encontrada en Antinoe, perteneciente a la colección Vives. El tocado de Hisan II está
+                    además enriquecido con una inscripción caligráfica en letra cúfica, algo muy habitual en todas las
+                    manifestaciones artísticas musulmanas, en la que puede leerse una leyenda exaltando al personaje: En el
+                    nombre de Dios Clemente y Misericordioso, la bendición de Dios y la prosperidad y la duración para el
+                    califa, el imán Abd Allah Hisam favorecido de Dios y emir de los creyentes.
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
