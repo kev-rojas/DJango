@@ -229,8 +229,8 @@ def rabbit(request):
     return render(request,'core/rabbit.html')
 
 def registrarse(request):
-    datos:{'usuario' : UsuarioForm}
-    return render(request,'core/registrarse.html', datos)
+    #datos:{'form' : UsuarioForm}
+    return render(request,'core/registrarse.html')
 
 def retorno(request):
     return render(request,'core/retorno.html')
