@@ -40,6 +40,7 @@ def form_delvehiculo(request,id):
     vehiculos=vehiculo.objects.get(patente=id)
     vehiculos.delete()
     return redirect(to="home")
+
 #--------------------------------------------------------------------------------------------------
 
 
@@ -229,8 +230,8 @@ def rabbit(request):
     return render(request,'core/rabbit.html')
 
 def registrarse(request):
-    #datos:{'form' : UsuarioForm}
-    return render(request,'core/registrarse.html')
+    datos={'form' : UsuarioForm}
+    return render(request,'core/registrarse.html',datos)
 
 def retorno(request):
     return render(request,'core/retorno.html')
