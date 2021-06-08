@@ -231,6 +231,11 @@ def rabbit(request):
 
 def registrarse(request):
     datos={'form' : UsuarioForm}
+    if request.method=='POST':
+        formulario=UsuarioForm(request.POST)
+        if formulario.is_valid:
+            formulario.save()
+            datos['mensaje']="Registrado Correctamente"
     return render(request,'core/registrarse.html',datos)
 
 def retorno(request):

@@ -91,16 +91,18 @@
         <div class="row">
             <form method="post" action="" id="formulario">
                 {% csrf_token %}
-                <div class="form-group">
+                <div>
                     {{form.as_table}}
                 </div>
                 <input type="submit" class="btn btn-danger" id="enviar" value="Enviar">
                 <input type="submit" class="btn btn-primary" id="limpiar" value="Limpiar">
             </form>
         </div>
-
-
-
+        <div class="row">
+            <div class="alert alert-success" role="alert">
+                {{mensaje}}
+            </div>
+        </div>
 
 </body>
 
