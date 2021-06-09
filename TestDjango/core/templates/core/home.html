@@ -38,13 +38,13 @@
                         <td>{{ve.patente}}</td>
                         <td>{{ve.marca}}</td>
                         <td>{{ve.modelo}}</td>
-                        <td><a href="{% url 'form_modvehiculo' ve.patente %}">Modificar</a></td>
-                        <td><a href="{% url 'form_delvehiculo' ve.patente %}">Eliminar</a></td>
+                        <td><a href="{% url 'form_modvehiculo' ve.patente %}">Modificar</a></td> 
+                        <td><a href="{% url 'form_delvehiculo' ve.patente %}">Eliminar</a></td> 
                     </tr>
                     {%endfor%}
                 </tbody>
         </table>
-        <a href="{% url 'form_vehiculo' %}">Nuevo vehiculo</a>
-    </div>
+         <a href="{% url 'form_vehiculo' %}">Nuevo vehiculo</a>
+    </div> 
 </body>
 </html>

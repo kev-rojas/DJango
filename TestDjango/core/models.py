@@ -34,7 +34,7 @@ class Obra(models.Model):
 
     def str(self):
         return self.nombreOb
-
+#
 class Usuario(models.Model):
     nombre = models.CharField(max_length=30, verbose_name='Nombre')
     email = models.EmailField(max_length=100, primary_key=True, verbose_name= 'Email')

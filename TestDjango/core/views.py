@@ -27,7 +27,7 @@ def form_vehiculo(request):
     return render(request, 'core/form_vehiculo.html',dato)
 
 def form_modvehiculo(request,id):
-    vehiculos=vehiculo.objects.get(patente=id)
+    vehiculos=vehiculo.objects.get(patente='AABB11')
     datos={'form':vehiculoForm(instance=vehiculos)}
     if request.method=='POST':
         formulario=vehiculoForm(data=request.POST, instance=vehiculos)
