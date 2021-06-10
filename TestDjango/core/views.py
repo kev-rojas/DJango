@@ -164,7 +164,7 @@ def moises(request):
     return render(request,'core/moises.html')
 
 def monalisa(request):
-    mona=Obra.objects.all
+    mona=Obra.objects.get(nombreOb='La Mona Lisa')
     datos={
         'mona': mona
     }
