@@ -88,14 +88,13 @@
     <div class="container">
         <table class="table" border="3">
             <tbody>
-                {%for mona in mona%}
-                    {%if mona.nombreOb="La Mona Lisa"%}
-                        <tr>
-                            <td>{{mona.nombreOb}}</td>
-                            <td>{{mona.autor}}</td>
-                        </tr>
-                    {%endif%}
-                {%endfor%}
+                {%if nombreOb == true%}
+                    {% csrf_token %}
+                    <tr>
+                        <td>{{mona.nombreOb}}</td>
+                        <td>{{mona.autor}}</td>
+                    </tr> 
+                {%endif%}
             </tbody>
         </table>
     </div>

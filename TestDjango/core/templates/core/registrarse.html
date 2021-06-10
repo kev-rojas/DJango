@@ -68,19 +68,19 @@
     </center>
     <br>
     <center>
-        <form method="post">
+        <form name="form" method="post">
             {% csrf_token %}
             <div class="form-group" >
-                <label id="texFor">Nombre: </label>
-                {{form.nombre}}
+                <label id="texFor">Nombre</label>
+                <input class="form-control"{{form.nombre}}>
             </div>
             <div class="form-group">
               <label id="texFor">Email: </label>
-              {{form.email}}
+              <input class="form-control" {{form.email}}>
             </div>
             <div class="form-group">
               <label id="texFor">Contraseña: </label>
-              <input type="password" {{form.contraseña}}>
+              <input type="password" class="form-control" {{form.contraseña}}>
             </div>
             <input type="submit" class="btn btn-primary" id="crear" value="Crear Cuenta">
             <div class="row">
