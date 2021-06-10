@@ -68,33 +68,36 @@
     </center>
     <br>
     <center>
-        <form name="form"  onsubmit="return validar()">
+        <form method="post">
             {% csrf_token %}
             <div class="form-group">
-                <label for="exampleInputPassword1" id="texFor">Nombre</label>
-                <input id="name" type="text" class="form-control" name="name">
+                <label id="texFor">Nombre: </label>
+                {{form.nombre}}
             </div>
             <div class="form-group">
-              <label for="exampleInputEmail1" id="texFor">Correo Electrónico</label>
-              <input id="email" type="email" class="form-control" name="email">
-              <small id="emailHelp" class="form-text text-muted">Jamás compartiremos tu correo con terceros.</small>
+              <label id="texFor">Email: </label>
+              {{form.email}}
             </div>
             <div class="form-group">
-              <label for="exampleInputPassword1" id="texFor">Contraseña</label>
-              <input id="password" type="password" class="form-control" name="password">
+              <label id="texFor">Contraseña: </label>
+              <input type="password" {{form.contraseña}}>
             </div>
-            <input type="submit" onclick="validar()" class="btn btn-primary" id="inicar" value="Crear Cuenta">
+            <input type="submit" class="btn btn-primary" id="crear" value="Crear Cuenta">
+            <div class="row">
+                    <div class="alert alert-success" role="alert">
+                        {{mensaje}}
+                    </div>
+            </div>
         </form>
-          <br>
     </center>
-    <br>
+
     <!-- <div class="container">
         <div class="row">
             <form name="form"  id="formulario">
                 {% csrf_token %}
                 <div class="form-group">
                     <label for="exampleInputPassword1" id="texFor">Nombre</label>
-                    <label>{{form.nombre}}</label>
+                    {{form.nombre}}
                 </div>
                 <div>
                     <label>{{form.email}}</label>
@@ -109,17 +112,6 @@
             </div>
         </div>
     </div> -->
-
-    <center>
-        <form name="form">
-            {% csrf_token %}
-            <div>
-                <label for="exampleInputPassword1" id="texFor">Nombre: </label>
-                <label>{{form.nombre}}</label>
-            </div>
-
-        </form>
-    </center>
 
 </body>
 

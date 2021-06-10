@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import vehiculo
 from .forms import vehiculoForm
-from .models import Usuario
+from .models import Usuario, Obra
 from .forms import UsuarioForm
 #-------------------------------------------------------------------
 
@@ -164,7 +164,11 @@ def moises(request):
     return render(request,'core/moises.html')
 
 def monalisa(request):
-    return render(request,'core/monalisa.html')
+    mona=Obra.objects.all
+    datos={
+        'mona': mona
+    }
+    return render(request,'core/monalisa.html',datos)
 
 def mujerespejo(request):
     return render(request,'core/mujerespejo.html')

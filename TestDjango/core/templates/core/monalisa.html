@@ -85,7 +85,18 @@
         </p>
     </div>
     
-
+    <div class="container">
+        <table class="table" border="3">
+            <tbody>
+                {%for mona in mona%}
+                <tr>
+                    <td>{{mona.nombreOb}}</td>
+                    <td>{{mona.autor}}</td>
+                </tr>
+                {%endfor%}
+            </tbody>
+        </table>
+    </div>
 
 
 
