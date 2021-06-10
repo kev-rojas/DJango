@@ -64,35 +64,48 @@
     <img id="obra" src="{% static 'core/img/mona2.jpg'%}">
     </center>
     <br>
-    <ul class="list-group">
-        <li id="lista" class="list-group-item">Información de la Obra</li>
-        <li class="list-group-item" >Nombre: La Mona Lisa</li> 
-        <li class="list-group-item">Autor: Leonardo da Vinci</li>
-        <li class="list-group-item">Año: 1503</li>
-        <li class="list-group-item">Técnica: Pintura al Óleo</li>
-        <li class="list-group-item">Tamaño: 77cm x 53cm</li>
-    </ul>
-    <br>
-    <div>
-        <br>
-        <p id="info">
-            El Retrato de Lisa Gherardini, esposa de Francesco del Giocondo,​ más conocido como La Gioconda o La Mona
-            Lisa, es una obra pictórica del polímata renacentista italiano Leonardo da Vinci. Fue adquirida por el
-            rey Francisco I de Francia a comienzos del siglo XVI y desde entonces es propiedad del
-            Estado francés. Se halla expuesta en el Museo del Louvre de París, siendo, sin duda, la «joya» de sus
-            colecciones. Es un óleo sobre tabla de álamo de 77 × 53 cm, pintado entre 1503 y 1519,​ y retocado varias
-            veces por el autor.
-        </p>
-    </div>
-    
     <div class="container">
+        {%if nombreOb == true%}
+            {% csrf_token %}
+            <h3>INFORMACIÓN DE LA OBRA</h3>
+            <ul class="list-group">
+                <li class="list-group-item" >Nombre: {{mona.nombreOb}}</li> 
+                <li class="list-group-item">Autor: {{mona.autor}}</li>
+                <li class="list-group-item">Año: {{mona.año}}</li>
+                <li class="list-group-item">Tecnica: {{mona.tecnica}}</li>
+                <li class="list-group-item">Tamaño: {{mona.tamaño}}m</li>
+            </ul>
+            <br>
+            <p id="info">
+                El Retrato de Lisa Gherardini, esposa de Francesco del Giocondo,​ más conocido como La Gioconda o La Mona
+                Lisa, es una obra pictórica del polímata renacentista italiano Leonardo da Vinci. Fue adquirida por el
+                rey Francisco I de Francia a comienzos del siglo XVI y desde entonces es propiedad del
+                Estado francés. Se halla expuesta en el Museo del Louvre de París, siendo, sin duda, la «joya» de sus
+                colecciones. Es un óleo sobre tabla de álamo de 77 × 53 cm, pintado entre 1503 y 1519,​ y retocado varias
+                veces por el autor.
+            </p>
+        {%endif%}
+        <br>
+        <br>
         <table class="table" border="3">
+            <thead>
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Autor</th>
+                    <th scope="col">Año</th>
+                    <th scope="col">Técnica</th>
+                    <th scope="col">Tamaño</th>
+                </tr>
+            </thead>
             <tbody>
                 {%if nombreOb == true%}
                     {% csrf_token %}
                     <tr>
                         <td>{{mona.nombreOb}}</td>
                         <td>{{mona.autor}}</td>
+                        <td>{{mona.año}}</td>
+                        <td>{{mona.tecnica}}</td>
+                        <td>{{mona.tamaño}}</td>
                     </tr> 
                 {%endif%}
             </tbody>
