@@ -103,8 +103,8 @@ def damaarmiño(request):
 def discobolo(request):
     return render(request,'core/discobolo.html')
 
-def elefantes(request):
-    return render(request,'core/elefantes.html')
+def elfantes(request):
+    return render(request,'core/elfantes.html')
 
 def elvacio(request):
     return render(request,'core/elvacio.html')

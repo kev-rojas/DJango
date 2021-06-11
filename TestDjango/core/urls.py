@@ -22,7 +22,7 @@ from .views import cristo
 from .views import cuadron19
 from .views import damaarmiño
 from .views import discobolo
-from .views import elefantes
+from .views import elfantes
 from .views import elvacio
 from .views import frescos
 from .views import ginebra
@@ -117,7 +117,7 @@ urlpatterns=[
     path('cuadron19',cuadron19,name="cuadron19"),
     path('damaarmiño',damaarmiño,name="damaarmiño"),
     path('discobolo',discobolo,name="discobolo"),
-    path('elefantes',elefantes,name="elefantes"),
+    path('elfantes',elfantes,name="elfantes"),
     path('elvacio',elvacio,name="elvacio"),
     path('frescos',frescos,name="frescos"),
     path('ginebra',ginebra,name="ginebra"),
