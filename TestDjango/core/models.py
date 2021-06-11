@@ -26,7 +26,7 @@ class vehiculo(models.Model):
 #modelos proyecto
 
 class Obra(models.Model):
-    nombreOb = models.CharField(max_length=30, primary_key=True, verbose_name= 'Nombre de la Obra')
+    nombreOb = models.CharField(max_length=50, primary_key=True, verbose_name= 'Nombre de la Obra')
     autor = models.CharField(max_length=30, verbose_name= 'Autor')
     año = models.CharField(max_length=20, verbose_name='Año')
     tecnica = models.CharField(max_length=50, verbose_name= 'Técnica')
