@@ -60,31 +60,44 @@
         </div>
     </nav>
     <br>
-
-    <img id="obra" src="{% static 'core/img/coquelicots.jpg'%}">
+    <center>
+        <img id="obra" src="{% static 'core/img/coquelicots.jpg'%}">
+    </center>
+    <br>
     <div class="container">
-        <div class="row">
-            <ul class="list-group">
-                <li class="list-group-item" style="background-color: #8B9494 ;">Información de la Obra</li>
-                <li class="list-group-item">Nombre: Coquelicots</li>
-                <li class="list-group-item">Autor: Claude Monet</li>
-                <li class="list-group-item">Año: 1841</li>
-                <li class="list-group-item">Técnica: Óleo sobre Lienzo</li>
-                <li class="list-group-item">Tamaño: 208cm x 264.5cm</li>
-            </ul>
+        {%if nombreOb == true%}
+        {% csrf_token %}
+        <h3 id="til">INFORMACIÓN DE LA OBRA</h3>
+        <ul class="list-group">
+            <li class="list-group-item">Nombre: {{coq.nombreOb}}</li>
+            <li class="list-group-item">Autor: {{coq.autor}}</li>
+            <li class="list-group-item">Año: {{coq.año}}</li>
+            <li class="list-group-item">Tecnica: {{coq.tecnica}}</li>
+            <li class="list-group-item">Tamaño: {{coq.tamaño}}</li>
+        </ul>
+        <br>
+        <p id="info">
+            Cada año, cuando la primavera estalla, me vienen a la mente los cuadros de Monet. Esos lienzos llenos de
+            colores, flores, naturaleza, sol y alegría, esas series de pinturas de nenúfares, de paisajes de Bretaña,
+            del Sena, son para mí la primavera. Pero detrás de esa explosión de alegría hay una vida complicada y eso
+            hace que la alegría que transmite su obra sea mucho más poderosa.
             <br>
-            <div>
-                <br>
-                <p id="info">
-                    Cada año, cuando la primavera estalla, me vienen a la mente los cuadros de Monet. Esos lienzos llenos de
-                    colores, flores, naturaleza, sol y alegría, esas series de pinturas de nenúfares, de paisajes de Bretaña,
-                    del Sena, son para mí la primavera. Pero detrás de esa explosión de alegría hay una vida complicada y eso
-                    hace que la alegría que transmite su obra sea mucho más poderosa.
-                </p>
-            </div>
-        </div>
+            Fue a la muerte de Camille (su esposa) cuando el pintor bretón se dedicó a pintar paisajes. Y son esos lienzos los que
+            aparecen en mi mente cuando llega la primavera, los que muestran la alegría que un alma sensible es capaz de
+            ver a pesar de las circunstancias que puedan atribularla.
+            <br>
+            El cuadro elegido Les Coquelicots (Las amapolas) lo pintó en 1873, recién llegado de Inglaterra, donde
+            residieron durante la guerra franco-prusiana. La mujer con la sombrilla y el niño que aparecen en primer
+            plano son Camille y Jean, y realmente son una excusa pictórica para marcar una diagonal en el lienzo que
+            separara las dos gamas de color de la obra. No hay una definición de caras, formas, flores y matorrales,
+            pero mirándolo, se huele el verano y casi se oyen las chicharras.
+        </p>
+        {%endif%}
     </div>
 
+
+
+ 
 
 </body>
 

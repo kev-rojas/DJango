@@ -60,31 +60,42 @@
         </div>
     </nav>
     <br>
-
-    <img id="obra" src="{% static 'core/img/arte cubista2.jpg'%}">
-    
+    <center>
+        <img id="obra" src="{% static 'core/img/arte cubista2.jpg'%}">
+    </center>
+    <br>
     <div class="container">
-        <div class="row">
-            <ul class="list-group">
-                <li class="list-group-item" style="background-color: #8B9494 ;">Información de la Obra</li>
-                <li class="list-group-item">Nombre: Pablo Picasso</li>
-                <li class="list-group-item">Autor: Cap de Fernande sobre la muntanya de Santa Bárbara</li>
-                <li class="list-group-item">Año: 1909</li>
-            </ul>
+        {%if nombreOb == true%}
+        {% csrf_token %}
+        <h3 id="til">INFORMACIÓN DE LA OBRA</h3>
+        <ul class="list-group">
+            <li class="list-group-item">Nombre: {{cap.nombreOb}}</li>
+            <li class="list-group-item">Autor: {{cap.autor}}</li>
+            <li class="list-group-item">Año: {{cap.año}}</li>
+            <li class="list-group-item">Tecnica: {{cap.tecnica}}</li>
+            <li class="list-group-item">Tamaño: {{cap.tamaño}}m</li>
+        </ul>
+        <br>
+        <p id="info">
+            Tête de femme (Fernande) (Cabeza de mujer Fernande) es un claro ejemplo de los descubrimientos realizados
+            por Pablo Picasso en Horta, que giran en torno a la búsqueda de la tridimensionalidad en una superficie
+            pictórica plana, traducida aquí en la multiplicidad de facetas que definen la cabeza de la figura femenina.
+            Las diferentes zonas que conforman el rostro de Fernande –a partir de 1909, Fernande inspira toda una serie
+            de retratos cubistas, que incluyen también la producción escultórica– son delineadas por trazos que
+            constituyen agudos perfiles geométricos, y que configuran una especie de rejilla que recorre y anima la
+            superficie de la tela. La paleta empleada se limita a las tonalidades marrones, verdosas, grises, y negras
+            típicas del cubismo analítico, lo que permite que el autor concentre su atención en la estructuración formal
+            del espacio, construido a base de superposiciones de planos diferentes. 
             <br>
-        
-            <div>
-            <br>
-                <p id="info">
-                    El pintor representa, en este caso, una figura humana: el rostro de Fernande, su compañera, con un fondo de
-                    montañas. 
-                    
-                    Con la paleta también limitada a colores ocres, gris y verde, Picasso pinta la figura de la mujer
-                    con formas geométricas más marcadas, y el fondo con líneas menos concretas.
-                </p>
-            </div>
-        </div>
+            El resultado de todo ello es una composición integrada por zonas agudamente definidas y complejamente fragmentadas. Por otra parte, como
+            apunta Jan Avgikos refiriéndose a los trabajos cubistas en general, la visión total de este tipo de lienzos
+            –y, por ende, de Tête de femme (Fernande)– debe ser "pensada" tanto como "contemplada", tomando como punto
+            de partida las pistas visuales proporcionadas por el autor, vestigios que solo después de ser
+            convenientemente ensamblados proporcionan al lienzo su significado completo.
+        </p>
+        {%endif%}
     </div>
+
 
 
 </body>

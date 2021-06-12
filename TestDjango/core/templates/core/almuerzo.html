@@ -60,31 +60,41 @@
         </div>
     </nav>
     <br>
-
-    <img id="obra" src="{% static 'core/img/almuerzo.jpg'%}">
+    <center>
+        <img id="obra" src="{% static 'core/img/almuerzo.jpg'%}">
+    </center>
+    <br>
     <div class="container">
-        <div class="row">
-            <ul class="list-group">
-                <li class="list-group-item" style="background-color: #8B9494 ;">Información de la Obra</li>
-                <li class="list-group-item">Nombre: Almuerzo sobre la hierba</li>
-                <li class="list-group-item">Autor: Claude Monet</li>
-                <li class="list-group-item">Año: 1863</li>
-                <li class="list-group-item">Técnica: Óleo sobre Lienzo</li>
-                <li class="list-group-item">Tamaño: 208cm x 264.5cm</li>
-            </ul>
+        {%if nombreOb == true%}
+        {% csrf_token %}
+        <h3 id="til">INFORMACIÓN DE LA OBRA</h3>
+        <ul class="list-group">
+            <li class="list-group-item">Nombre: {{almuerzo.nombreOb}}</li>
+            <li class="list-group-item">Autor: {{almuerzo.autor}}</li>
+            <li class="list-group-item">Año: {{almuerzo.año}}</li>
+            <li class="list-group-item">Tecnica: {{almuerzo.tecnica}}</li>
+            <li class="list-group-item">Tamaño: {{almuerzo.tamaño}}m</li>
+        </ul>
+        <br>
+        <p id="info">
+            Le Déjeuner sur l'Herbe ("Almuerzo sobre la hierba" en francés) es un cuadro al óleo de 208 cm de altura y
+            264,5 de largo, pintado por Édouard Manet en 1863. Se exhibe en el Museo de Orsay de París. La yuxtaposición
+            de un desnudo femenino con caballeros completamente vestidos suscitó controversia cuando la obra se mostró
+            por vez primera en el Salon des Refusés en 1863, después de ser rechazado por el Salón oficial. Fue el
+            lienzo "más irritante y controvertido" de esa exposición de obras rechazadas.
             <br>
-            <div>
-            <br>
-                <p id="info">
-                    Le Déjeuner sur l'Herbe ("Almuerzo sobre la hierba" en francés) es un cuadro al óleo de 208 cm de altura y
-                    264,5 de largo, pintado por Édouard Manet en 1863. Se exhibe en el Museo de Orsay de París. La yuxtaposición
-                    de un desnudo femenino con caballeros completamente vestidos suscitó controversia cuando la obra se mostró
-                    por vez primera en el Salon des Refusés en 1863, después de ser rechazado por el Salón oficial. Fue el
-                    lienzo "más irritante y controvertido" de esa exposición de obras rechazadas.
-                </p>
-            </div>
-        </div>
+            En 1863, Manet sorprendió al público francés al exponer su Déjeuner sur l'Herbe («Almuerzo sobre la
+            hierba»). La idea del cuadro se le ocurrió durante una excursión a Argenteuil, a orillas del Sena.​ No es
+            una pintura realista en el sentido social o político del término propio de un Daumier, sino que es una
+            afirmación a favor de la libertad individual del artista. El escándalo que causaba una mujer desnuda
+            almorzando despreocupadamente con dos hombres completamente vestidos, lo que ofendía a la moralidad de la
+            época, se acentuaba por el hecho de que las figuras eran reconocibles.
+        </p>
+        {%endif%}
     </div>
+
+
+    
 
 </body>
 

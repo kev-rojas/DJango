@@ -60,33 +60,42 @@
         </div>
     </nav>
     <br>
-
-    <img id="obra" src="{% static 'core/img/tejido1.jpg'%}">
-    
+    <center>
+        <img id="obra" src="{% static 'core/img/tejido1.jpg'%}">
+    </center>
+    <br>
     <div class="container">
-        <div class="row">
-            <ul class="list-group">
-                <li class="list-group-item" style="background-color: #8B9494 ;">Información del Tejido</li>
-                <li class="list-group-item">Nombre: Letra Capital</li>
-                <li class="list-group-item">Autor: Desconocido</li>
-                <li class="list-group-item">Año: Desconocido</li>
-            </ul>
+        {%if nombreOb == true%}
+        {% csrf_token %}
+        <h3 id="til">INFORMACIÓN DE LA OBRA</h3>
+        <ul class="list-group">
+            <li class="list-group-item">Nombre: {{capi.nombreOb}}</li>
+            <li class="list-group-item">Autor: {{capi.autor}}</li>
+            <li class="list-group-item">Año: {{capi.año}}</li>
+            <li class="list-group-item">Tecnica: {{capi.tecnica}}</li>
+            <li class="list-group-item">Tamaño: {{capi.tamaño}}</li>
+        </ul>
+        <br>
+        <p id="info">
+            La península Ibérica antes de la invasión musulmana era una parte del Imperio Romano con la consiguiente
+            influencia Bizantina que eso acarreaba; a partir del siglo V sufrió las diferentes invasiones de los pueblos
+            bárbaros, siendo los visigodos los que desde el 410 se instalaron en la zona iniciando la formación de un
+            estado nacional que acabó siendo políticamente dominante en el territorio, aunque culturalmente no pudo
+            sustraerse al influjo tardorromano, ni al bizantino que entraba en la península a través del comercio con
+            Oriente; dado que la producción textil peninsular en esa fecha no parece ser significativa, y la existente
+            no estaba dedicada a la realización de telas lujosas; o al menos esto es lo que parece desprenderse del
+            texto de las Etimologías de San Isidoro de Sevilla en sus Etimologías.
             <br>
-            <div>
-                <br>
-                <p id="info">
-                    La península Ibérica antes de la invasión musulmana era una parte del Imperio Romano con la consiguiente
-                    influencia Bizantina que eso acarreaba; a partir del siglo V sufrió las diferentes invasiones de los pueblos
-                    bárbaros, siendo los visigodos los que desde el 410 se instalaron en la zona iniciando la formación de un
-                    estado nacional que acabó siendo políticamente dominante en el territorio, aunque culturalmente no pudo
-                    sustraerse al influjo tardorromano, ni al bizantino que entraba en la península a través del comercio con
-                    Oriente; dado que la producción textil peninsular en esa fecha no parece ser significativa, y la existente
-                    no estaba dedicada a la realización de telas lujosas; o al menos esto es lo que parece desprenderse del
-                    texto de las Etimologías de San Isidoro de Sevilla en sus Etimologías. 
-                </p>
-            </div>
-        </div>
+            Los yacimientos visigodos excavados, como la necrópolis de Castiltierra (Segovia), los de Carpio de Tajo
+            (Toledo) o los de Turuñuelo (Badajoz), en los que aparecieron ajuares funerarios demuestran, sin embargo, el
+            uso de hilos de oro y trabajos textiles que presentan características que pueden hacer pensar en una
+            intencionalidad artística y decorativa por parte de sus ejecutores; permitiéndonos deducir la existencia de
+            algunos talleres textiles en los que se trabajaban telas de carácter más lujoso que las producidas en épocas
+            anteriores.
+        </p>
+        {%endif%}
     </div>
+
 
 
 

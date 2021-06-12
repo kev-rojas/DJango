@@ -60,31 +60,37 @@
         </div>
     </nav>
     <br>
-
-    <img id="obra" src="{% static 'core/img/cisnes.jpg'%}">
-    
+    <center>
+        <img id="obra" src="{% static 'core/img/cisnes.jpg'%}">
+    </center>
+    <br>
     <div class="container">
-        <div class="row">
-            <ul class="list-group">
-                <li class="list-group-item" style="background-color: #8B9494 ;">Información de la Obra</li>
-                <li class="list-group-item">Nombre: Cisnes que se reflejan como elefantes</li>
-                <li class="list-group-item">Autor: Salvador Dalí</li>
-                <li class="list-group-item">Año: 1937</li>
-                <li class="list-group-item">Técnica: Óleo sobre Lienzo</li>
-                <li class="list-group-item">Tamaño: 51cm x 77cm</li>
-            </ul>
+        {%if nombreOb == true%}
+        {% csrf_token %}
+        <h3 id="til">INFORMACIÓN DE LA OBRA</h3>
+        <ul class="list-group">
+            <li class="list-group-item">Nombre: {{cis.nombreOb}}</li>
+            <li class="list-group-item">Autor: {{cis.autor}}</li>
+            <li class="list-group-item">Año: {{cis.año}}</li>
+            <li class="list-group-item">Tecnica: {{cis.tecnica}}</li>
+            <li class="list-group-item">Tamaño: {{cis.tamaño}}</li>
+        </ul>
+        <br>
+        <p id="info">
+            Cisnes que se reflejan como elefantes es una pintura por el pintor surrealista español Salvador Dalí. El
+            cuadro fue pintado durante su período paranoico-crítico, y contiene una de las imágenes dobles más conocidas
+            que formaron una parte importante de este período.
             <br>
-            <div>
-                <br>
-                <p id="info">
-                    Cisnes que se reflejan como elefantes emplea el reflejo en un lago para crear la imagen doble del cuadro.
-                    Tres cisnes están delante de árboles y, en el reflejo, los cisnes son las cabezas de los elefantes y los
-                    árboles son los cuerpos. El fondo del cuadro es un paisaje catalán representado en colores de otoño, el
-                    manejo del pincel creando remolinos en los precipicios circundantes del lago, para contrastar con la quietud
-                    del agua. 
-                </p>
-            </div>
-        </div>
+            Cisnes que se reflejan como elefantes emplea el reflejo en un lago para crear la imagen doble del cuadro.
+            Tres cisnes están delante de árboles y, en el reflejo, los cisnes son las cabezas de los elefantes y los
+            árboles son los cuerpos. El fondo del cuadro es un paisaje catalán representado en colores de otoño, el
+            manejo del pincel creando remolinos en los precipicios circundantes del lago, para contrastar con la quietud
+            del agua.
+            <br>
+            En la segunda guerra mundial, esta obra fue expoliada por el ejército alemán durante la ocupación francesa y
+            permaneció almacenada en el museo Jeu de Paume de París en la llamada "salle des martyrs" entre 1940-1944.
+        </p>
+        {%endif%}
     </div>
 
 

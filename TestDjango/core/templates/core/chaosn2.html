@@ -60,32 +60,34 @@
         </div>
     </nav>
     <br>
-
-    <img id="obra" src="{% static 'core/img/arte abstracto5.jpg'%}">
-    
+    <center>
+        <img id="obra" src="{% static 'core/img/arte abstracto5.jpg'%}">
+    </center>
+    <br>
     <div class="container">
-        <div class="row">
-            <ul class="list-group">
-                <li class="list-group-item" style="background-color: #8B9494 ;">Información de la Obra</li>
-                <li class="list-group-item">Nombre: Chaos N2</li>
-                <li class="list-group-item">Autor: Hilma Af Klint</li>
-                <li class="list-group-item">Año: 1906</li>
-                <li class="list-group-item">Técnica: Óleo sobre linezo</li>
-            </ul>
-            <br>
-            <div>
-                <p id="info">
-                    Aunque Wassily Kandinsky es el padre de la pintura abstracta, y sus obras abstractas fueron las primeras que
-                    vieron la luz, hay una artista abstracta que pintó cuadros abstractos antes que el propio Kandinsky. Se
-                    trata de Hilma Af Klint, que en 1906 pintó su famosa obra Chaos II, pero que entendió que el público en
-                    general no estaba preparado para el arte abstracto, así que ordenó no exhibir sus imágenes abstractas hasta
-                    veinte años después de su muerte.
-                </p>
-            </div>
-        </div>
+        {%if nombreOb == true%}
+        {% csrf_token %}
+        <h3 id="til">INFORMACIÓN DE LA OBRA</h3>
+        <ul class="list-group">
+            <li class="list-group-item">Nombre: {{cha.nombreOb}}</li>
+            <li class="list-group-item">Autor: {{cha.autor}}</li>
+            <li class="list-group-item">Año: {{cha.año}}</li>
+            <li class="list-group-item">Tecnica: {{cha.tecnica}}</li>
+            <li class="list-group-item">Tamaño: {{cha.tamaño}}</li>
+        </ul>
+        <br>
+        <p id="info">
+            Aunque Wassily Kandinsky es el padre de la pintura abstracta, y sus obras abstractas fueron las primeras que
+            vieron la luz, hay una artista abstracta que pintó cuadros abstractos antes que el propio Kandinsky. Se
+            trata de Hilma Af Klint, que en 1906 pintó su famosa obra Chaos II, pero que entendió que el público en
+            general no estaba preparado para el arte abstracto, así que ordenó no exhibir sus imágenes abstractas hasta
+            veinte años después de su muerte.
+        </p>
+        {%endif%}
     </div>
 
 
+ 
 
 </body>
 

@@ -60,35 +60,41 @@
         </div>
     </nav>
     <br>
-
-    <img id="obra" src="{% static 'core/img/arte-contemporáneo4.jpg'%}">
-    
+    <center>
+        <img id="obra" src="{% static 'core/img/arte-contemporáneo4.jpg'%}">
+    </center>
+    <br>
     <div class="container">
-        <div class="row">
-            <ul class="list-group">
-                <li class="list-group-item" style="background-color: #8B9494 ;">Información de la Obra</li>
-                <li class="list-group-item">Nombre: Ballon Dog (Orange) </li>
-                <li class="list-group-item">Autor: Jeff Koons</li>
-                <li class="list-group-item">Año: 1956</li>
-                <li class="list-group-item">Material: Acero inoxidable</li>
-            </ul>
+        {%if nombreOb == true%}
+        {% csrf_token %}
+        <h3 id="til">INFORMACIÓN DE LA OBRA</h3>
+        <ul class="list-group">
+            <li class="list-group-item">Nombre: {{ball.nombreOb}}</li>
+            <li class="list-group-item">Autor: {{ball.autor}}</li>
+            <li class="list-group-item">Año: {{ball.año}}</li>
+            <li class="list-group-item">Material: {{ball.tecnica}}</li>
+            <li class="list-group-item">Tamaño: {{ball.tamaño}}</li>
+        </ul>
+        <br>
+        <p id="info">
+            Esta obra monumental, con su impecable superficie reflectante y su glorioso color, es la más querida de
+            todas las esculturas contemporáneas. Su espectacular forma ha sido admirada en todo el mundo, después de
+            haber aparecido en la azotea del Museo Metropolitano de Arte de Nueva York, el Gran Canal de Venecia, y el
+            Palacio de Versalles en las afueras de París. La obra se ha convertido en un icono del arte popular, adorado
+            por el público y los coleccionistas por su deshinibida celebración de la niñez, la esperanza y la inocencia.
             <br>
-        
-            <div>
+            Posteriormente, Koons explora en la representación en materiales industriales, separándolos de la realidad y
+            naturaleza de origen. Esta tensión contribuye a que el espectador juegue visualmente con el valor del
+            objeto, con su significado y simbolización.
             <br>
-                <p id="info">
-                    Esta obra monumental, con su impecable superficie reflectante y su glorioso color, es la más querida de
-                    todas las esculturas contemporáneas. Su espectacular forma ha sido admirada en todo el mundo, después de
-                    haber aparecido en la azotea del Museo Metropolitano de Arte de Nueva York, el Gran Canal de Venecia, y el
-                    Palacio de Versalles en las afueras de París. La obra se ha convertido en un icono del arte popular, adorado
-                    por el público y los coleccionistas por su deshinibida celebración de la niñez, la esperanza y la inocencia.
-        
-                    "Balloon Dog (Orange)", fue uno de los primeros Balloon Dogs en ser fabricado, y fue adquirido por el
-                    coleccionista de Greenwich Peter Brant a finales de la década de los 90. 
-                </p>
-            </div>
-        </div>
+            "Balloon Dog (Orange)", fue uno de los primeros Balloon Dogs en ser fabricado, y fue adquirido por el
+            coleccionista de Greenwich Peter Brant a finales de la década de los 90.
+        </p>
+        {%endif%}
     </div>
+
+
+    
 
 
 </body>

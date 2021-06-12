@@ -56,34 +56,70 @@ def inicarSesion(request):
     return render(request,'core/inicarSesion.html')
 
 def almuerzo(request):
-    return render(request,'core/almuerzo.html')
+    almuerzo=Obra.objects.get(nombreOb='Almuerzo sobre la hierba')
+    datos={
+        'almuerzo': almuerzo
+    }
+    return render(request,'core/almuerzo.html',datos)
 
 def balloon(request):
-    return render(request,'core/balloon.html')
+    ball=Obra.objects.get(nombreOb='Ballon Dog (Orange)')
+    datos={
+        'ball': ball
+    }
+    return render(request,'core/balloon.html',datos)
 
 def cap(request):
-    return render(request,'core/cap.html')
+    cap=Obra.objects.get(nombreOb='Cap de Fernande')
+    datos={
+        'cap': cap
+    }
+    return render(request,'core/cap.html',datos)
 
 def capital(request):
-    return render(request,'core/capital.html')
+    capi=Obra.objects.get(nombreOb='Letra Capital')
+    datos={
+        'capi': capi
+    }
+    return render(request,'core/capital.html',datos)
 
 def cases(request):
-    return render(request,'core/cases.html')
+    cas=Obra.objects.get(nombreOb='Cases d.Horta')
+    datos={
+        'cas': cas
+    }
+    return render(request,'core/cases.html',datos)
 
 def chaosn2(request):
-    return render(request,'core/chaosn2.html')
+    cha=Obra.objects.get(nombreOb='Chaos N2')
+    datos={
+        'cha': cha
+    }
+    return render(request,'core/chaosn2.html',datos)
 
 def cisnes(request):
-    return render(request,'core/cisnes.html')
+    cis=Obra.objects.get(nombreOb='Cisnes que se reflejan como elefantes')
+    datos={
+        'cis': cis
+    }
+    return render(request,'core/cisnes.html',datos)
 
 def comedores(request):
-    return render(request,'core/comedores.html')
+    com=Obra.objects.get(nombreOb='Los Comedores de Patatas')
+    datos={
+        'com': com
+    }
+    return render(request,'core/comedores.html',datos)
 
 def conceptos(request):
     return render(request,'core/conceptos.html')
 
 def coquelicots(request):
-    return render(request,'core/coquelicots.html')
+    coq=Obra.objects.get(nombreOb='Coquelicots')
+    datos={
+        'coq': coq
+    }
+    return render(request,'core/coquelicots.html',datos)
 
 def corona(request):
     return render(request,'core/corona.html')

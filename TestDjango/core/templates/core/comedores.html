@@ -60,32 +60,44 @@
         </div>
     </nav>
     <br>
-
-    <img id="obra" src="{% static 'core/img/comedores.jpg'%}">
+    <center>
+        <img id="obra" src="{% static 'core/img/comedores.jpg'%}">
+    </center>
+    <br>
     <div class="container">
-        <div class="row">
-            <ul class="list-group">
-                <li class="list-group-item" style="background-color: #8B9494 ;">Información de la Obra</li>
-                <li class="list-group-item">Nombre: Los Comedores de Patatas</li>
-                <li class="list-group-item">Autor: Vincent Van Gogh</li>
-                <li class="list-group-item">Año: 1885</li>
-                <li class="list-group-item">Técnica: Pintura al Óleo</li>
-                <li class="list-group-item">Tamaño: 114cm x 82cm</li>
-            </ul>
+        {%if nombreOb == true%}
+        {% csrf_token %}
+        <h3 id="til">INFORMACIÓN DE LA OBRA</h3>
+        <ul class="list-group">
+            <li class="list-group-item">Nombre: {{com.nombreOb}}</li>
+            <li class="list-group-item">Autor: {{com.autor}}</li>
+            <li class="list-group-item">Año: {{com.año}}</li>
+            <li class="list-group-item">Tecnica: {{com.tecnica}}</li>
+            <li class="list-group-item">Tamaño: {{com.tamaño}}</li>
+        </ul>
+        <br>
+        <p id="info">
+            Durante el mes de marzo e inicios de abril del año 1885, el autor preparó bosquejos relativos a la obra.
+            Esta la inició el 13 de abril del mismo para dejarla casi terminada a inicios del mes de mayo. Los cambios
+            menores los finalizó más tarde en 1885, con pequeñas pinceladas.
             <br>
-            <div>
-                <br>
-                <p id="info">
-                    Los comedores de patatas (también, Los comedores de papa o Los campesinos comiendo patatas; Aardappeleters,
-                    en neerlandés) es un cuadro del pintor Vincent van Gogh, que creó en abril de 1885 mientras residía en
-                    Nuenen, Países Bajos. Se encuentra en el Museo Van Gogh de Ámsterdam. La versión que se encuentra en el
-                    Museo Kröller-Müller de la ciudad de Otterlo es un bosquejo preliminar en óleo. Durante el mes de marzo e
-                    inicios de abril del año 1885, el autor preparó bosquejos relativos a la obra. Esta la inició el 13 de abril
-                    del mismo para dejarla casi terminada a inicios del mes de mayo.
-                </p>
-            </div>
-        </div>
+            En una carta escrita a su hermano dos años después en París, Van Gogh seguía considerando que Los comedores
+            de patatas era su cuadro más exitoso: «Lo que creo acerca de mi propio trabajo es que la pintura de los
+            campesinos comiendo patatas que hice en Neunen es, después de todo, lo mejor que he hecho».​ Sin embargo,
+            su obra fue criticada por su amigo Anthon van Rappard poco después de haber sido pintada. Esto fue un duro
+            golpe a la confianza de Van Gogh en su calidad de artista emergente, por lo que escribiría de vuelta a su
+            amigo: «tú... no tienes el derecho a condenar mi trabajo en la forma que lo has hecho» (julio de 1885), y
+            después, «siempre hago lo que aún no puedo hacer con el fin de aprender a cómo hacerlo» (septiembre de
+            1885).​Esto provocó la ruptura de su amistad.
+            <br>
+            El tema del cuadro fue tratado por varios artistas de la época en obras como La comida frugal, de Jozef
+            Israëls.​ El propio Van Gogh realizó diversas obras con una temática similar, como Cesto con patatas,
+            también de 1885.
+        </p>
+        {%endif%}
     </div>
+
+
 
 
 

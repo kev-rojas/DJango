@@ -60,34 +60,38 @@
         </div>
     </nav>
     <br>
-
-    <img id="obra" src="{% static 'core/img/arte cubista1.jpg'%}">
-    
+    <center>
+        <img id="obra" src="{% static 'core/img/arte cubista1.jpg'%}">
+    </center>
+    <br>
     <div class="container">
-        <div class="row">
-            <ul class="list-group">
-                <li class="list-group-item" style="background-color: #8B9494 ;">Información de la Obra</li>
-                <li class="list-group-item">Nombre: Cases d'Horta</li>
-                <li class="list-group-item">Autor: Pablo Picasso</li>
-                <li class="list-group-item">Año: 1909</li>
-            </ul>
-            <br>
-        
-            <div>
-                <br>
-                <p id="info">
-                    Es uno de las primeras obras cubistas de Picasso. En ella se representa un paisaje, arquitectónico en este
-                    caso, con una fuerte predominancia del color ocre y los tonos grises.
-        
-                    En Cases d’Horta Picasso aporta formas geométricas bien depuradas y contiguas entre ellas, todas diferentes
-                    caras de poliedros, en este caso
-                    cuadrados, rectángulos y triángulos.
-                </p>
-            </div>
-        </div>
+        {%if nombreOb == true%}
+        {% csrf_token %}
+        <h3 id="til">INFORMACIÓN DE LA OBRA</h3>
+        <ul class="list-group">
+            <li class="list-group-item" >Nombre: {{cas.nombreOb}}</li>
+            <li class="list-group-item">Autor: {{cas.autor}}</li>
+            <li class="list-group-item">Año: {{cas.año}}</li>
+            <li class="list-group-item">Tecnica: {{cas.tecnica}}</li>
+            <li class="list-group-item">Tamaño: {{cas.tamaño}}</li>
+        </ul>
+        <br>
+        <p id="info">
+            Casas de Horta es una de las obras realizadas por Picasso en Horta (actual Horta de San Juan), en el verano
+            de 1909 durante su segunda estancia en la villa. Se trata de un óleo de tonos ocres, con algunas zonas de un
+            gris zinc azuladas y la aparición tímida de un verde en la zona superior izquierda de la pintura. La
+            aportación al cubismo que Picasso hace en Horta es el trabajo en formas geométricas bien depuradas y
+            contiguas, caras de poliedros que en Casas de Horta son un cúmulo de cuadrados, rectángulos y triángulos
+            donde se enfatizan las aristas. Se trata de una aportación definitiva que, aunque obras de Braque y Picasso
+            posteriores sean las que se cataloguen de “cubismo” puro, se puede decir que el cubismo picassiano empieza
+            en realidad en Horta propiamente dicho.
+        </p>
+        {%endif%}
     </div>
 
 
+
+    
 
 </body>
 
