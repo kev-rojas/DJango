@@ -59,27 +59,32 @@
         </div>
     </nav>
     <br>
-
-    <img id="obra" src="{% static 'core/img/tejido5.jpg'%}">
-    
+    <center>
+        <img id="obra" src="{% static 'core/img/tejido5.jpg'%}">
+    </center>
+    <br>
     <div class="container">
-        <div class="row">
-            <ul class="list-group">
-                <li class="list-group-item" style="background-color: #8B9494 ;">Información del Tejido</li>
-                <li class="list-group-item">Nombre: Frescos Harén Real de Samarra</li>
-                <li class="list-group-item">Autor: Samarra S.IX</li>
-                <li class="list-group-item">Año: 1024</li>
-            </ul>
-            <br>
-            <div>
-                <br>
-                <p id="info">
-                    Con una tira central de roleos vegetales en la que inscriben animales que recuerda las decoraciones
-                    visigodas de Quintanilla de las Viñas, y comparables a los frescos existentes en el harén real de Samarra.
-                </p>
-            </div>
-        </div>
+        {%if nombreOb == true%}
+        {% csrf_token %}
+        <h3 id="til">INFORMACIÓN DE LA OBRA</h3>
+        <ul class="list-group">
+            <li class="list-group-item">Nombre: {{fres.nombreOb}}</li>
+            <li class="list-group-item">Autor: {{fres.autor}}</li>
+            <li class="list-group-item">Año: {{fres.año}}</li>
+            <li class="list-group-item">Tecnica: {{fres.tecnica}}</li>
+            <li class="list-group-item">Tamaño: {{fres.tamaño}}</li>
+        </ul>
+        <br>
+        <p id="info">
+            Con una tira central de roleos vegetales en la que inscriben animales que recuerda las decoraciones
+            visigodas de Quintanilla de las Viñas, y comparables a los frescos existentes en el harén real de Samarra.
+        </p>
+        {%endif%}
     </div>
+
+
+
+
 
 </body>
 

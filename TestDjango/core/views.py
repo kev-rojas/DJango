@@ -164,13 +164,25 @@ def discobolo(request):
     return render(request,'core/discobolo.html',datos)
 
 def elfantes(request):
-    return render(request,'core/elfantes.html')
+    ele=Obra.objects.get(nombreOb='Los Elefantes')
+    datos={
+        'ele': ele
+    }
+    return render(request,'core/elfantes.html',datos)
 
 def elvacio(request):
-    return render(request,'core/elvacio.html')
+    vac=Obra.objects.get(nombreOb='El Vacío')
+    datos={
+        'vac': vac
+    }
+    return render(request,'core/elvacio.html',datos)
 
 def frescos(request):
-    return render(request,'core/frescos.html')
+    fres=Obra.objects.get(nombreOb='Frescos Harén Real')
+    datos={
+        'fres': fres
+    }
+    return render(request,'core/frescos.html',datos)
 
 def ginebra(request):
     return render(request,'core/ginebra.html')

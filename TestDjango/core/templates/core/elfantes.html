@@ -60,31 +60,42 @@
         </div>
     </nav>
     <br>
-
-    <img id="obra" src="{% static 'core/img/elefantes.jpg'%}">
-    
+    <center>
+        <img id="obra" src="{% static 'core/img/elefantes.jpg'%}">
+    </center>
+    <br>
     <div class="container">
-        <div class="row">
-            <ul class="list-group">
-                <li class="list-group-item" style="background-color: #8B9494 ;">Información de la Obra</li>
-                <li class="list-group-item">Nombre: Los Elefantes</li>
-                <li class="list-group-item">Autor: Salvador Dalí</li>
-                <li class="list-group-item">Año: 1948</li>
-                <li class="list-group-item">Técnica: Óleo sobre Lienzo</li>
-                <li class="list-group-item">Tamaño: 49cm x 60cm</li>
-            </ul>
+        {%if nombreOb == true%}
+        {% csrf_token %}
+        <h3 id="til">INFORMACIÓN DE LA OBRA</h3>
+        <ul class="list-group">
+            <li class="list-group-item">Nombre: {{ele.nombreOb}}</li>
+            <li class="list-group-item">Autor: {{ele.autor}}</li>
+            <li class="list-group-item">Año: {{ele.año}}</li>
+            <li class="list-group-item">Tecnica: {{ele.tecnica}}</li>
+            <li class="list-group-item">Tamaño: {{ele.tamaño}}</li>
+        </ul>
+        <br>
+        <p id="info">
+            La figura del elefante es una temática que se repite en la obras de Salvador Dalí.En 1944, en el cuadro
+            “Sueño causado por el vuelo de una abeja alrededor de una granada un segundo antes de
+            despertar” aparece por primera vez la presencia de esta figura, al igual que en “La tentación de San
+            Antonio” y “Cisnes que se reflejan como elefantes”. “Los elefantes” se distingue de otros cuadros ya que los
+            animales son el foco principal de la obra, posee con un fondo desértico degradado y la ausencia de
+            contenido. Lo curioso es que otros cuadros de Dalí contienen muchas figuras y detalles a la vez (Eso puede
+            ser por lo que el cuadro Cisnes que se reflejan como elefantes sea mucho más conocido que ”Los
+            elefantes”).Los elefantes con las patas excesivamente alargadas es uno de los iconos más característicos de
+            los cuadros de Dalí, y adornan los museos españoles.
             <br>
-            <div>
-                <br>
-                <p id="info">
-                    En 1944, en el cuadro “Sueño causado por el vuelo de una abeja alrededor de una granada un segundo antes de
-                    despertar” aparece por primera vez la presencia de esta figura, al igual que en “La tentación de San
-                    Antonio” y “Cisnes que se reflejan como elefantes”. “Los elefantes” se distingue de otros cuadros ya que los
-                    animales son el foco principal de la obra, posee con un fondo desértico degradado y la ausencia de
-                    contenido. Lo curioso es que otros cuadros de Dalí contienen muchas figuras y detalles a la vez.
-                </p>
-            </div>
-        </div>
+            Hay varias hipótesis populares sobre lo que pueden significar los elefantes, casi siempre se veían como
+            símbolos de fortaleza, dominio y poder por su constitución y peso. Dalí contrasta este tópico con la imagen
+            del elefante con las patas de araña, a veces descritas como piernas casi invisibles de deseo. Dalí realza la
+            imagen de fuerza y pesadez representando a los elefantes llevando unos obeliscos gigantes a las espaldas,
+            aunque, si se analiza desde otra perspectiva parece que ese peso descomunal está flotando. Los obeliscos de
+            la espalda de los elefantes se cree que están inspirados por la escultura de los elefantes llevando un viejo
+            obelisco del artista Italiano Gian Lorenzo Bernini.
+        </p>
+        {%endif%}
     </div>
 
 
