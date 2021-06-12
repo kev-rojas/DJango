@@ -60,34 +60,39 @@
         </div>
     </nav>
     <br>
-
-    <img id="obra" src="{% static 'core/img/arte abstracto4.jpg'%}">
-    
+    <center>
+        <img id="obra" src="{% static 'core/img/arte abstracto4.jpg'%}">
+    </center>
+    <br>
     <div class="container">
-        <div class="row">
-            <ul class="list-group">
-                <li class="list-group-item" style="background-color: #8B9494 ;">Información de la Obra</li>
-                <li class="list-group-item">Nombre: Jackson Pollock</li>
-                <li class="list-group-item">Autor: The Moon Woman Cuts the Circle</li>
-                <li class="list-group-item">Año: 1942</li>
-                <li class="list-group-item">Técnica: Dripping sobre tela</li>
-            </ul>
+        {%if nombreOb == true%}
+        {% csrf_token %}
+        <h3 id="til">INFORMACIÓN DE LA OBRA</h3>
+        <ul class="list-group">
+            <li class="list-group-item">Nombre: {{cua.nombreOb}}</li>
+            <li class="list-group-item">Autor: {{cua.autor}}</li>
+            <li class="list-group-item">Año: {{cua.año}}</li>
+            <li class="list-group-item">Tecnica: {{cua.tecnica}}</li>
+            <li class="list-group-item">Tamaño: {{cua.tamaño}}</li>
+        </ul>
+        <br>
+        <p id="info">
+            Como otros miembros de la Escuela de Nueva York, Jackson Pollock fue influenciado en sus primeros trabajos
+            por Joan Miro y Picasso , y se apoderó del concepto surrealista del inconsciente como fuente del arte. A
+            fines de la década de 1930, Pollock introdujo imágenes basadas en figuras totémicas o míticas, signos
+            ideográficos y eventos rituales, que se han interpretado como pertenecientes a las experiencias enterradas y
+            los recuerdos culturales de la psique.
             <br>
-            <div>
-                <br>
-                <p id="info">
-                    The Moon Woman Cuts the Circle, 1942 sugiere el ejemplo de Picasso, particularmente su Chica ante un espejo
-                    de 1932. Las paletas son similares, y ambos artistas describen a una mujer de pie solitaria como si le
-                    hubieran hecho una radiografía, su columna vertebral de un ancho negro línea de la que se originan sus
-                    contornos curvos. Las vistas frontales y de perfil de la cara se combinan para contrastar dos aspectos del
-                    yo, uno sereno y público, el otro oscuro e interior.
-        
-                    El tema de la mujer luna, que Pollock trató en varios dibujos y pinturas de principios de la década de 1940,
-                    podría haber estado disponible para él de varias fuentes. 
-                </p>
-            </div>
-        </div>
+            La mujer luna corta el círculo , 1942 sugiere el ejemplo de Picasso, en particular su Chica ante un
+            espejo.de 1932. Las paletas son similares, y ambos artistas describen a una mujer solitaria de pie como si
+            le hubieran hecho una radiografía, su columna vertebral es una amplia línea negra de la que se originan sus
+            contornos curvos. Las vistas frontales y de perfil del rostro se combinan para contrastar dos aspectos del
+            yo, uno sereno y público, el otro oscuro e interior. El tema de la mujer luna, que Pollock trató en varios
+            dibujos y pinturas de principios de la década de 1940, podría haber estado disponible para él de varias fuentes.
+        </p>
+        {%endif%}
     </div>
+
 
 
 </body>

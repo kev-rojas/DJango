@@ -60,35 +60,43 @@
         </div>
     </nav>
     <br>
-
-    <img id="obra" src="{% static 'core/img/orfebreria visigoda.jpg'%}">
-    
+    <center>
+        <img id="obra" src="{% static 'core/img/orfebreria visigoda.jpg'%}">
+    </center>
+    <br>
     <div class="container">
-        <div class="row">
-            <ul class="list-group">
-                <li class="list-group-item" style="background-color: #8B9494 ;">Información de la Orfebreria</li>
-                <li class="list-group-item">Nombre: Corona de Recesvinto</li>
-                <li class="list-group-item">Autor: Taller de la Corte de Toledo</li>
-                <li class="list-group-item">Año: Siglo VII</li>
-            </ul>
+        {%if nombreOb == true%}
+        {% csrf_token %}
+        <h3 id="til">INFORMACIÓN DE LA OBRA</h3>
+        <ul class="list-group">
+            <li class="list-group-item">Nombre: {{cor.nombreOb}}</li>
+            <li class="list-group-item">Autor: {{cor.autor}}</li>
+            <li class="list-group-item">Año: {{cor.año}}</li>
+            <li class="list-group-item">Tecnica: {{cor.tecnica}}</li>
+            <li class="list-group-item">Tamaño: {{cor.tamaño}}</li>
+        </ul>
+        <br>
+        <p id="info">
+            La corona de Recesvinto es una obra de orfebrería visigoda del siglo VII mandada realizar por el rey
+            Recesvinto. Fue confeccionada por el taller de la Corte de Toledo y en su realización se empleó oro,
+            granates, zafiros y perlas. Forma parte del llamado tesoro de Guarrazar descubierto en 1858 en la localidad
+            de Guadamur, provincia de Toledo, España. Se encuentra expuesta en el Museo Arqueológico Nacional.
             <br>
-            <div>
-                <br>
-                <p id="info">
-                    La corona de Recesvinto es una obra de orfebrería visigoda del siglo VII mandada realizar por el rey
-                    Recesvinto. Fue confeccionada por el taller de la Corte de Toledo y en su realización se empleó oro,
-                    granates, zafiros y perlas. Forma parte del llamado tesoro de Guarrazar descubierto en 1858 en la localidad
-                    de Guadamur, provincia de Toledo, España. Se encuentra expuesta en el Museo Arqueológico Nacional.
-        
-                    La estructura básica está formada por dos placas semicirculares articuladas mediante el empleo de charnelas.
-                    El interior es liso, mientras que el exterior está decorado con pequeñas hojas y granates (la mayoría
-                    perdidos). Sobre la diadema se dispone una red de zafiros y perlas. La corona pende de 4 cadenas formadas
-                    por pequeños eslabones con forma de hoja de peral que se reúnen en una doble azucena sobre la que se sitúa
-                    un pequeño capitel realizado en cristal de roca.
-                </p>
-            </div>
-        </div>
+            Se conoce como corona votiva a una ofrenda de carácter permanente que se donaba a las iglesias para honrar a
+            Dios. Generalmente consistían en cercos de metal precioso con incrustaciones de pedrería que después de
+            haber servido para la coronación de un rey, o sin proceder de esta, se ofrecía por reyes y nobles para ser
+            suspendidas sobre el altar durante la liturgia. Contenían generalmente una inscripción con el nombre del
+            oferente, del centro de la corona solía pender una cruz.
+            <br>
+            La estructura básica está formada por dos placas semicirculares articuladas mediante el empleo de charnelas.
+            El interior es liso, mientras que el exterior está decorado con pequeñas hojas y granates (la mayoría
+            perdidos). Sobre la diadema se dispone una red de zafiros y perlas. La corona pende de 4 cadenas formadas
+            por pequeños eslabones con forma de hoja de peral que se reúnen en una doble azucena sobre la que se sitúa
+            un pequeño capitel realizado en cristal de roca.
+        </p>
+        {%endif%}
     </div>
+
 
 
 

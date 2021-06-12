@@ -60,37 +60,40 @@
         </div>
     </nav>
     <br>
-
-    <img id="obra" src="{% static 'core/img/cristo redentor.jpg'%}">
-    
+    <center>
+        <img id="obra" src="{% static 'core/img/cristo redentor.jpg'%}">
+    </center>
+    <br>
     <div class="container">
-        <div class="row">
-            <ul class="list-group">
-                <li class="list-group-item" style="background-color: #8B9494 ;">Información de la Escultura</li>
-                <li class="list-group-item">Nombre: Cristo Redentor</li>
-                <li class="list-group-item">Autores: Paul Landowski, Heitor da Silva Costa, Albert Caquot, Gheorghe Leonida</li>
-                <li class="list-group-item">Año: 1931</li>
-            </ul>
+        {%if nombreOb == true%}
+        {% csrf_token %}
+        <h3 id="til">INFORMACIÓN DE LA OBRA</h3>
+        <ul class="list-group">
+            <li class="list-group-item">Nombre: {{cri.nombreOb}}</li>
+            <li class="list-group-item">Autor: {{cri.autor}}</li>
+            <li class="list-group-item">Año: {{cri.año}}</li>
+            <li class="list-group-item">Tecnica: {{cri.tecnica}}</li>
+            <li class="list-group-item">Tamaño: {{cri.tamaño}}</li>
+        </ul>
+        <br>
+        <p id="info">
+            La idea de un monumento religioso en Río de Janeiro nació en 1858, con el presbítero católico Pedro María
+            Boss y la princesa Isabel de Brasil. Sin embargo, la idea no se concretó durante el Imperio del Brasil. Se
+            retomó en 1921, cuando se aproximaba el centenario de la Independencia de Brasil. Héctor da Silva Costa fue
+            delegado para la ejecución de la obra, y la estatua fue realizada por el escultor francés Paul Landowski.
             <br>
-            <div>
-                <br>
-                <p id="info">
-                    La idea de un monumento religioso en Río de Janeiro nació en 1858, con el presbítero católico Pedro María
-                    Boss y la princesa Isabel de Brasil. Sin embargo, la idea no se concretó durante el Imperio del Brasil. Se
-                    retomó en 1921, cuando se aproximaba el centenario de la Independencia de Brasil. Héctor da Silva Costa fue
-                    delegado para la ejecución de la obra, y la estatua fue realizada por el escultor francés Paul Landowski.
-        
-                    El rostro de la estatua fue creado por el escultor rumano Gheorghe Leonida (c. 1892/1893 - 1942). Leonida
-                    estudió escultura en el Conservatorio de Bellas Artes de Bucarest y tras completar su formación con tres
-                    años de estudios en Italia, ganó un premio por la escultura Réveil (en francés, 'Despertar'). Después de
-                    eso, se trasladó a París, donde, por su obra Le Diable (en francés, 'El Diablo'), fue de nuevo galardonado
-                    con un premio. Tras adquirir fama en Francia como retratista, fue incluido por Paul Landowski en su equipo
-                    para trabajar en el Cristo Redentor a partir de 1922.
-        
-                </p>
-            </div>
-        </div>
+            El rostro de la estatua fue creado por el escultor rumano Gheorghe Leonida (c. 1892/1893 - 1942). Leonida
+            estudió escultura en el Conservatorio de Bellas Artes de Bucarest y tras completar su formación con tres
+            años de estudios en Italia, ganó un premio por la escultura Réveil (en francés, 'Despertar'). Después de
+            eso, se trasladó a París, donde, por su obra Le Diable (en francés, 'El Diablo'), fue de nuevo galardonado
+            con un premio. Tras adquirir fama en Francia como retratista, fue incluido por Paul Landowski en su equipo
+            para trabajar en el Cristo Redentor a partir de 1922.
+        </p>
+        {%endif%}
     </div>
+
+
+
 
 
 </body>

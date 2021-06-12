@@ -60,9 +60,40 @@
         </div>
     </nav>
     <br>
+    <center>
+        <img id="obra" src="{% static 'core/img/Discobolo.jpg'%}">
+    </center>
+    <br>
+    <div class="container">
+        {%if nombreOb == true%}
+        {% csrf_token %}
+        <h3 id="til">INFORMACIÓN DE LA OBRA</h3>
+        <ul class="list-group">
+            <li class="list-group-item">Nombre: {{dis.nombreOb}}</li>
+            <li class="list-group-item">Autor: {{dis.autor}}</li>
+            <li class="list-group-item">Año: {{dis.año}}</li>
+            <li class="list-group-item">Tecnica: {{dis.tecnica}}</li>
+            <li class="list-group-item">Tamaño: {{dis.tamaño}}</li>
+        </ul>
+        <br>
+        <p id="info">
+            Discóbolo es la denominación convencional de una icónica escultura griega de bulto redondo realizada por
+            Mirón de Eléuteras en torno al 450 a.C.. Se enmarca en el inicio del periodo griego clásico, entre el
+            arcaico y el helenístico.​ La obra representa a un joven atleta desnudo en el instante anterior al
+            lanzamiento de un disco. Obedece a los preceptos de belleza de la época, suponiendo un gran avance hacia el
+            naturalismo, el dinamismo, la serenidad, el equilibrio y hacia un estudio anatómico más completo.
+            <br>
+            Mirón representa el cuerpo en el momento de su máxima tensión y esplendor. Sin embargo, ese gran esfuerzo no
+            se refleja en el rostro del atleta, que muestra solo una tenue concentración. Es decir, el escultor
+            ateniense no consigue una expresión facial acorde con el momento previo al lanzamiento. La torsión
+            corporal es vigorosa; pero, al mismo tiempo, armoniosa y delicada. Todo el cuerpo está inclinado hacia
+            delante, para producir con el balanceo posterior el impulso necesario para poder lanzar el disco.
+        </p>
+        {%endif%}
+    </div>
 
-    <img id="obra" src="{% static 'core/img/Discobolo.jpg'%}">
-    
+
+
     <div class="container">
         <div class="row">
             <ul class="list-group">
@@ -75,14 +106,21 @@
             <div>
                 <br>
                 <p id="info">
-                    La escultura llamada "El Discóbolo" representa a un atleta en un instante anterior al lanzamiento del disco.
+                    La escultura llamada "El Discóbolo" representa a un atleta en un instante anterior al lanzamiento
+                    del disco.
                     Una de sus copias romanas se
-                    encuentra en el Museo Británico de Londres, ya que como ocurre con muchas de las esculturas griegas más
-                    importantes, no se ha conservado la obra original, seguramente realizada en bronce. Mirón representa el
-                    cuerpo en el momento de su máxima tensión y esplendor. Sin embargo, ese gran esfuerzo no se refleja en el
-                    rostro del atleta, que muestra solo una tenue concentración. Es decir, el escultor ateniense no consigue una
-                    expresión facial acorde con el momento previo al lanzamiento.​ La torsión corporal es vigorosa; pero, al
-                    mismo tiempo, armoniosa y delicada. Todo el cuerpo está inclinado hacia delante, para producir con el
+                    encuentra en el Museo Británico de Londres, ya que como ocurre con muchas de las esculturas griegas
+                    más
+                    importantes, no se ha conservado la obra original, seguramente realizada en bronce. Mirón representa
+                    el
+                    cuerpo en el momento de su máxima tensión y esplendor. Sin embargo, ese gran esfuerzo no se refleja
+                    en el
+                    rostro del atleta, que muestra solo una tenue concentración. Es decir, el escultor ateniense no
+                    consigue una
+                    expresión facial acorde con el momento previo al lanzamiento.​ La torsión corporal es vigorosa;
+                    pero, al
+                    mismo tiempo, armoniosa y delicada. Todo el cuerpo está inclinado hacia delante, para producir con
+                    el
                     balanceo posterior el impulso necesario para poder lanzar el disco.
                 </p>
             </div>

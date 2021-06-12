@@ -60,33 +60,52 @@
         </div>
     </nav>
     <br>
-
-    <img id="obra" src="{% static 'core/img/Crepusculo_en_venecia.jpg'%}">
-    
+    <center>
+        <img id="obra" src="{% static 'core/img/Crepusculo_en_venecia.jpg'%}">
+    </center>
+    <br>
     <div class="container">
-        <div class="row">
-            <ul class="list-group">
-                <li class="list-group-item" style="background-color: #8B9494 ;">Información de la Obra</li>
-                <li class="list-group-item">Nombre: Crepusculo en Venecia</li>
-                <li class="list-group-item">Autor: Claude Monet</li>
-                <li class="list-group-item">Año: 1908 - 1912</li>
-                <li class="list-group-item">Técnica: Óleo sobre Lienzo</li>
-                <li class="list-group-item">Tamaño: 65.2cm x 92.4cm</li>
-            </ul>
+        {%if nombreOb == true%}
+        {% csrf_token %}
+        <h3 id="til">INFORMACIÓN DE LA OBRA</h3>
+        <ul class="list-group">
+            <li class="list-group-item">Nombre: {{cre.nombreOb}}</li>
+            <li class="list-group-item">Autor: {{cre.autor}}</li>
+            <li class="list-group-item">Año: {{cre.año}}</li>
+            <li class="list-group-item">Tecnica: {{cre.tecnica}}</li>
+            <li class="list-group-item">Tamaño: {{cre.tamaño}}</li>
+        </ul>
+        <br>
+        <p id="info">
+            Es una vista de la isla del monasterio de San Giorgio de Venecia. A la derecha se ven débilmente la cúpula
+            de Santa María Salute y la desembocadura del Gran Canal. Monet estaba totalmente fascinado por las puestas
+            de sol venecianas, que son únicas en el mundo. Es una obra emblemática por los colores contrastantes para
+            resaltar un objeto en especial, las pinceladas son un tanto libres, rápidas y directas, reduciendo los
+            elementos, lo mejor es que genera volumen, gracias a la variedad cromática y ayuda de la luz al receptor
+            pueda presenciar esta mezcla óptica y se logre apreciar el volumen. En esta aparece como una sombra al
+            costado izquierdo de la pintura, pintada a contraluz (de manera casi fotográfica); detrás de ella, emerge
+            uno de los atardeceres más bellos y refulgentes de la historia del arte. Al costado derecho de la imagen,
+            sobre la línea de horizonte, se alcanzan a observar una serie de edificios de baja altura, también a
+            contraluz, difuminados por la bruma de la tarde veneciana, bruma acentuada por la técnica del pintor: como
+            toda obra impresionista, la bruma está constituida por pequeñas manchas de colores puros que la retina
+            humana se encarga de convertir en imágenes inteligibles, manchas que permiten modelar bellamente el vapor
+            emergente de las aguas.
             <br>
-            <div>
-                <br>
-                <p id="info">
-                    San Giorgio Maggiore al Crepuscolo (Crepusculo en Venecia) mide aproximadamente dos por tres pies y está pintado al óleo sobre
-                    lienzo. Representa edificios misteriosos que parecen aparecer mágicamente del paisaje circundante, casi
-                    parecen flotar en el fondo. Las formas se insertan suavemente, aunque no lo suficiente como para disfrazar
-                    su identidad. La pintura se centra en la Iglesia de San Giorgio Maggiore con su campanario que se eleva
-                    hasta la parte superior de la pintura. A la derecha están las cúpulas apenas visibles de Santa Maria della
-                    Salute y la desembocadura del Gran Canal .
-                </p>
-            </div>
-        </div>
+            El Crepúsculo de San Jorge Maggiore, o San Jorge Maggiore en la oscuridad es uno de una serie de pinturas
+            hechas por el artista Claude Monet, de la puesta del sol más fabulosa de Venecia. Esto es una pintura
+            impresionista famosa de Claude Monet pintó en 1908. La pintura fue hecha en aceite en lona mientras que
+            Monet veía al San Jorge Maggiore en Venecia de su ventana de Venecia del hotel de la costa. La pintura
+            impresionista de la puesta del sol de Venecia muestra la catedral y el campanario veneciano que están
+            situados en la isla de Venecia en la puesta del sol. El Crepúsculo de San Jorge Maggiore a veces se llama
+            Dusk en Venecia, San Jorge Maggiore por crepúsculo y puesta del sol en Venecia. La pintura impresionista de
+            la puesta del sol fue pintada en los colores de una puesta del sol brillante - naranja brillante, amarillo,
+            y una cinta del descoloramiento azul en el cielo.
+        </p>
+        {%endif%}
     </div>
+
+
+
 
 
 

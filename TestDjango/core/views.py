@@ -122,22 +122,46 @@ def coquelicots(request):
     return render(request,'core/coquelicots.html',datos)
 
 def corona(request):
-    return render(request,'core/corona.html')
+    cor=Obra.objects.get(nombreOb='Corona de Recesvinto')
+    datos={
+        'cor': cor
+    }
+    return render(request,'core/corona.html',datos)
 
 def crepusculo(request):
-    return render(request,'core/crepusculo.html')
+    cre=Obra.objects.get(nombreOb='Crepusculo en Venecia')
+    datos={
+        'cre': cre
+    }
+    return render(request,'core/crepusculo.html',datos)
 
 def cristo(request):
-    return render(request,'core/cristo.html')
+    cri=Obra.objects.get(nombreOb='Cristo Redentor')
+    datos={
+        'cri': cri
+    }
+    return render(request,'core/cristo.html',datos)
 
 def cuadron19(request):
-    return render(request,'core/cuadron19.html')
+    cua=Obra.objects.get(nombreOb='The Moon Woman Cuts the Circle')
+    datos={
+        'cua': cua
+    }
+    return render(request,'core/cuadron19.html',datos)
 
 def damaarmiño(request):
-    return render(request,'core/damaarmiño.html')
+    miño=Obra.objects.get(nombreOb='Dama de Armiño')
+    datos={
+        'miño': miño
+    }
+    return render(request,'core/damaarmiño.html',datos)
 
 def discobolo(request):
-    return render(request,'core/discobolo.html')
+    dis=Obra.objects.get(nombreOb='El Discóbolo')
+    datos={
+        'dis': dis
+    }
+    return render(request,'core/discobolo.html',datos)
 
 def elfantes(request):
     return render(request,'core/elfantes.html')
