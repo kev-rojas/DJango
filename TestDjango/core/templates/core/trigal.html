@@ -61,33 +61,39 @@
     </nav>
     <br>
 
-    <img id="obra" src="{% static 'core/img/trigal.jpg'%}">
-
+    <center>
+        <img id="obra" src="{% static 'core/img/trigal.jpg'%}">
+    </center>
+    <br>
     <div class="container">
-        <div class="row">
-            <ul class="list-group">
-                <li class="list-group-item" style="background-color: #8B9494 ;">Información de la Obra</li>
-                <li class="list-group-item">Nombre: Trigal con Cuervos</li>
-                <li class="list-group-item">Autor: Vincent Van Gogh</li>
-                <li class="list-group-item">Año: 1890</li>
-                <li class="list-group-item">Técnica: Óleo sobre Lienzo</li>
-                <li class="list-group-item">Tamaño: 50.2cm x 103cm</li>
-            </ul>
+        {%if nombreOb == true%}
+        {% csrf_token %}
+        <h3 id="til">INFORMACIÓN DE LA OBRA</h3>
+        <ul class="list-group">
+            <li class="list-group-item">Nombre: {{tri.nombreOb}}</li>
+            <li class="list-group-item">Autor: {{tri.autor}}</li>
+            <li class="list-group-item">Año: {{tri.año}}</li>
+            <li class="list-group-item">Tecnica: {{tri.tecnica}}</li>
+            <li class="list-group-item">Tamaño: {{tri.tamaño}}</li>
+        </ul>
+        <br>
+        <p id="info">
+            Trigal con cuervos,​ Campo de trigo con cuervos2​3​ o Trigal bajo la tormenta4​ (título completo en
+            neerlandés: Korenvelden onder dreigende luchten met kraaien, lit. Trigales bajo un cielo amenazador con
+            cuervos) es un óleo sobre lienzo del pintor holandés Vincent van Gogh.
             <br>
-            <div>
-                <br>
-                <p id="info">
-                    Comúnmente se afirmaba que esta fue la última pintura de Van Gogh. Sin embargo, los historiadores de arte
-                    no estaban seguros de que la pintura fuera la última, ya que la evidencia de sus cartas sugiere que Trigal
-                    con cuervos se completó alrededor del 10 de julio, y es anterior a pinturas tales como El Ayuntamiento de
-                    Auvers el 14 de julio de 1890 y Jardín de Daubigny.​ Por otra parte, Jan Hulsker señaló que una pintura
-                    de trigo ya cosechado, Campo con las gavillas de trigo, podría ser una pintura posterior.
-                </p>
-            </div>
-        </div>
+            Comúnmente se afirmaba que esta fue la última pintura de Van Gogh. Sin embargo, los historiadores de arte
+            no estaban seguros de que la pintura fuera la última, ya que la evidencia de sus cartas sugiere que Trigal
+            con cuervos se completó alrededor del 10 de julio, y es anterior a pinturas tales como El Ayuntamiento de
+            Auvers el 14 de julio de 1890 y Jardín de Daubigny.5​6​7​ Por otra parte, Jan Hulsker señaló que una pintura
+            de trigo ya cosechado, Campo con las gavillas de trigo, podría ser una pintura posterior.
+            <br>
+            Trigal con cuervos fue pintado en julio de 1890, en las últimas semanas de vida de Van Gogh. Muchos han
+            afirmado que se trata de su última pintura, mientras otros indican que es Raíces de árbol, o la ya
+            mencionada Jardín de Daubigny, como su pintura final.
+        </p>
+        {%endif%}
     </div>
-
-
 
 
 </body>

@@ -62,34 +62,31 @@
     </nav>
     <br>
 
-    <img id="obra" src="{% static 'core/img/telefono.jpg'%}">
-    
+    <center>
+        <img id="obra" src="{% static 'core/img/telefono.jpg'%}">
+    </center>
+    <br>
     <div class="container">
-        <div class="row">
-            <ul class="list-group">
-                <li class="list-group-item" style="background-color: #8B9494 ;">Información de la Obra</li>
-                <li class="list-group-item">Nombre: Teléfono Langosta</li>
-                <li class="list-group-item">Autor: Salvador Dalí</li>
-                <li class="list-group-item">Año: 1936</li>
-                <li class="list-group-item">Material: Yeso</li>
-                <li class="list-group-item">Tamaño: 178cm x 330mm</li>
-            </ul>
-            <br>
-            <div>
-                <br>
-                <p id="info">
-                    La obra está formada por un teléfono a disco y una langosta hecha de yeso colocada sobre él, cumpliendo la
-                    función del auricular o receptor. El teléfono es completamente funcional y cuatro de ellos fueron utilizados
-                    por Edward James en su vivienda vacacional. Dalí realizó un total de once Teléfonos Langosta, cuatro de
-                    color rojo y siete en blanco. Su tamaño aproximado es de 15x30x17 centímetros. Se trata de una de las obras
-                    más representativas del movimiento surrealista del siglo xx.
-                </p>
-            </div>
-        </div>
+        {%if nombreOb == true%}
+        {% csrf_token %}
+        <h3 id="til">INFORMACIÓN DE LA OBRA</h3>
+        <ul class="list-group">
+            <li class="list-group-item">Nombre: {{tele.nombreOb}}</li>
+            <li class="list-group-item">Autor: {{tele.autor}}</li>
+            <li class="list-group-item">Año: {{tele.año}}</li>
+            <li class="list-group-item">Material: {{tele.tecnica}}</li>
+            <li class="list-group-item">Tamaño: {{tele.tamaño}}</li>
+        </ul>
+        <br>
+        <p id="info">
+            La obra está formada por un teléfono a disco y una langosta hecha de yeso colocada sobre él, cumpliendo la
+            función del auricular o receptor. El teléfono es completamente funcional y cuatro de ellos fueron utilizados
+            por Edward James en su vivienda vacacional. Dalí realizó un total de once Teléfonos Langosta, cuatro de
+            color rojo y siete en blanco. Su tamaño aproximado es de 15x30x17 centímetros. Se trata de una de las obras
+            más representativas del movimiento surrealista del siglo xx.
+        </p>
+        {%endif%}
     </div>
-
-
-
 
 
 

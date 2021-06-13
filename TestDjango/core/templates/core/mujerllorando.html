@@ -61,31 +61,40 @@
     </nav>
     <br>
 
-    <img id="obra" src="{% static 'core/img/Mujerllorando.jpg'%}">
-    
+    <center>
+        <img id="obra" src="{% static 'core/img/Mujerllorando.jpg'%}">
+    </center>
+    <br>
     <div class="container">
-        <div class="row">
-            <ul class="list-group">
-                <li class="list-group-item" style="background-color: #8B9494 ;">Información de la Obra</li>
-                <li class="list-group-item">Nombre: La mujer que llora</li>
-                <li class="list-group-item">Autor: Pablo Picasso</li>
-                <li class="list-group-item">Año: 1937</li>
-                <li class="list-group-item">Técnica: Óleo sobre Lienzo</li>
-                <li class="list-group-item">Tamaño: 61cm x 50cm</li>
-            </ul>
+        {%if nombreOb == true%}
+        {% csrf_token %}
+        <h3 id="til">INFORMACIÓN DE LA OBRA</h3>
+        <ul class="list-group">
+            <li class="list-group-item">Nombre: {{mujer.nombreOb}}</li>
+            <li class="list-group-item">Autor: {{mujer.autor}}</li>
+            <li class="list-group-item">Año: {{mujer.año}}</li>
+            <li class="list-group-item">Tecnica: {{mujer.tecnica}}</li>
+            <li class="list-group-item">Tamaño: {{mujer.tamaño}}</li>
+        </ul>
+        <br>
+        <p id="info">
+            La mujer que llora (en francés: Femme an pleurs ) es un óleo sobre lienzo de Pablo Picasso, que creó en
+            Francia en 1937. El cuadro representa a Dora Maar, la amante y musa de Picasso. La mujer que llora fue
+            creada al final de una serie de pinturas que Picasso realizó en respuesta al bombardeo de Guernica en la
+            Guerra Civil española y está estrechamente asociada con la iconografía de su pintura Guernica. A Picasso le
+            intrigaba el tema de la mujer que lloraba y lo revisó en numerosas ocasiones ese año. Esta pintura,
+            creada el 26 de octubre de 1937, fue el más elaborado de la serie.
             <br>
-            <div>
-                <p id="info">
-                    La mujer que llora (en francés: Femme an pleurs ) es un óleo sobre lienzo de Pablo Picasso, que creó en
-                    Francia en 1937. El cuadro representa a Dora Maar, la amante y musa de Picasso. La mujer que llora fue
-                    creada al final de una serie de pinturas que Picasso realizó en respuesta al bombardeo de Guernica en la
-                    Guerra Civil española y está estrechamente asociada con la iconografía de su pintura Guernica. A Picasso le
-                    intrigaba el tema de la mujer que lloraba y lo revisó en numerosas ocasiones ese año. Esta pintura,
-                    creada el 26 de octubre de 1937, fue el más elaborado de la serie. 
-                </p>
-            </div>
-        </div>
+            Picasso creó La mujer que llora durante la Guerra Civil española , que estalló en julio de 1936, cuando el
+            general Franco se rebeló contra el gobierno republicano. Formaba parte de una serie de trabajos en respuesta
+            al bombardeo de Guernica en la Guerra Civil española el 26 de abril de 1937. El bombardeo tuvo lugar cuando
+            Adolf Hitler ordenó a la fuerza aérea alemana bombardear la ciudad vasca en nombre de Franco. La pintura
+            fue una protesta personal después de ver fotografías del evento en los periódicos.
+        </p>
+        {%endif%}
     </div>
+
+
 
 
 

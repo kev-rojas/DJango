@@ -62,37 +62,41 @@
     </nav>
     <br>
 
-    <img id="obra" src="{% static 'core/img/arte conceptual1.jpg'%}">
-    
-    <div class="cotainer">
-        <div class="row">
-            <ul class="list-group">
-                <li class="list-group-item" style="background-color: #8B9494 ;">Información de la Obra</li>
-                <li class="list-group-item">Nombre: Una y Tres Silla</li>
-                <li class="list-group-item">Autor: Marcel Duchamp</li>
-                <li class="list-group-item">Año: 1960</li>
-            </ul>
+    <center>
+        <img id="obra" src="{% static 'core/img/arte conceptual1.jpg'%}">
+    </center>
+    <br>
+    <div class="container">
+        {%if nombreOb == true%}
+        {% csrf_token %}
+        <h3 id="til">INFORMACIÓN DE LA OBRA</h3>
+        <ul class="list-group">
+            <li class="list-group-item">Nombre: {{rueda.nombreOb}}</li>
+            <li class="list-group-item">Autor: {{rueda.autor}}</li>
+            <li class="list-group-item">Año: {{rueda.año}}</li>
+            <li class="list-group-item">Tecnica: {{rueda.tecnica}}</li>
+            <li class="list-group-item">Tamaño: {{rueda.tamaño}}</li>
+        </ul>
+        <br>
+        <p id="info">
+            Duchamp crea su primer Ready Made, que viene a ser ese objeto sacado de su contexto original,
+            desfuncionalizado y convertido en arte. Es decir en vez de ser un objeto creado por el artista, es el
+            artista «robando» uno ya fabricado. Después de todo, no conozco un solo artista que no robe. Algunos incluso
+            a mano armada…
             <br>
-            <div>
-                <br>
-                <p id="info">
-                    Duchamp crea su primer Ready Made, que viene a ser ese objeto sacado de su contexto original,
-                    desfuncionalizado y convertido en arte. Es decir en vez de ser un objeto creado por el artista, es el
-                    artista «robando» uno ya fabricado. Después de todo, no conozco un solo artista que no robe. Algunos incluso
-                    a mano armada…
-        
-                    El arte se convertía así en algo que reside básicamente en el espectador y que no tiene que poseer
-                    necesariamente las cualidades estéticas tradicionales. Puro reciclaje, y además un nuevo concepto, original
-                    e irreverente que sabotea deliberadamente lo que hasta entonces se entendía por arte. Le cayeron hostias,
-                    lógicamente, era una idea que abría demasiadas puertas, pero a la larga se convirtió en la piedra angular
-                    del arte realizado en el siglo XX.
-        
-                    Un concepto tan influyente que todavía se usa como algo nuevo y rompedor en cientos de galerías y museos de
-                    arte contemporáneo del mundo, a pesar de que tiene ya más de 100 años.
-                </p>
-        </div>
+            El arte se convertía así en algo que reside básicamente en el espectador y que no tiene que poseer
+            necesariamente las cualidades estéticas tradicionales. Puro reciclaje, y además un nuevo concepto, original
+            e irreverente que sabotea deliberadamente lo que hasta entonces se entendía por arte. Le cayeron hostias,
+            lógicamente, era una idea que abría demasiadas puertas, pero a la larga se convirtió en la piedra angular
+            del arte realizado en el siglo XX.
+            <br>
+            Un concepto tan influyente que todavía se usa como algo nuevo y rompedor en cientos de galerías y museos de
+            arte contemporáneo del mundo, a pesar de que tiene ya más de 100 años.
+        </p>
+        {%endif%}
     </div>
-    </div>
+
+
 
 
 </body>

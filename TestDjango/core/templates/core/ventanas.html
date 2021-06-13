@@ -61,35 +61,37 @@
     </nav>
     <br>
 
-    <img id="obra" src="{% static 'core/img/arte abstracto1.jpg'%}">
-    
+    <center>
+        <img id="obra" src="{% static 'core/img/arte abstracto1.jpg'%}">
+    </center>
+    <br>
     <div class="container">
-        <div class="row">
-            <ul class="list-group">
-                <li class="list-group-item" style="background-color: #8B9494 ;">Información de la Obra</li>
-                <li class="list-group-item">Nombre: Ventanas Simultáneas</li>
-                <li class="list-group-item">Autor: Robert Delaunay</li>
-                <li class="list-group-item">Año: 1912</li>
-                <li class="list-group-item">Técnica: Óleo sobre lienzo / papel</li>
-            </ul>
+        {%if nombreOb == true%}
+        {% csrf_token %}
+        <h3 id="til">INFORMACIÓN DE LA OBRA</h3>
+        <ul class="list-group">
+            <li class="list-group-item">Nombre: {{ventanas.nombreOb}}</li>
+            <li class="list-group-item">Autor: {{ventanas.autor}}</li>
+            <li class="list-group-item">Año: {{ventanas.año}}</li>
+            <li class="list-group-item">Tecnica: {{ventanas.tecnica}}</li>
+            <li class="list-group-item">Tamaño: {{ventanas.tamaño}}</li>
+        </ul>
+        <br>
+        <p id="info">
+            Las ventanas inician mi vida como artista”, dice Robert Delaunay, refiriéndose a la serie de las Ventanas
+            simultáneas.
             <br>
-            
-            <div>
-                <br>
-                <p id="info">
-                    Las ventanas inician mi vida como artista”, dice Robert Delaunay, refiriéndose a la serie de las Ventanas
-                    simultáneas.
-        
-                    Son en total 22 cuadros que Delaunay pinta en 1912, y es donde aplica la técnica del simultaneísmo, y que a
-                    la vez da inicio al orfismo, el movimiento que el artista lleva adelante con su esposa Sonia.
-                    El color se utiliza en pequeñas áreas yuxtapuestas (puestas una junto a la otra), por lo general utilizando
-                    contrastes, para que el efecto de observar el conjunto en un golpe de vista genere formas, luminosidad,
-                    espacio, movimiento. Los contrastes simultáneos de color construyendo la realidad. Una interesante metáfora
-                    de la realidad.
-                </p>
-        </div>
+            Son en total 22 cuadros que Delaunay pinta en 1912, y es donde aplica la técnica del simultaneísmo, y que a
+            la vez da inicio al orfismo, el movimiento que el artista lleva adelante con su esposa Sonia.
+            El color se utiliza en pequeñas áreas yuxtapuestas (puestas una junto a la otra), por lo general utilizando
+            contrastes, para que el efecto de observar el conjunto en un golpe de vista genere formas, luminosidad,
+            espacio, movimiento. Los contrastes simultáneos de color construyendo la realidad. Una interesante metáfora
+            de la realidad.
+        </p>
+        {%endif%}
     </div>
-    </div>
+
+
 
 
 </body>

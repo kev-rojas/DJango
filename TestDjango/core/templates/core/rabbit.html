@@ -62,35 +62,37 @@
     </nav>
     <br>
 
-    <img id="obra" src="{% static 'core/img/arte-contemporáneo3.jpg'%}">
-    
+    <center>
+        <img id="obra" src="{% static 'core/img/arte-contemporáneo3.jpg'%}">
+    </center>
+    <br>
     <div class="container">
-        <div class="row">
-            <ul class="list-group">
-                <li class="list-group-item" style="background-color: #8B9494 ;">Información de la Obra</li>
-                <li class="list-group-item">Nombre: Rabbit </li>
-                <li class="list-group-item">Autor: Jeff Koons</li>
-                <li class="list-group-item">Año: 1986</li>
-                <li class="list-group-item">Material: Acero Inoxidable</li>
-            </ul>
+        {%if nombreOb == true%}
+        {% csrf_token %}
+        <h3 id="til">INFORMACIÓN DE LA OBRA</h3>
+        <ul class="list-group">
+            <li class="list-group-item">Nombre: {{crabapi.nombreOb}}</li>
+            <li class="list-group-item">Autor: {{rab.autor}}</li>
+            <li class="list-group-item">Año: {{rab.año}}</li>
+            <li class="list-group-item">Material: {{rab.tecnica}}</li>
+            <li class="list-group-item">Tamaño: {{rab.tamaño}}</li>
+        </ul>
+        <br>
+        <p id="info">
+            Jeff Koons estableció el récord de la obra de arte más cara del mundo realizada por un artista vivo. Nada
+            más y nada menos que 91 millones de dólares (unos 81 millones de euros) fue la cifra alcanzada. La obra en
+            cuestión es Rabbit, un conejo de acero inoxidable que parece un globo de helio y que mide de poco más de un
+            metro de altura, que Koons realizó en 1986, y que se ha convertido en el protagonista de la subasta de arte
+            contemporáneo de Christie’s, celebrada en Nueva York.
             <br>
-        
-            <div>
-                <br>
-                <p id="info">
-                    Jeff Koons estableció el récord de la obra de arte más cara del mundo realizada por un artista vivo. Nada
-                    más y nada menos que 91 millones de dólares (unos 81 millones de euros) fue la cifra alcanzada. La obra en
-                    cuestión es Rabbit, un conejo de acero inoxidable que parece un globo de helio y que mide de poco más de un
-                    metro de altura, que Koons realizó en 1986, y que se ha convertido en el protagonista de la subasta de arte
-                    contemporáneo de Christie’s, celebrada en Nueva York.
-        
-                    Aunque se estimaba que Rabbit tenía un valor de 50 o 70 millones de euros, Steve Cohen, el comprador,
-                    desembolsó 91 millones de dólares por ella, una cifra que la ha alzado como la obra más cara de un artista
-                    vivo. 
-                </p>
-            </div>
-        </div>
+            Aunque se estimaba que Rabbit tenía un valor de 50 o 70 millones de euros, Steve Cohen, el comprador,
+            desembolsó 91 millones de dólares por ella, una cifra que la ha alzado como la obra más cara de un artista
+            vivo. 
+        </p>
+        {%endif%}
     </div>
+
+
 
 </body>
 

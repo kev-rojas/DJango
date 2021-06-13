@@ -61,31 +61,50 @@
     </nav>
     <br>
 
-    <img id="obra" src="{% static 'core/img/sombrilla.jpg'%}">
-    
+    <center>
+        <img id="obra" src="{% static 'core/img/sombrilla.jpg'%}">
+    </center>
+    <br>
     <div class="container">
-        <div class="row">
-            <ul class="list-group">
-                <li class="list-group-item" style="background-color: #8B9494 ;">Información de la Obra</li>
-                <li class="list-group-item">Nombre: Mujer con sombrilla</li>
-                <li class="list-group-item">Autor: Claude Monet</li>
-                <li class="list-group-item">Año: 1875</li>
-                <li class="list-group-item">Técnica: Óleo sobre Lienzo</li>
-                <li class="list-group-item">Tamaño: 24cm x 33cm</li>
-            </ul>
+        {%if nombreOb == true%}
+        {% csrf_token %}
+        <h3 id="til">INFORMACIÓN DE LA OBRA</h3>
+        <ul class="list-group">
+            <li class="list-group-item">Nombre: {{somb.nombreOb}}</li>
+            <li class="list-group-item">Autor: {{somb.autor}}</li>
+            <li class="list-group-item">Año: {{somb.año}}</li>
+            <li class="list-group-item">Tecnica: {{somb.tecnica}}</li>
+            <li class="list-group-item">Tamaño: {{somb.tamaño}}</li>
+        </ul>
+        <br>
+        <p id="info">
+            En 1876 Monet fue invitado por Ernest Hoschedé a su castillo de Rottembourg, en Montgeron, cerca de París,
+            donde ya había estado anteriormente con su mujer. Son pinturas al aire libre propias del impresionismo y que
+            son posibles mediante caballetes y obras de no mucho tamaño, dando la sensación de ser una instantánea. Las
+            pinceladas rápidas crean la sensación de dinamismo y movimiento, haciendo que el mismo viento mezcle los
+            ropajes captados en un momento determinado.
             <br>
-            <div>
-                <br>
-                <p id="info">
-                    En 1876 Monet fue invitado por Ernest Hoschedé a su castillo de Rottembourg, en Montgeron, cerca de París,
-                    donde ya había estado anteriormente con su mujer. Son pinturas al aire libre propias del impresionismo y que
-                    son posibles mediante caballetes y obras de no mucho tamaño, dando la sensación de ser una instantánea. Las
-                    pinceladas rápidas crean la sensación de dinamismo y movimiento, haciendo que el mismo viento mezcle los
-                    ropajes captados en un momento determinado.
-                </p>
-            </div>
-        </div>
+            Esta obra se da en el periodo en el que tanto él como su familia vivían en Argenteuil cerca del río Sena,
+            algo muy propicio para un autor impresionista como Monet aficionado a retratar el agua. Estos establecieron
+            su residencia en esta zona por las influencias de su amigo Édouard Manet. En este contexto se le ofrece un
+            taller en el parque a su disposición para ejecutar las obras al aire libre. Este impresiona mucho a Monet
+            debido a su carácter flotante con el cual podía plasmar las aguas del río desde el mismo.
+            <br>
+            Los retratados en esta obra son su mujer Camille y su hijo Jean; crea en la figura de Camille una gran
+            monumentalidad enfocando desde abajo, aprovechando un desnivel del terreno, el cual se puede apreciar en la
+            obra. Con estas características en la obra, debería destacar sobre todo la parte del celaje, pero no es así,
+            consigue que todos los elementos se muestren de una manera proporcionada. Esto se hace mediante el ligamento
+            de los colores, haciendo que los colores que más destaquen sean los de la parte de abajo que se conectan con
+            el color de la sombrilla, jugando así con la visión del espectador. Mientras que en contraste las vestiduras
+            de ambos parecen mezclarse con el cielo ligándose con las nubes. Con su hijo opta por aplicar matices
+            rojizos destacándolo sobre el fondo. Desecha totalmente el negro para las sombras, utilizando sobre todo
+            violetas, y juega con la luz en los vestidos cuyas veladuras dejan pasar esa luminosidad.
+        </p>
+        {%endif%}
     </div>
+
+
+
 
 </body>
 

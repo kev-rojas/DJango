@@ -61,33 +61,42 @@
     </nav>
     <br>
 
-    <img id="obra" src="{% static 'core/img/arte abstracto3.jpg'%}">
-    
+    <center>
+        <img id="obra" src="{% static 'core/img/arte abstracto3.jpg'%}">
+    </center>
+    <br>
     <div class="container">
-        <div class="row">
-            <ul class="list-group">
-                <li class="list-group-item" style="background-color: #8B9494 ;">Información de la Obra</li>
-                <li class="list-group-item">Nombre: Interchange</li>
-                <li class="list-group-item">Autor: Willem de Kooning</li>
-                <li class="list-group-item">Año: 1995</li>
-                <li class="list-group-item">Técnica: Óleo sobre linezo</li>
-            </ul>
+        {%if nombreOb == true%}
+        {% csrf_token %}
+        <h3 id="til">INFORMACIÓN DE LA OBRA</h3>
+        <ul class="list-group">
+            <li class="list-group-item">Nombre: {{inter.nombreOb}}</li>
+            <li class="list-group-item">Autor: {{inter.autor}}</li>
+            <li class="list-group-item">Año: {{inter.año}}</li>
+            <li class="list-group-item">Tecnica: {{inter.tecnica}}</li>
+            <li class="list-group-item">Tamaño: {{inter.tamaño}}</li>
+        </ul>
+        <br>
+        <p id="info">
+            Interchange, también conocido como Interchanged, es una pintura al óleo expresionista abstracta sobre
+            lienzo del pintor holandés-estadounidense Willem de Kooning (1904-1997). Al igual que Jackson Pollock, de
+            Kooning fue uno de los primeros artistas delmovimiento expresionista abstracto, el primermovimiento de arte
+            moderno estadounidense. La pintura mide 200,7 por 175,3 centímetros (79,0 por 69,0 pulgadas) y se completó
+            en 1955. Marcó la transición de los sujetos de las pinturas de De Kooning de mujeres a paisajes urbanos
+            abstractos. Refleja una transición en la técnica de pintura de De Kooning debido a la influencia del artista
+            Franz Kline, quien inspiró a De Kooning a pintar con marcas gestuales de rápida realización en lugar de
+            pinceladas violentas. La pintura presenta una masa rosada carnosa en su centro, que representa a una mujer
+            sentada.
             <br>
-            <div>
-                <br>
-                <p id="info">
-                    Interchange, también conocido como Interchanged, es un óleo sobre lienzo del pintor expresionista abstracto
-                    holandés-estadounidense Willem de Kooning (1904-1997). Mide 200,7 por 175,3 centímetros (79,0 por 69,0
-                    pulgadas) y se completó en 1955. Fue uno de los primeros paisajes abstractos de De Kooning y marcó un cambio
-                    en su estilo bajo la influencia de su compañero artista Franz Kline. En septiembre de 2015, fue vendida por
-                    la Fundación David Geffen a Kenneth C. Griffin por $ 300 millones (equivalente a $ 325,731,065.70 a partir
-                    de 2019), una nueva marca para el precio más alto de la historia para una pintura, no superada hasta
-                    noviembre de 2017 por Salvator de Leonardo da Vinci. Mundi. Ha sido cedido en el Art Institute
-                    of Chicago.
-                </p>
-            </div>
-        </div>
+            Originalmente vendido por el artista en 1955 por $ 4,000, fue vendido por la Fundación David Geffen a
+            Kenneth C. Griffin por $ 300 millones en septiembre de 2015, y luego lo clasificó primero en la lista de
+            pinturas más caras. Ha sido cedido en el Art Institute of Chicago. En la actualidad ocupa
+            el segundo lugar en la lista de la mayoría de las pinturas costosas , sólo superado por Leonardo da Vinci ‘s
+            Salvator Mundi, que se vendió por $ 450,3 millones en noviembre de 2017.
+        </p>
+        {%endif%}
     </div>
+
 
 </body>
 

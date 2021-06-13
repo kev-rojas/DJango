@@ -61,30 +61,39 @@
     </nav>
     <br>
 
-    <img id="obra" src="{% static 'core/img/jardin.jpg'%}">
-    
+    <center>
+        <img id="obra" src="{% static 'core/img/jardin.jpg'%}">
+    </center>
+    <br>
     <div class="container">
-        <div class="row">
-            <ul class="list-group">
-                <li class="list-group-item" style="background-color: #8B9494 ;">Información de la Obra</li>
-                <li class="list-group-item">Nombre: El jardín del artista en Giverny</li>
-                <li class="list-group-item">Autor: Claude Monet</li>
-                <li class="list-group-item">Año: 1900</li>
-                <li class="list-group-item">Técnica: Óleo sobre Lienzo</li>
-                <li class="list-group-item">Tamaño: 816cm x 926cm</li>
-            </ul>
+        {%if nombreOb == true%}
+        {% csrf_token %}
+        <h3 id="til">INFORMACIÓN DE LA OBRA</h3>
+        <ul class="list-group">
+            <li class="list-group-item">Nombre: {{jard.nombreOb}}</li>
+            <li class="list-group-item">Autor: {{jard.autor}}</li>
+            <li class="list-group-item">Año: {{jard.año}}</li>
+            <li class="list-group-item">Tecnica: {{jard.tecnica}}</li>
+            <li class="list-group-item">Tamaño: {{jard.tamaño}}</li>
+        </ul>
+        <br>
+        <p id="info">
+            Paisaje en Giverny (Payasage à Giverny en francés) o El jardín del artista en Giverny, es un óleo sobre
+            lienzo del pintor impresionista francés Claude Monet. La tradición señala que Monet visualizó esta
+            instantánea desde la ventana de un tren en Giverny, y evoca el distanciamiento de Monet con quien fuera su
+            segunda esposa Alice Hoschedé.
             <br>
-            <div>
-                <br>
-                <p id="info">
-                    Cuando las lilas florecieron, Monet las pintó con pinceladas cortas y gruesas de color concentrado, en esta
-                    obra aparece el efecto flotante de una capa de flores, la cual se reparte entre zonas soleadas y sombreadas.
-                    Al artista no le gustaba el caracter formal del camino principal que conducía a la puerta de su casa en
-                    Giverny, en lugar de los árboles que había en el paseo, Monet esparció toda clase de flores en colores:
-                    rosa, fucsia, verde, amarillo, rojo y blanco.
-                </p>
-            </div>
-        </div>
+            Para esta obra Monet repite el bajo horizonte característico de sus obras, en primer plano (extremo
+            izquierdo) se acomoda la figura de un árbol invernal. La cima del árbol terminada en tonos blancos
+            desarrolla hacia la parte inferior del lienzo un tronco incólume, resuelto con pinceladas oscuras que
+            otorgan un ambiente nublado y solitario al resto de la obra.
+            <br>
+            Debido a su prosperidad económica producida por la mejora del mercado de obras impresionistas en inicios de
+            1880, renta una propiedad en Giverny, donde vive con su esposa e hijos. Aquí mismo recibirá visitas de otros
+            pintores y amigos como Theodore Robinson, Auguste Renoir, Auguste Rodin (con quien compartiría estudio) o su
+            biógrafo personal Gustave Geffroy, entre otros.
+        </p>
+        {%endif%}
     </div>
 
 

@@ -63,33 +63,40 @@
     </nav>
     <br>
 
-    <img id="obra" src="{% static 'core/img/retorno.jpg'%}">
-    
+    <center>
+        <img id="obra" src="{% static 'core/img/retorno.jpg'%}">
+    </center>
+    <br>
     <div class="container">
-        <div class="row">
-            <ul class="list-group">
-                <li class="list-group-item" style="background-color: #8B9494 ;">Información de la Obra</li>
-                <li class="list-group-item">Nombre: El retorno del hijo pródigo</li>
-                <li class="list-group-item">Autor: Rembrant van Rijin</li>
-                <li class="list-group-item">Año: 1662</li>
-                <li class="list-group-item">Técnica: Óleo</li>
-                <li class="list-group-item">Tamaño: 262cm x 205cm</li>
-            </ul>
+        {%if nombreOb == true%}
+        {% csrf_token %}
+        <h3 id="til">INFORMACIÓN DE LA OBRA</h3>
+        <ul class="list-group">
+            <li class="list-group-item">Nombre: {{reto.nombreOb}}</li>
+            <li class="list-group-item">Autor: {{reto.autor}}</li>
+            <li class="list-group-item">Año: {{reto.año}}</li>
+            <li class="list-group-item">Tecnica: {{reto.tecnica}}</li>
+            <li class="list-group-item">Tamaño: {{reto.tamaño}}</li>
+        </ul>
+        <br>
+        <p id="info">
+            El retorno del hijo pródigo (Terugkeer van de Verloren Zoon en neerlandés) es una obra del pintor holandés
+            Rembrandt. Está realizado en óleo sobre tela, y fue pintado hacia el año 1662. Mide 262 cm de alto y 205 cm
+            de ancho. Se exhibe actualmente en el Museo del Ermitage de San Petersburgo (Rusia).
             <br>
-            <div>
-                <br>
-                <p id="info">
-                    El cuadro se inspira en la parábola del hijo pródigo contenida en la Biblia. La parábola del evangelista
-                    Lucas, representada en este cuadro, también es recordada como "Parábola del Padre
-                    misericordioso". La escena representa el momento cumbre del perdón del padre frente al hijo arrepentido de
-                    su propia conducta. Rasgo de arrepentimiento es que comparece con el cabello rapado y se arrodilla ante el
-                    padre. Viste andrajos con agujeros. El anciano lo acoge con un gesto amoroso y casi protector, expresando
-                    así sentimientos de misericordia y compasión. 
-                </p>
-        </div>
+            El cuadro se inspira en la parábola del hijo pródigo contenida en la Biblia. La parábola del evangelista
+            Lucas (c.15, v.11-32), representada en este cuadro, también es recordada como «Parábola del Padre
+            misericordioso». La escena representa el momento cumbre del perdón del padre frente al hijo arrepentido de
+            su propia conducta. Rasgo de arrepentimiento es que comparece con el cabello rapado y se arrodilla ante el
+            padre. Viste andrajos con agujeros. El anciano lo acoge con un gesto amoroso y casi protector, expresando
+            así sentimientos de misericordia y compasión. Coloca las manos amorosamente en la espalda del hijo.
+            <br>
+            Rembrandt quiso simbolizar la misericordia de Dios Padre con la humanidad. De hecho, puede observarse que un
+            brazo del padre es de hombre y el otro de mujer. Simboliza que Dios es padre y madre a la vez.
+        </p>
+        {%endif%}
     </div>
 
-    </div>
 
 
 

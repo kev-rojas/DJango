@@ -60,34 +60,43 @@
         </div>
     </nav>
     <br>
-
-    <img id="obra" src="{% static 'core/img/guernica.jpg'%}">
-    
+    <center>
+        <img id="obra" src="{% static 'core/img/guernica.jpg'%}">
+    </center>
+    <br>
     <div class="container">
-        <div class="row">
-            <ul class="list-group">
-                <li class="list-group-item" style="background-color: #8B9494 ;">Información de la Obra</li>
-                <li class="list-group-item">Nombre: Guernica</li>
-                <li class="list-group-item">Autor: Pablo Picasso</li>
-                <li class="list-group-item">Año: 1937</li>
-                <li class="list-group-item">Técnica: Óleo sobre Lienzo</li>
-                <li class="list-group-item">Tamaño: 776.6cm x 349.3cm</li>
-            </ul>
+        {%if nombreOb == true%}
+        {% csrf_token %}
+        <h3 id="til">INFORMACIÓN DE LA OBRA</h3>
+        <ul class="list-group">
+            <li class="list-group-item">Nombre: {{guer.nombreOb}}</li>
+            <li class="list-group-item">Autor: {{guer.autor}}</li>
+            <li class="list-group-item">Año: {{guer.año}}</li>
+            <li class="list-group-item">Tecnica: {{guer.tecnica}}</li>
+            <li class="list-group-item">Tamaño: {{guer.tamaño}}</li>
+        </ul>
+        <br>
+        <p id="info">
+            Guernica es un cuadro de Pablo Picasso, pintado en París​ entre los meses de mayo y junio de 1937, cuyo
+            título alude al bombardeo de Guernica, ocurrido el 26 de abril de dicho año (1937), durante la guerra civil
+            española. Fue realizado por encargo del director general de Bellas Artes, Josep Renau, a petición del
+            Gobierno de la Segunda República Española para ser expuesto en el pabellón español durante la Exposición
+            Internacional de 1937 en París, con el fin de atraer la atención del público hacia la causa republicana en
+            plena guerra civil española.
             <br>
-            <div>
-                <br>
-                <p id="info">
-                    Guernica es un famoso cuadro de Pablo Picasso, pintado en París​ entre los meses de mayo y junio de 1937,
-                    cuyo título alude al bombardeo de Guernica, ocurrido el 26 de abril de dicho año (1937), durante la guerra
-                    civil española. Fue realizado por encargo del director general de Bellas Artes, Josep Renau, a petición del
-                    Gobierno de la Segunda República Española para ser expuesto en el pabellón español durante la Exposición
-                    Internacional de 1937 en París, con el fin de atraer la atención del público hacia la causa republicana en
-                    plena guerra civil española.
-                </p>
-            </div>
-        </div>
+            En la década de 1940, puesto que en España se había instaurado la dictadura militar del general Franco,
+            Picasso optó por dejar que el cuadro fuese custodiado por el Museo de Arte Moderno de Nueva York, aunque
+            expresó su voluntad de que fuera devuelto a España cuando volviese al país la democracia. En 1981 la obra
+            llegó finalmente a España. Se expuso al público primero en el Casón del Buen Retiro, y luego, desde 1992, en
+            el Museo Reina Sofía de Madrid, donde se encuentra en exhibición permanente.
+            <br>
+            Su interpretación en profundidad es objeto de controversia, ya que varias figuras son simbólicas y suscitan
+            opiniones dispares; pero su valor artístico está fuera de discusión. No solo es considerado una de las obras
+            más importantes del arte del siglo XX, sino que se ha convertido en un auténtico «icono del siglo XX»,
+            símbolo de los terribles sufrimientos que la guerra inflige a los seres humanos.
+        </p>
+        {%endif%}
     </div>
-
 
 
 

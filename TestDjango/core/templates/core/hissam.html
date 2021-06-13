@@ -61,34 +61,44 @@
     </nav>
     <br>
 
-    <img id="obra" src="{% static 'core/img/tejido3.jpg'%}">
-    
+    <center>
+        <img id="obra" src="{% static 'core/img/tejido3.jpg'%}">
+    </center>
+    <br>
     <div class="container">
-        <div class="row">
-            <ul class="list-group">
-                <li class="list-group-item" style="background-color: #8B9494 ;">Información de la Escultura</li>
-                <li class="list-group-item">Nombre: Hissam II</li>
-                <li class="list-group-item">Autor: Almaizar</li>
-                <li class="list-group-item">Año: 976-1013</li>
-            </ul>
+        {%if nombreOb == true%}
+        {% csrf_token %}
+        <h3 id="til">INFORMACIÓN DE LA OBRA</h3>
+        <ul class="list-group">
+            <li class="list-group-item">Nombre: {{his.nombreOb}}</li>
+            <li class="list-group-item">Autor: {{his.autor}}</li>
+            <li class="list-group-item">Año: {{his.año}}</li>
+            <li class="list-group-item">Tecnica: {{his.tecnica}}</li>
+            <li class="list-group-item">Tamaño: {{his.tamaño}}</li>
+        </ul>
+        <br>
+        <p id="info">
+            Después de esta descripción somera de la implantación y evolución de la industria textil en esta época
+            entraremos a valorar el sistema iconográfico y decorativo que los tejidos artísticos presentan; ya que puede
+            observarse en ellos diversas influencias y procedencias como iremos viendo.
             <br>
-            <div>
-                <br>
-                <p id="info">
-                    Después de esta descripción somera de la implantación y evolución de la industria textil en esta época
-                    entraremos a valorar el sistema iconográfico y decorativo que los tejidos artísticos presentan; ya que puede
-                    observarse en ellos diversas influencias y procedencias como iremos viendo.
-        
-                    De época visigoda los restos que se conservan no permiten apreciar sus decoraciones aunque cabe suponer que
-                    al igual que como en el resto de sus manifestaciones dominaría en ellas el influjo bizantino,
-                    presente y dominante en la península ya a finales de la dominación romana; manteniéndose incluso en época
-                    musulmana dada la proximidad, en origen del mundo árabe con Bizancio, con presencia también del influjo
-                    persa y sasánida del que los emperadores bizantinos no pudieron sustraerse llegando a adoptarlo, incluso en
-                    su indumentaria.
-                </p>
-            </div>
-        </div>
+            De época visigoda los restos que se conservan no permiten apreciar sus decoraciones aunque cabe suponer que
+            al igual que como en el resto de sus manifestaciones dominaría en ellas el influjo bizantino,
+            presente y dominante en la península ya a finales de la dominación romana; manteniéndose incluso en época
+            musulmana dada la proximidad, en origen del mundo árabe con Bizancio, con presencia también del influjo
+            persa y sasánida del que los emperadores bizantinos no pudieron sustraerse llegando a adoptarlo, incluso en
+            su indumentaria.
+            <br>
+            El telar de lazos permitía abaratar el sistema de producción mediante el planteamiento simétrico de la
+            decoración que, partiendo de un eje central y mediante un sistema de espejos, permitía la realización del
+            tejido completo y en duplicado; líneas horizontales y dibujos enmarcados en espacios cuadrados o circulares,
+            estos últimos las pallie rotate sasánidas; de animales reales o fantásticos enfilados y enmarcados en
+            círculos o roleos, de forma individual o por parejas afrontadas y separadas, en muchos casos, por un hom
+            (árbol de la vida persa); ciervos, leones, y de variadas aves como águilas y todo tipo de gallináceas.
+        </p>
+        {%endif%}
     </div>
+
 
 
 </body>

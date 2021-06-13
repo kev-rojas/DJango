@@ -61,33 +61,41 @@
     </nav>
     <br>
 
-    <img id="obra" src="{% static 'core/img/memoria.jpg'%}">
-    
+    <center>
+        <img id="obra" src="{% static 'core/img/memoria.jpg'%}">
+    </center>
+    <br>
     <div class="container">
-        <div class="row">
-            <ul class="list-group">
-                <li class="list-group-item" style="background-color: #8B9494 ;">Información de la Obra</li>
-                <li class="list-group-item">Nombre: La persistencia de la memoria</li>
-                <li class="list-group-item">Autor: Salvador Dalí</li>
-                <li class="list-group-item">Año: 1931</li>
-                <li class="list-group-item">Técnica: Óleo sobre Lienzo</li>
-                <li class="list-group-item">Tamaño: 24cm x 33cm</li>
-            </ul>
+        {%if nombreOb == true%}
+        {% csrf_token %}
+        <h3 id="til">INFORMACIÓN DE LA OBRA</h3>
+        <ul class="list-group">
+            <li class="list-group-item">Nombre: {{memo.nombreOb}}</li>
+            <li class="list-group-item">Autor: {{memo.autor}}</li>
+            <li class="list-group-item">Año: {{memo.año}}</li>
+            <li class="list-group-item">Tecnica: {{memo.tecnica}}</li>
+            <li class="list-group-item">Tamaño: {{memo.tamaño}}</li>
+        </ul>
+        <br>
+        <p id="info">
+            La persistencia de la memoria, conocido también como Los relojes blandos​ o Los relojes derretidos​ es un
+            cuadro del pintor español Salvador Dalí pintado en 1931. Realizado mediante la técnica del óleo sobre
+            lienzo, es de estilo surrealista y sus medidas son 24 x 33 cm. La obra fue exhibida en la primera exposición
+            individual de Dalí en la Galerie Pierre Colle de París,​ del 3 al 15 de junio de 1931, y en enero del año
+            siguiente en una exposición en la Julien Levy Gallery de Nueva York, Surrealism: Paintings, Drawngs and
+            Photographs.
             <br>
-            <div>
-                <br>
-                <p id="info">
-                    La persistencia de la memoria, conocido también como Los relojes blandos​ o Los relojes derretidos​ es un
-                    cuadro del pintor español Salvador Dalí pintado en 1931. Realizado mediante la técnica del óleo sobre
-                    lienzo, es de estilo surrealista y sus medidas son 24 x 33 cm. La obra fue exhibida en la primera exposición
-                    individual de Dalí en la Galerie Pierre Colle de París,​ del 3 al 15 de junio de 1931, y en enero del año
-                    siguiente en una exposición en la Julien Levy Gallery de Nueva York, Surrealism: Paintings, Drawngs and
-                    Photographs.
-                </p>
-            </div>
-        </div>
+            El paisaje es simple; aparece el mar al fondo y una pequeña formación rocosa a la derecha de forma insólita.
+            En primer plano a la izquierda, se observa un bloque probablemente de cartón tejido a mano, que hace las
+            funciones de una mesa, sobre el que se disponen dos relojes, un árbol y en el centro de la obra aparece una
+            extraña figura que simula una cabeza blanda, cuyo cuello se diluye en la oscuridad. Llama la atención la
+            enorme nariz, la especie de lengua que sale de ella y el ojo cerrado con largas pestañas. La figura parece
+            dormir sobre la arena. El artista ha colocado sobre esta figura un cuarto reloj, igualmente blando y que
+            también parece derretirse o escurrirse. Los elementos anteriormente descritos se ambientan en lo que parece
+            una playa desierta, con el mar y una cala rodeada de acantilados al fondo. El cielo y el mar se confunden.
+        </p>
+        {%endif%}
     </div>
-
 
 
 

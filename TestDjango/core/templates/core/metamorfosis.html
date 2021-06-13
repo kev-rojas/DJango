@@ -61,8 +61,42 @@
     </nav>
     <br>
 
-    <img id="obra" src="{% static 'core/img/metamorfosis.jpg'%}">
-    
+    <center>
+        <img id="obra" src="{% static 'core/img/metamorfosis.jpg'%}">
+    </center>
+    <br>
+    <div class="container">
+        {%if nombreOb == true%}
+        {% csrf_token %}
+        <h3 id="til">INFORMACIÓN DE LA OBRA</h3>
+        <ul class="list-group">
+            <li class="list-group-item">Nombre: {{meta.nombreOb}}</li>
+            <li class="list-group-item">Autor: {{meta.autor}}</li>
+            <li class="list-group-item">Año: {{meta.año}}</li>
+            <li class="list-group-item">Tecnica: {{meta.tecnica}}</li>
+            <li class="list-group-item">Tamaño: {{meta.tamaño}}</li>
+        </ul>
+        <br>
+        <p id="info">
+            Metamorfosis de Narciso (1937) es una pintura al óleo sobre lienzo del surrealista español Salvador Dalí .
+            Originalmente titulado Métamorphose de Narcisse, esta pintura es delperíodo paranoico-crítico de Dalíy
+            representa su interpretación del mito griego de Narciso. Dalí comenzó a pintar en la primavera de 1937
+            mientras estaba en Zürs, en los Alpes austríacos.
+            <br>
+            Según la mitología griega , la belleza de Narciso lo hacía atractivo para casi todos los que lo veían y
+            tanto hombres como mujeres lo perseguían, pero rechazaba todos los avances. Uno de sus admiradores, una
+            ninfa llamada Echo , se enamoró tan locamente de él que, después de que él la rechazó, ella se consumió
+            hasta que solo quedó su voz. La diosa Némesis , compadeciéndose de Echo, convenció a Narciso de que mirara
+            un estanque. Al ver su propio rostro reflejado en el agua, Narciso se enamoró de su propio reflejo. Como no
+            pudo abrazar su propio reflejo, Narciso también se consumió y en su lugar creció la flor que lleva su
+            nombre, el narciso
+        </p>
+        {%endif%}
+    </div>
+
+
+
+
     <div class="container">
         <div class="row">
             <ul class="list-group">
@@ -77,12 +111,17 @@
             <div>
                 <br>
                 <p id="info">
-                    Según la mitología griega, la belleza de Narciso lo hacía atractivo para casi todos los que lo veían y
-                    tanto hombres como mujeres lo perseguían, pero rechazaba todos los avances. Uno de sus admiradores, una
-                    ninfa llamada Echo, se enamoró tan locamente de él que, después de que él la rechazó, ella se consumió
-                    hasta que solo le quedó la voz. La diosa Némesis, compadeciéndose de Echo, convenció a Narciso de que
-                    mirara un estanque. Al ver su propio rostro reflejado en el agua, Narciso se enamoró de su propio reflejo.
-                
+                    Según la mitología griega, la belleza de Narciso lo hacía atractivo para casi todos los que lo veían
+                    y
+                    tanto hombres como mujeres lo perseguían, pero rechazaba todos los avances. Uno de sus admiradores,
+                    una
+                    ninfa llamada Echo, se enamoró tan locamente de él que, después de que él la rechazó, ella se
+                    consumió
+                    hasta que solo le quedó la voz. La diosa Némesis, compadeciéndose de Echo, convenció a Narciso de
+                    que
+                    mirara un estanque. Al ver su propio rostro reflejado en el agua, Narciso se enamoró de su propio
+                    reflejo.
+
                 </p>
             </div>
         </div>

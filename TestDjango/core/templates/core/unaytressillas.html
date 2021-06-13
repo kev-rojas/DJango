@@ -61,32 +61,35 @@
     </nav>
     <br>
 
-    <img id="obra" src="{% static 'core/img/arte conceptual2.jpg'%}">
-    
+    <center>
+        <img id="obra" src="{% static 'core/img/arte conceptual2.jpg'%}">
+    </center>
+    <br>
     <div class="container">
-        <div class="row">
-            <ul class="list-group">
-                <li class="list-group-item" style="background-color: #8B9494 ;">Información de la Obra</li>
-                <li class="list-group-item">Nombre: Una y Tres Sillas</li>
-                <li class="list-group-item">Autor: Joseph Kosuth</li>
-                <li class="list-group-item">Año: 2000</li>
-            </ul>
-            <br>
-            <div>
-                <br>
-                <p id="info">
-                    Joseph Kosuth escribió: El arte que yo denomino conceptual lo es porque se basa en una investigación en
-                    torno a la naturaleza del arte. One and Three Chairs (Una y tres sillas) se considera una de las primeras
-                    obras conceptuales que el artista concibió, siguiendo un criterio que él mismo calificó como
-                    «antiformalista» y que, con un sentido tautológico, se aproxima a una misma reflexión desde tres
-                    persepectivas diversas: mediante el objeto (la silla), su representación o índice (la fotografía de la misma
-                    silla), y dos elementos lingüísticos (la palabra que designa al objeto y su definición). Kosuth llama de ese
-                    modo la atención sobre un triple código de aproximación a la realidad: un código objetual, un código visual
-                    y un código verbal (referente, representación y lenguaje). 
-                </p>
-            </div>
-        </div>  
+        {%if nombreOb == true%}
+        {% csrf_token %}
+        <h3 id="til">INFORMACIÓN DE LA OBRA</h3>
+        <ul class="list-group">
+            <li class="list-group-item">Nombre: {{unay.nombreOb}}</li>
+            <li class="list-group-item">Autor: {{unay.autor}}</li>
+            <li class="list-group-item">Año: {{unay.año}}</li>
+            <li class="list-group-item">Tecnica: {{unay.tecnica}}</li>
+            <li class="list-group-item">Tamaño: {{unay.tamaño}}</li>
+        </ul>
+        <br>
+        <p id="info">
+            Joseph Kosuth escribió: El arte que yo denomino conceptual lo es porque se basa en una investigación en
+            torno a la naturaleza del arte. One and Three Chairs (Una y tres sillas) se considera una de las primeras
+            obras conceptuales que el artista concibió, siguiendo un criterio que él mismo calificó como
+            «antiformalista» y que, con un sentido tautológico, se aproxima a una misma reflexión desde tres
+            persepectivas diversas: mediante el objeto (la silla), su representación o índice (la fotografía de la misma
+            silla), y dos elementos lingüísticos (la palabra que designa al objeto y su definición). Kosuth llama de ese
+            modo la atención sobre un triple código de aproximación a la realidad: un código objetual, un código visual
+            y un código verbal (referente, representación y lenguaje). 
+        </p>
+        {%endif%}
     </div>
+
 
 
 </body>

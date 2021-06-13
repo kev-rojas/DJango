@@ -61,33 +61,43 @@
     </nav>
     <br>
 
-    <img id="obra" src="{% static 'core/img/impresion.jpg'%}">
-    
+    <center>
+        <img id="obra" src="{% static 'core/img/impresion.jpg'%}">
+    </center>
+    <br>
     <div class="container">
-        <div class="row">
-            <ul class="list-group">
-                <li class="list-group-item" style="background-color: #8B9494 ;">Información de la Obra</li>
-                <li class="list-group-item">Nombre: impresión, sol naciente</li>
-                <li class="list-group-item">Autor: Claude Monet</li>
-                <li class="list-group-item">Año: 1872</li>
-                <li class="list-group-item">Técnica: Óleo sobre Lienzo</li>
-                <li class="list-group-item">Tamaño: 48cm x 63cm</li>
-            </ul>
+        {%if nombreOb == true%}
+        {% csrf_token %}
+        <h3 id="til">INFORMACIÓN DE LA OBRA</h3>
+        <ul class="list-group">
+            <li class="list-group-item">Nombre: {{imp.nombreOb}}</li>
+            <li class="list-group-item">Autor: {{imp.autor}}</li>
+            <li class="list-group-item">Año: {{imp.año}}</li>
+            <li class="list-group-item">Tecnica: {{imp.tecnica}}</li>
+            <li class="list-group-item">Tamaño: {{imp.tamaño}}</li>
+        </ul>
+        <br>
+        <p id="info">
+            Impresión, sol naciente es un cuadro del pintor francés Claude Monet, que dio su nombre al movimiento
+            impresionista. Se conserva en el Museo Marmottan Monet de París. Pintado aproximadamente en el año 1872,
+            representa el puerto de Le Havre, ciudad en la que Monet pasó parte de la vida. La pintura fue robada del
+            museo en 1985 y recuperada en 1990. Desde 1991 ha estado de nuevo en exhibición.
             <br>
-            <div>
-                <br>
-                <p id="info">
-                    Monet pintó el sol casi con la misma luminancia del cielo, una condición que sugiere humedad alta y
-                    atenuación atmosférica de la luz. Este detalle descansa sobre el uso de colores complementarios y variedad
-                    de temperaturas de color, en lugar de cambios de intensidad o valores contrastantes, para diferenciar el sol
-                    del cielo circundante. La pintura trata el valor de contraste simultáneo de los colores, situando tonos
-                    cálidos sobre otros opuestos que permiten resaltar, en la retina del espectador, unos tonos sobre otros. La
-                    vaporización será el elemento fundamental que invade la superficie.
-                </p>
-            </div>
-        </div>
+            El único canal de exposición que tenían los pintores en la Francia del siglo XIX era el Salón de París,
+            vinculado a la Escuela de Bellas Artes, que contaba con un prestigioso jurado que seleccionaba las obras
+            enviadas. El escándalo de 1863 con la presentación del Desayuno en la hierba de Édouard Manet originó la
+            creación del Salón de los Rechazados, el cual tenía más éxito entre los jóvenes creadores que el oficial al
+            mostrar obras más modernas. Los pintores que se reunían en el Café Guerbois en torno a Manet decidieron
+            crear un foro de exposición diferente a los oficiales, en el que pudieran mostrar sus obras todos los
+            artistas independientes. Así surge la I Exposición de la sociedad anónima de artistas pintores, escultores y
+            grabadores que tuvo lugar entre el 15 de abril y el 15 de mayo de 1874 en las salas que el fotógrafo Nadar
+            les prestó. Acudieron 3500 visitantes, que se rieron de la pintura tan moderna que contemplaban. A esa
+            exposición Monet presentó nueve cuadros, entre los que destacó esta obra. El crítico Louis Leroy, inspirado
+            por el título del cuadro, tituló su hostil crítica en el periódico Le Charivari «Exhibición de los
+            impresionistas», dando nombre inadvertidamente al movimiento.
+        </p>
+        {%endif%}
     </div>
-
 
 
 

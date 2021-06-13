@@ -61,33 +61,37 @@
     </nav>
     <br>
 
-    <img id="obra" src="{% static 'core/img/vitruvio2.jpg'%}">
-    
+    <center>
+        <img id="obra" src="{% static 'core/img/vitruvio2.jpg'%}">
+    </center>
+    <br>
     <div class="container">
-        <div class="row">
-            <ul class="list-group">
-                <li class="list-group-item" style="background-color: #8B9494 ;">Información de la Obra</li>
-                <li class="list-group-item">Nombre: Hombre de Vitruvio</li>
-                <li class="list-group-item">Autor: Leonardo da Vinci</li>
-                <li class="list-group-item">Año: 1492</li>
-                <li class="list-group-item">Técnica: Plumín, pluma y tinta sobre papel</li>
-                <li class="list-group-item">Tamaño: 34.4cm x 25.5cm</li>
-            </ul>
+        {%if nombreOb == true%}
+        {% csrf_token %}
+        <h3 id="til">INFORMACIÓN DE LA OBRA</h3>
+        <ul class="list-group">
+            <li class="list-group-item">Nombre: {{homb.nombreOb}}</li>
+            <li class="list-group-item">Autor: {{homb.autor}}</li>
+            <li class="list-group-item">Año: {{homb.año}}</li>
+            <li class="list-group-item">Tecnica: {{homb.tecnica}}</li>
+            <li class="list-group-item">Tamaño: {{homb.tamaño}}</li>
+        </ul>
+        <br>
+        <p id="info">
+            El Hombre de Vitruvio o Estudio de las proporciones ideales del cuerpo humano es un famoso dibujo acompañado
+            de notas anatómicas de Leonardo da Vinci realizado alrededor de 1490 en uno de sus diarios. Representa una
+            figura masculina desnuda en dos posiciones sobreimpresas de brazos y piernas e inscrita en una
+            circunferencia y un cuadrado (Ad quadratum). Se trata de un estudio de las proporciones del cuerpo humano,
+            realizado a partir de los textos de arquitectura de Vitruvio, arquitecto de la antigua Roma, del cual el
+            dibujo toma su nombre.
             <br>
-            <div>
-                <br>
-                <p id="info">
-                    El Hombre de Vitruvio o Estudio de las proporciones ideales del cuerpo humano es un famoso dibujo acompañado
-                    de notas anatómicas de Leonardo da Vinci realizado alrededor de 1490 en uno de sus diarios. Representa una
-                    figura masculina desnuda en dos posiciones sobreimpresas de brazos y piernas e inscrita en una
-                    circunferencia y un cuadrado. Se trata de un estudio de las proporciones del cuerpo humano,
-                    realizado a partir de los textos de arquitectura de Vitruvio, arquitecto de la antigua Roma, del cual el
-                    dibujo toma su nombre. 
-                </p>
-            </div>
-        </div>
+            Perteneció a la colección del escritor y pintor Giuseppe Bossi hasta que, tras su muerte acaecida en 1815,
+            su colección fue comprada en una subasta por Luigi Celotti y posteriormente adquirida por la Galería de la
+            Academia de Venecia, donde se conserva desde 1822, aunque se exhibe al público rara vez por motivos de
+            conservación. Por esta razón no es parte de la exposición habitual del museo.
+        </p>
+        {%endif%}
     </div>
-
 
 
 

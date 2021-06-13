@@ -61,32 +61,32 @@
     </nav>
     <br>
 
-    <img id="obra" src="{% static 'core/img/ronda.jpg'%}">
-    
+    <center>
+        <img id="obra" src="{% static 'core/img/ronda.jpg'%}">
+    </center>
+    <br>
     <div class="container">
-        <div class="row">
-            <ul class="list-group">
-                <li class="list-group-item" style="background-color: #8B9494 ;">Información de la Obra</li>
-                <li class="list-group-item">Nombre: La ronda de anoche</li>
-                <li class="list-group-item">Autor: Rembrant van Rijin</li>
-                <li class="list-group-item">Año: 1642</li>
-                <li class="list-group-item">Técnica: Óleo</li>
-                <li class="list-group-item">Tamaño: 359cm x 438cm</li>
-            </ul>
-            <br>
-            <div>
-                <br>
-                El cuadro fue llamado en el siglo XIX "Patrouille de Nuit" por la crítica francesa, y "Night Watch"​ por Sir
-                Joshua Reynolds; de ahí el nombre por el que se le conoce popularmente. El origen de este título surge de una
-                equivocación de interpretación, debida a que, en esa época, el cuadro estaba tan deteriorado y oscurecido por la
-                oxidación del barniz y la suciedad acumulada, que sus figuras eran casi indistinguibles, y parecía una escena
-                nocturna. Después de su restauración en 1947, cuando se eliminó este barniz oscurecido, se descubrió que el
-                título no se ajustaba a la realidad, ya que la acción no se desarrolla de noche sino de día.
-                </p>
-            </div>
-        </div>
+        {%if nombreOb == true%}
+        {% csrf_token %}
+        <h3 id="til">INFORMACIÓN DE LA OBRA</h3>
+        <ul class="list-group">
+            <li class="list-group-item">Nombre: {{ronda.nombreOb}}</li>
+            <li class="list-group-item">Autor: {{ronda.autor}}</li>
+            <li class="list-group-item">Año: {{ronda.año}}</li>
+            <li class="list-group-item">Tecnica: {{ronda.tecnica}}</li>
+            <li class="list-group-item">Tamaño: {{ronda.tamaño}}</li>
+        </ul>
+        <br>
+        <p id="info">
+            El cuadro fue llamado en el siglo XIX "Patrouille de Nuit" por la crítica francesa, y "Night Watch"​ por Sir
+            Joshua Reynolds; de ahí el nombre por el que se le conoce popularmente. El origen de este título surge de una
+            equivocación de interpretación, debida a que, en esa época, el cuadro estaba tan deteriorado y oscurecido por la
+            oxidación del barniz y la suciedad acumulada, que sus figuras eran casi indistinguibles, y parecía una escena
+            nocturna. Después de su restauración en 1947, cuando se eliminó este barniz oscurecido, se descubrió que el
+            título no se ajustaba a la realidad, ya que la acción no se desarrolla de noche sino de día.
+        </p>
+        {%endif%}
     </div>
-
 
 
 

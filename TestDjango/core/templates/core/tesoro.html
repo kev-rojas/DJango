@@ -62,37 +62,40 @@
     </nav>
     <br>
 
-    <img id="obra" src="{% static 'core/img/orfebreria carolingio.jpg'%}">
-    
+    <center>
+        <img id="obra" src="{% static 'core/img/orfebreria carolingio.jpg'%}">
+    </center>
+    <br>
     <div class="container">
-        <div class="row">
-            <ul class="list-group">
-                <li class="list-group-item" style="background-color: #8B9494 ;">Información de la Orfebreria</li>
-                <li class="list-group-item">Nombre: Trésor de Conques</li>
-                <li class="list-group-item">Autor: Carlomagno</li>
-                <li class="list-group-item">Año: Siglo VIII</li>
-            </ul>
+        {%if nombreOb == true%}
+        {% csrf_token %}
+        <h3 id="til">INFORMACIÓN DE LA OBRA</h3>
+        <ul class="list-group">
+            <li class="list-group-item">Nombre: {{teso.nombreOb}}</li>
+            <li class="list-group-item">Autor: {{teso.autor}}</li>
+            <li class="list-group-item">Año: {{teso.año}}</li>
+            <li class="list-group-item">Material: {{teso.tecnica}}</li>
+            <li class="list-group-item">Tamaño: {{teso.tamaño}}</li>
+        </ul>
+        <br>
+        <p id="info">
+            Carlomagno fundó el imperio carolingio a finales del siglo VIII. Toda la producción artística bajo su poder
+            se insertaba en el fenómeno llamado "renacimiento carolingio".
             <br>
-            <div>
-                <br>
-                <p id="info">
-                    Carlomagno fundó el imperio carolingio a finales del siglo VIII. Toda la producción artística bajo su poder
-                    se insertaba en el fenómeno llamado "renacimiento carolingio".
-        
-                    También la producción de orfebrería y de objetos preciosos en general tuvo un pico durante dicho
-                    renacimiento, gracias también a las inmensas riquezas acumuladas tras las victoriosas campañas militares:
-                    solo de los ávaros en el 795 se obtuvo un botín de cincuenta carros colmados de oro y plata. Las obras de
-                    alta orfebrería fueron donadas a menudo a basílicas, abadías y catedrales por los mismos soberanos. Hay
-                    esmalte de influencia bizantina.
-        
-                    Por lo que se refiere a la orfebrería, una obra maestra absoluta es el altar de San Ambrosio, conservado
-                    magníficamente intacto en la basílica de Milán, encargado por el arzobispo Angilberto II a Vuolvinus faber.
-                    Data de 824–859, y es un paliotto; los cuatro lados del altar están decorados con imágenes en oro y plata
-                    repujada, enmarcado por borduras de filigrana, piedras preciosas y esmalte.
-                </p>
-            </div>
-        </div>
+            También la producción de orfebrería y de objetos preciosos en general tuvo un pico durante dicho
+            renacimiento, gracias también a las inmensas riquezas acumuladas tras las victoriosas campañas militares:
+            solo de los ávaros en el 795 se obtuvo un botín de cincuenta carros colmados de oro y plata. Las obras de
+            alta orfebrería fueron donadas a menudo a basílicas, abadías y catedrales por los mismos soberanos. Hay
+            esmalte de influencia bizantina.
+            <br>
+            Por lo que se refiere a la orfebrería, una obra maestra absoluta es el altar de San Ambrosio, conservado
+            magníficamente intacto en la basílica de Milán, encargado por el arzobispo Angilberto II a Vuolvinus faber.
+            Data de 824–859, y es un paliotto; los cuatro lados del altar están decorados con imágenes en oro y plata
+            repujada, enmarcado por borduras de filigrana, piedras preciosas y esmalte.
+        </p>
+        {%endif%}
     </div>
+
 
 </body>
 

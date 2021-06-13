@@ -60,9 +60,49 @@
         </div>
     </nav>
     <br>
+    <center>
+        <img id="obra" src="{% static 'core/img/ginebra.jpg'%}">
+    </center>
+    <br>
+    <div class="container">
+        {%if nombreOb == true%}
+        {% csrf_token %}
+        <h3 id="til">INFORMACIÓN DE LA OBRA</h3>
+        <ul class="list-group">
+            <li class="list-group-item">Nombre: {{gine.nombreOb}}</li>
+            <li class="list-group-item">Autor: {{gine.autor}}</li>
+            <li class="list-group-item">Año: {{gine.año}}</li>
+            <li class="list-group-item">Tecnica: {{gine.tecnica}}</li>
+            <li class="list-group-item">Tamaño: {{gine.tamaño}}</li>
+        </ul>
+        <br>
+        <p id="info">
+            Este Retrato de mujer, llamado de Ginebra de Benci, es un cuadro atribuido a Leonardo da Vinci, datado hacia
+            1474-76. Está realizado al temple y óleo sobre tabla (madera de álamo). Mide 38,8 cm. de alto y 36,7 cm. de
+            ancho. Fue adquirido por la National Gallery of Art de Washington en 1967 por 5 millones de dólares pagados
+            a la Casa Real de Liechtenstein, un precio récord para ese tiempo.
+            <br>
+            Se cree que es un retrato de Ginebra de Benci (Ginevra de' Benci), lo que explicaría la representación del
+            enebro a sus espaldas.​ De hecho, también se conoce como Retrato de mujer joven ante un enebro, aunque
+            actualmente es más común el otro nombre. Fue una dama de la clase aristocrática del siglo XV de Florencia,
+            admirada por su excepcional inteligencia por sus contemporáneos florentinos. A Ginebra Benci se la recuerda
+            hoy en día solo por ser el tema de una de las 17 pinturas atribuidas a Leonardo da Vinci. Posiblemente en el
+            pasado fuera más grande, habiéndose acortado por la parte inferior.
+            <br>
+            Se considera que es obra del mismo autor de La dama del armiño del Museo Czartoryski, y en general se
+            considera que el autor de ambas fue Leonardo, pero no sin voces disidentes dentro de la crítica.
+            Podría haber sido hecho con motivo del matrimonio de Ginebra, en 1474 o, dado que ella aparenta
+            más de 18 años, pudo ser un encargo de años posteriores del embajador veneciano Bernardo Bembo, que tenía
+            con la dama una amistad platónica. Pijoán considera que está datada hacia 1504, cuando Ginebra tendría
+            treinta años.
+        </p>
+        {%endif%}
+    </div>
 
-    <img id="obra" src="{% static 'core/img/ginebra.jpg'%}">
-    
+
+
+
+
     <div class="container">
         <div class="row">
             <ul class="list-group">
@@ -77,11 +117,16 @@
             <div>
                 <br>
                 <p id="info">
-                    Este Retrato de mujer, llamado de Ginebra de Benci, es un cuadro atribuido a Leonardo da Vinci, datado hacia
-                    1474. Está realizado al temple y óleo sobre tabla (madera de álamo). Mide 38,8 cm. de alto y 36,7 cm. de
-                    ancho. Fue adquirido por la National Gallery of Art de Washington en 1967 por 5 millones de dólares pagados
-                    a la Casa Real de Liechtenstein, un precio récord para ese tiempo. Fue una dama de la clase aristocrática
-                    del siglo XV de Florencia, admirada por su excepcional inteligencia por sus contemporáneos florentinos.
+                    Este Retrato de mujer, llamado de Ginebra de Benci, es un cuadro atribuido a Leonardo da Vinci,
+                    datado hacia
+                    1474. Está realizado al temple y óleo sobre tabla (madera de álamo). Mide 38,8 cm. de alto y 36,7
+                    cm. de
+                    ancho. Fue adquirido por la National Gallery of Art de Washington en 1967 por 5 millones de dólares
+                    pagados
+                    a la Casa Real de Liechtenstein, un precio récord para ese tiempo. Fue una dama de la clase
+                    aristocrática
+                    del siglo XV de Florencia, admirada por su excepcional inteligencia por sus contemporáneos
+                    florentinos.
                 </p>
             </div>
         </div>

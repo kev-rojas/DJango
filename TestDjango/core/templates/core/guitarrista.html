@@ -60,34 +60,39 @@
         </div>
     </nav>
     <br>
-
-    <img id="obra" src="{% static 'core/img/guitarrista.jpg'%}">
-    
+    <center>
+        <img id="obra" src="{% static 'core/img/guitarrista.jpg'%}">
+    </center>
+    <br>
     <div class="container">
-        <div class="row">
-            <ul class="list-group">
-                <li class="list-group-item" style="background-color: #8B9494 ;">Información de la Obra</li>
-                <li class="list-group-item">Nombre: El viejo guitarrista ciego</li>
-                <li class="list-group-item">Autor: Pablo Picasso</li>
-                <li class="list-group-item">Año: 1903</li>
-                <li class="list-group-item">Técnica: Óleo sobre Lienzo</li>
-                <li class="list-group-item">Tamaño: 121cm x 92cm</li>
-            </ul>
+        {%if nombreOb == true%}
+        {% csrf_token %}
+        <h3 id="til">INFORMACIÓN DE LA OBRA</h3>
+        <ul class="list-group">
+            <li class="list-group-item">Nombre: {{guit.nombreOb}}</li>
+            <li class="list-group-item">Autor: {{guit.autor}}</li>
+            <li class="list-group-item">Año: {{guit.año}}</li>
+            <li class="list-group-item">Tecnica: {{guit.tecnica}}</li>
+            <li class="list-group-item">Tamaño: {{guit.tamaño}}</li>
+        </ul>
+        <br>
+        <p id="info">
+            El viejo guitarrista ciego es un cuadro realizado por el pintor cubista malagueño Pablo Picasso. Este cuadro
+            fue pintado en 1903 mediante la técnica de óleo sobre lienzo, y sus medidas son de 121cm de alto x 92cm de
+            ancho. En la actualidad se encuentra en el Instituto de Arte de Chicago, Estados Unidos. Es uno de los
+            cuadros más característicos Período azul de Picasso.
             <br>
-            <div>
-                <br>
-                <p id="info">
-                    Este cuadro muestra la imagen lánguida de un mendigo tocando la guitarra, en el que predominan los
-                    característicos tonos azules del llamado Período azul de Picasso. Mediante el uso de estas tonalidades frías
-                    (incluso en el color de la piel), acentúa la tristeza del anciano. A pesar de esto, mantiene la guitarra de
-                    un color marrón, como muestra de esperanza para el mendigo, ya que se trata de su único medio de
-                    subsistencia. Además se trata de un elemento de contraste en el cuadro ya que las líneas curvas de la
-                    guitarra se diferencian mucho del cuerpo delgado y anguloso del viejo. 
-                </p>
-            </div>
-        </div>
+            Este cuadro muestra la imagen lánguida de un mendigo tocando la guitarra, en el que predominan los
+            característicos tonos azules del llamado Período azul de Picasso. Mediante el uso de estas tonalidades frías
+            (incluso en el color de la piel), acentúa la tristeza del anciano. A pesar de esto, mantiene la guitarra de
+            un color marrón, como muestra de esperanza para el mendigo, ya que se trata de su único medio de
+            subsistencia.​ Además se trata de un elemento de contraste en el cuadro ya que las líneas curvas de la
+            guitarra se diferencian mucho del cuerpo delgado y anguloso del viejo. Son estas características alargadas
+            las que recuerdan al manierismo, en concreto al estilo de El Greco.
+            <br>
+        </p>
+        {%endif%}
     </div>
-
 
 
 

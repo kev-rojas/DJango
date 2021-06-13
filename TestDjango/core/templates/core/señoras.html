@@ -62,31 +62,40 @@
     </nav>
     <br>
 
-    <img id="obra" src="{% static 'core/img/señoras.jpg'%}">
-    
-    <div class="cotainer">
-        <div class="row">
-            <ul class="list-group">
-                <li class="list-group-item" style="background-color: #8B9494 ;">Información de la Obra</li>
-                <li class="list-group-item">Nombre: Las señoritas de Avignon</li>
-                <li class="list-group-item">Autor: Pablo Picasso</li>
-                <li class="list-group-item">Año: 1907</li>
-                <li class="list-group-item">Técnica: Óleo sobre Lienzo</li>
-                <li class="list-group-item">Tamaño: 243.9cm x 233.7cm</li>
-            </ul>
+    <center>
+        <img id="obra" src="{% static 'core/img/señoras.jpg'%}">
+    </center>
+    <br>
+    <div class="container">
+        {%if nombreOb == true%}
+        {% csrf_token %}
+        <h3 id="til">INFORMACIÓN DE LA OBRA</h3>
+        <ul class="list-group">
+            <li class="list-group-item">Nombre: {{señoras.nombreOb}}</li>
+            <li class="list-group-item">Autor: {{señoras.autor}}</li>
+            <li class="list-group-item">Año: {{señoras.año}}</li>
+            <li class="list-group-item">Tecnica: {{señoras.tecnica}}</li>
+            <li class="list-group-item">Tamaño: {{señoras.tamaño}}</li>
+        </ul>
+        <br>
+        <p id="info">
+            Las señoritas de Avignon, Las señoritas de Aviñón o, más correctamente, Las señoritas de la calle de
+            Avinyó,1​ es un cuadro del pintor español Pablo Picasso pintado en 1907 al óleo sobre lienzo y sus medidas
+            son 243,9 x 233,7 cm. Se conserva en el Museo de Arte Moderno de Nueva York.
             <br>
-            <div>
-                <br>
-                <p id="info">
-                    Este cuadro, que marcó el comienzo de su Periodo africano o Protocubismo, es la referencia clave para hablar
-                    de cubismo, del cual el artista español es el máximo exponente y creador del movimiento artístico. Imprime
-                    un nuevo punto de partida donde Picasso elimina todo lo sublime de la tradición rompiendo con el Realismo,
-                    los cánones de profundidad espacial y el ideal existente hasta entonces del cuerpo femenino, reducida toda
-                    la obra a un conjunto de planos angulares sin fondo ni perspectiva espacial, en el que las formas están
-                    marcadas por líneas claro-oscuras.
-                </p>
-            </div>
-        </div>
+            Este cuadro, que marcó el comienzo de su Periodo africano o Protocubismo, es la referencia clave para hablar
+            de cubismo, del cual el artista español es el máximo exponente y creador del movimiento artístico. Imprime
+            un nuevo punto de partida donde Picasso elimina todo lo sublime de la tradición rompiendo con el Realismo,
+            los cánones de profundidad espacial y el ideal existente hasta entonces del cuerpo femenino, reducida toda
+            la obra a un conjunto de planos angulares sin fondo ni perspectiva espacial, en el que las formas están
+            marcadas por líneas claro-oscuras.
+            <br>
+            Dos de los rostros, los de aspecto más cubista de los cinco, que asemejan máscaras, se deben a la influencia
+            del arte africano, cuyas manifestaciones culturales comenzaron a ser conocidas en Europa por aquellas
+            fechas, mientras los dos centrales son más afines a las caras de los frescos medievales y las primitivas
+            esculturas ibéricas, el rostro de la izquierda presenta un perfil que recuerda las pinturas egipcias.
+        </p>
+        {%endif%}
     </div>
 
 

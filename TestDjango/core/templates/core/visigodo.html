@@ -60,37 +60,40 @@
     </nav>
     <br>
 
-    <img id="obra" src="{% static 'core/img/tejido2.jpg'%}">
-    
+    <center>
+        <img id="obra" src="{% static 'core/img/tejido2.jpg'%}">
+    </center>
+    <br>
     <div class="container">
-        <div class="row">
-            <ul class="list-group">
-                <li class="list-group-item" style="background-color: #8B9494 ;">Información de la Escultura</li>
-                <li class="list-group-item">Nombre: Friso Visigodo</li>
-                <li class="list-group-item">Autor: Desconocido</li>
-                <li class="list-group-item">Año: Siglo VII-VIII</li>
-            </ul>
+        {%if nombreOb == true%}
+        {% csrf_token %}
+        <h3 id="til">INFORMACIÓN DE LA OBRA</h3>
+        <ul class="list-group">
+            <li class="list-group-item">Nombre: {{visi.nombreOb}}</li>
+            <li class="list-group-item">Autor: {{visi.autor}}</li>
+            <li class="list-group-item">Año: {{visi.año}}</li>
+            <li class="list-group-item">Material: {{visi.tecnica}}</li>
+            <li class="list-group-item">Tamaño: {{visi.tamaño}}</li>
+        </ul>
+        <br>
+        <p id="info">
+            Aunque hoy día puede intuirse una etapa anterior marcada por los gustos bizantinos vigentes en la península
+            con anterioridad a la entrada de los musulmanes, a los que estos últimos añadirán nuevos motivos
+            iconográficos procedentes de su propia cultura y a su sincretismo, gracias al cual irán asimilando temas y
+            formas procedentes de cualquier cultura con las que se relacionaban, como ocurre con la escita, la persa, la
+            sasánida y/o la copta, etc.
             <br>
-            
-            <div>
-                <br>
-                <p id="info">
-                    Aunque hoy día puede intuirse una etapa anterior marcada por los gustos bizantinos vigentes en la península
-                    con anterioridad a la entrada de los musulmanes, a los que estos últimos añadirán nuevos motivos
-                    iconográficos procedentes de su propia cultura y a su sincretismo, gracias al cual irán asimilando temas y
-                    formas procedentes de cualquier cultura con las que se relacionaban, como ocurre con la escita, la persa, la
-                    sasánida y/o la copta, etc.
-        
-                    El origen de los musulmanes invasores es variado, pero en un primer momento hay que destacar la presencia de
-                    una buena parte de sirios seguidores de Abd-al Rahman, único superviviente de la matanza realizada por los
-                    Abásidas, durante la celebración de un banquete en Damasco, en el que pasaron a cuchillo a todos los Omeyas
-                    asistentes a él, y del que únicamente Abd-al Rahman logró huir; instalándose finalmente en el valle del
-                    Guadalquivir donde fundó el Emirato de Córdoba, independiente políticamente de Bagdad, convirtiéndose en su
-                    primer emir. 
-                </p>
-            </div>
-        </div>
+            El origen de los musulmanes invasores es variado, pero en un primer momento hay que destacar la presencia de
+            una buena parte de sirios seguidores de Abd-al Rahman, único superviviente de la matanza realizada por los
+            Abásidas, durante la celebración de un banquete en Damasco, en el que pasaron a cuchillo a todos los Omeyas
+            asistentes a él, y del que únicamente Abd-al Rahman logró huir; instalándose finalmente en el valle del
+            Guadalquivir donde fundó el Emirato de Córdoba, independiente políticamente de Bagdad, convirtiéndose en su
+            primer emir. 
+        </p>
+        {%endif%}
     </div>
+
+
 
 </body>
 

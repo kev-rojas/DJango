@@ -61,32 +61,39 @@
     </nav>
     <br>
 
-    <img id="obra" src="{% static 'core/img/judia.jpg'%}">
-    
+    <center>
+        <img id="obra" src="{% static 'core/img/judia.jpg'%}">
+    </center>
+    <br>
     <div class="container">
-        <div class="row">
-            <ul class="list-group">
-                <li class="list-group-item" style="background-color: #8B9494 ;">Información de la Obra</li>
-                <li class="list-group-item">Nombre: La novia judía</li>
-                <li class="list-group-item">Autor: Rembrant van Rijin</li>
-                <li class="list-group-item">Año: 1665 - 1669</li>
-                <li class="list-group-item">Técnica: Óleo</li>
-                <li class="list-group-item">Tamaño: 121.5cm x 166.5cm</li>
-            </ul>
+        {%if nombreOb == true%}
+        {% csrf_token %}
+        <h3 id="til">INFORMACIÓN DE LA OBRA</h3>
+        <ul class="list-group">
+            <li class="list-group-item">Nombre: {{judi.nombreOb}}</li>
+            <li class="list-group-item">Autor: {{judi.autor}}</li>
+            <li class="list-group-item">Año: {{judi.año}}</li>
+            <li class="list-group-item">Tecnica: {{judi.tecnica}}</li>
+            <li class="list-group-item">Tamaño: {{judi.tamaño}}</li>
+        </ul>
+        <br>
+        <p id="info">
+            La novia judía (en holandés: Het Joodse bruidje) es una obra del pintor holandés Rembrandt pintada en 1666.
+            Está expuesta de forma permanente en el Rijksmuseum de Ámsterdam.
             <br>
-            <div>
-                <br>
-                <p id="info">
-                    A la pintura se le dio el nombre actual a principios del siglo XIX, cuando un coleccionista de arte de
-                    Ámsterdam identificó el tema como el de un padre judío que regala un collar a su hija el día de su
-                    casamiento. Esta interpretación ya no es aceptada, y la identidad de la pareja es incierta.​ La ambigüedad
-                    es sobre todo por la falta de contexto anecdótico, y sólo deja claro el tema universal del amor en una
-                    pareja.
-                </p>
-            </div>
-        </div>
+            A la pintura se le dio el nombre actual a principios del siglo XIX, cuando un coleccionista de arte de
+            Ámsterdam identificó el tema como el de un padre judío que regala un collar a su hija el día de su
+            casamiento. Esta interpretación ya no es aceptada, y la identidad de la pareja es incierta.​ La ambigüedad
+            es sobre todo por la falta de contexto anecdótico, y sólo deja claro el tema universal del amor en una
+            pareja. Las especulaciones en relación a la identidad de la pareja se extendieron al hijo de Rembrandt,
+            Titus y su novia, o al poeta Miguel de Barrios junto a su mujer que aparece estar embarazada porque está
+            esperando a su nuevo hijo. También se ha considerado la posibilidad de que fuesen parejas del Antiguo
+            Testamento, incluyendo Abraham y Sara, o Boaz y Rut. La identificación más probable es la de Isaac y Rebeca
+            como son descritos en Génesis 26:8, identificación que se sostiene además con un dibujo del artista sobre el
+            mismo tema.
+        </p>
+        {%endif%}
     </div>
-
 
 
 

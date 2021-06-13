@@ -62,33 +62,42 @@
     </nav>
     <br>
 
-    <img id="obra" src="{% static 'core/img/sueño.jpg'%}">
-    
+    <center>
+        <img id="obra" src="{% static 'core/img/sueño.jpg'%}">
+    </center>
+    <br>
     <div class="container">
-        <div class="row">
-            <ul class="list-group">
-                <li class="list-group-item" style="background-color: #8B9494 ;">Información de la Obra</li>
-                <li class="list-group-item">Nombre: El sueño</li>
-                <li class="list-group-item">Autor: Pablo Picasso</li>
-                <li class="list-group-item">Año: 1932</li>
-                <li class="list-group-item">Técnica: Óleo sobre Lienzo</li>
-                <li class="list-group-item">Tamaño: 130cm x 97cm</li>
-            </ul>
+        {%if nombreOb == true%}
+        {% csrf_token %}
+        <h3 id="til">INFORMACIÓN DE LA OBRA</h3>
+        <ul class="list-group">
+            <li class="list-group-item">Nombre: {{sue.nombreOb}}</li>
+            <li class="list-group-item">Autor: {{sue.autor}}</li>
+            <li class="list-group-item">Año: {{sue.año}}</li>
+            <li class="list-group-item">Tecnica: {{sue.tecnica}}</li>
+            <li class="list-group-item">Tamaño: {{sue.tamaño}}</li>
+        </ul>
+        <br>
+        <p id="info">
+            El sueño (también conocido con su nombre en francés, Le rêve)​ es un cuadro del pintor español Pablo
+            Picasso pintado en 1932. Está hecho mediante la técnica del óleo sobre lienzo y es de estilo cubista.
             <br>
-            <div>
-                <br>
-                <p id="info">
-                    El cuadro, cuyas medidas son 130 x 97 cm, representa a una mujer que yace dormida, en un sillón con la
-                    cabeza vencida hacia atrás y el rostro partido en dos y medio seno al descubierto. La modelo del cuadro es
-                    Marie-Thérèse Walter. ​Además de los trazos cubistas y los colores al óleo, esta obra guarda la historia de
-                    amor entre la joven de 17 años y Picasso, que cuando la conoció tenía 46 años. Algunos relatos cuentan que
-                    Picasso conoció a la joven un día que salía de las galerías Lafayette en París; le llevó a una librería para
-                    mostrarle ejemplares de su obra y luego vivieron en el castillo de Boisgeloup.
-                </p>
-        </div>
+            El cuadro, cuyas medidas son 130 x 97 cm, representa a una mujer que yace dormida, en un sillón con la
+            cabeza vencida hacia atrás y el rostro partido en dos y medio seno al descubierto. La modelo del cuadro es
+            Marie-Thérèse Walter. Además de los trazos cubistas y los colores al óleo, esta obra guarda la historia de
+            amor entre la joven de 17 años y Picasso, que cuando la conoció tenía 46 años. Algunos relatos cuentan que
+            Picasso conoció a la joven un día que salía de las galerías Lafayette en París; le llevó a una librería para
+            mostrarle ejemplares de su obra y luego vivieron en el castillo de Boisgeloup, donde pasaban largas sesiones
+            de trabajo. El pintor aún estaba casado con la bailarina rusa Olga Khokhlova, madre de su hijo Paulo.
+            Thérèse Walter y Picasso tuvieron en 1935 una hija llamada Maya.
+            <br>
+            En el año 2006 fue dañada por su dueño, el magnate de Las Vegas, Steve Wynn.1​En el año 2013 "el sueño" fue
+            adquirido por Steven Cohen, tras pagar 155 millones de dólares, y se convirtió así en el segundo cuadro más
+            caro de la historia, según una nota publicada en The New York Post, y en el más cotizado de su obra
+            pictórica.
+        </p>
+        {%endif%}
     </div>
-    </div>
-
 
 
 

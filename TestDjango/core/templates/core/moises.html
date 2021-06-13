@@ -61,33 +61,38 @@
     </nav>
     <br>
 
-    <img id="obra" src="{% static 'core/img/moises-de-miguel-angel.jpeg'%}">
-    
+    <center>
+        <img id="obra" src="{% static 'core/img/moises-de-miguel-angel.jpeg'%}">
+    </center>
+    <br>
     <div class="container">
-        <div class="row">
-            <ul class="list-group">
-                <li class="list-group-item" style="background-color: #8B9494 ;">Información de la Escultura</li>
-                <li class="list-group-item">Nombre: El Moisés</li>
-                <li class="list-group-item">Autor: Miguel Ángel</li>
-                <li class="list-group-item">Año: 1509</li>
-            </ul>
-            <br>
-            <div>
-                <br>
-                <p id="info">
-                    El imponente Moisés de Miguel Ángel es sin lugar a dudas una de las esculturas más famosas del mundo. Se
-                    trata de una escultura renacentista realizada en mármol blanco en 1509 para ser el eje central de la tumba
-                    del Papa Julio II, en la pequeña iglesia de San Pedro in Víncoli, en Roma.
-                    Moisés representa al Moisés bíblico en el libro del Éxodo. La obra retrata el momento en que Moisés
-                    desciende del monte Sinaí con la tabla de los diez mandamientos y se encuentra con los israelitas adorando a
-                    un becerro de oro. Moisés está enmarcado por otras siete figuras secundarias que constituyen en su conjunto
-                    la fachada de la tumba del papa Julio II. Al lado derecho e izquierdo de Moisés, personaje principal, se
-                    encuentran Raquel y Lea, las hermanas descritas en el libro de Génesis que se involucran en un enredo
-                    matrimonial de cuyos descendientes forman el linaje de Jacob.
-                </p>
-            </div>
-        </div>
+        {%if nombreOb == true%}
+        {% csrf_token %}
+        <h3 id="til">INFORMACIÓN DE LA OBRA</h3>
+        <ul class="list-group">
+            <li class="list-group-item">Nombre: {{moises.nombreOb}}</li>
+            <li class="list-group-item">Autor: {{moises.autor}}</li>
+            <li class="list-group-item">Año: {{moises.año}}</li>
+            <li class="list-group-item">Material: {{moises.tecnica}}</li>
+            <li class="list-group-item">Tamaño: {{moises.tamaño}}</li>
+        </ul>
+        <br>
+        El imponente Moisés de Miguel Ángel es sin lugar a dudas una de las esculturas más famosas del mundo. Se
+        trata de una escultura renacentista realizada en mármol blanco en 1509 para ser el eje central de la tumba
+        del Papa Julio II, en la pequeña iglesia de San Pedro in Víncoli, en Roma.
+        <br>
+        Moisés representa al Moisés bíblico en el libro del Éxodo. La obra retrata el momento en que Moisés
+        desciende del monte Sinaí con la tabla de los diez mandamientos y se encuentra con los israelitas adorando a
+        un becerro de oro. Moisés está enmarcado por otras siete figuras secundarias que constituyen en su conjunto
+        la fachada de la tumba del papa Julio II. Al lado derecho e izquierdo de Moisés, personaje principal, se
+        encuentran Raquel y Lea, las hermanas descritas en el libro de Génesis que se involucran en un enredo
+        matrimonial de cuyos descendientes forman el linaje de Jacob.
+        </p>
+        {%endif%}
     </div>
+
+
+
 
 
 </body>

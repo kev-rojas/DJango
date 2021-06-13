@@ -62,29 +62,32 @@
     </nav>
     <br>
 
-    <img id="obra" src="{% static 'core/img/arte cubista3.jpg'%}">
-    
+    <center>
+        <img id="obra" src="{% static 'core/img/arte cubista3.jpg'%}">
+    </center>
+    <br>
     <div class="container">
-        <div class="row">
-            <ul class="list-group">
-                <li class="list-group-item" style="background-color: #8B9494 ;">Información de la Obra</li>
-                <li class="list-group-item">Nombre: Retrato de Pablo Picasso</li>
-                <li class="list-group-item">Autor: Juan Gris</li>
-                <li class="list-group-item">Año: 1912</li>
-            </ul>
+        {%if nombreOb == true%}
+        {% csrf_token %}
+        <h3 id="til">INFORMACIÓN DE LA OBRA</h3>
+        <ul class="list-group">
+            <li class="list-group-item">Nombre: {{retra.nombreOb}}</li>
+            <li class="list-group-item">Autor: {{retra.autor}}</li>
+            <li class="list-group-item">Año: {{retra.año}}</li>
+            <li class="list-group-item">Tecnica: {{retra.tecnica}}</li>
+            <li class="list-group-item">Tamaño: {{retra.tamaño}}</li>
+        </ul>
+        <br>
+        <p id="info">
+            El Retrato de Pablo Picasso muestra a Picasso con 31 años, en posición de sentado, y sosteniendo una paleta.
+            La composición, de colores terrosos, muestra una figura relativamente simétrica y ordenada, donde se pueden
+            apreciar los rasgos del protagonista, típica de las primeras épocas del cubismo, o cubismo analítico, a
+            diferencia de etapas posteriores, cuando las obras son más caóticas y desorganizadas.
             <br>
-        
-            <div>
-                <br>
-                <p id="info">
-                    Cuando Juan Gris conoció a Picasso y a Braque quedó maravillado por el cubismo y se convirtió al original
-                    movimiento. 
-                    
-                    En Retrato de Pablo Picasso, Gris representa a Picasso descomponiendo su figura en diferentes
-                    planos, recomponiendo una misma imagen desde diferentes ángulos.
-                </p>
-            </div>
-        </div>
+            Juan Gris pintó el retrato en 1912. Fue entonces una de las primeras pinturas cubistas realizadas por un
+            pintor distinto de Pablo Picasso o Georges Braque. El cuadro está conservado al Instituto de Arte de Chicago, en Estados Unidos.
+        </p>
+        {%endif%}
     </div>
 
 

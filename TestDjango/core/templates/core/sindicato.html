@@ -62,31 +62,43 @@
     </nav>
     <br>
 
-    <img id="obra" src="{% static 'core/img/sindicato.jpg'%}">
-    
+    <center>
+        <img id="obra" src="{% static 'core/img/sindicato.jpg'%}">
+    </center>
+    <br>
     <div class="container">
-        <div class="row">
-            <ul class="list-group">
-                <li class="list-group-item" style="background-color: #8B9494 ;">Información de la Obra</li>
-                <li class="list-group-item">Nombre: Los síndicos de los pañeros</li>
-                <li class="list-group-item">Autor: Rembrant van Rijin</li>
-                <li class="list-group-item">Año: 1662</li>
-                <li class="list-group-item">Técnica: Óleo</li>
-                <li class="list-group-item">Tamaño: 191.5cm x 279cm</li>
-            </ul>
+        {%if nombreOb == true%}
+        {% csrf_token %}
+        <h3 id="til">INFORMACIÓN DE LA OBRA</h3>
+        <ul class="list-group">
+            <li class="list-group-item">Nombre: {{sindi.nombreOb}}</li>
+            <li class="list-group-item">Autor: {{sindi.autor}}</li>
+            <li class="list-group-item">Año: {{sindi.año}}</li>
+            <li class="list-group-item">Tecnica: {{sindi.tecnica}}</li>
+            <li class="list-group-item">Tamaño: {{sindi.tamaño}}</li>
+        </ul>
+        <br>
+        <p id="info">
+            La obra está firmada y datada: REMBRANDT F. 1661 (sobre el tapete que recubre la mesa en lo alto a la
+            derecha).
             <br>
-            <div>
-                <br>
-                <p id="info">
-                    Se retrata a cinco Staalmeesters, miembros de una comisión la guilda o cofradía de los pañeros de Ámsterdam.
-                    Posiblemente sea la "Waardijns van de Lakenen", esto es, la que controlaba la calidad del paño.​ Era un
-                    cargo por el que no cobraban, y eran nombrados por el periodo de un año. Se reunían tres veces a la semana.
-                    Estos síndicos desempeñaron sus cargos desde el Viernes Santo de 1661 hasta el Viernes Santo de 1662. El
-                    libro sobre la mesa probablemente se refiera a la contabilidad de la cofradía.
-                </p>
-            </div>
-        </div>
+            Se retrata a cinco Staalmeesters, miembros de una comisión la guilda o cofradía de los pañeros de Ámsterdam.
+            Posiblemente sea la «Waardijns van de Lakenen», esto es, la que controlaba la calidad del paño.1​ Era un
+            cargo por el que no cobraban, y eran nombrados por el periodo de un año. Se reunían tres veces a la semana.
+            Estos síndicos desempeñaron sus cargos desde el Viernes Santo de 1661 hasta el Viernes Santo de 1662. El
+            libro sobre la mesa probablemente se refiera a la contabilidad de la cofradía.
+            <br>
+            No son los regentes de la cofradía, sino síndicos de la misma, y pertenecen a distintas confesiones, entre
+            ellos dos católicos. Sus nombres son: Jacob van Loon, Volckert Jansz., Willem van Doeyenburg (el presidente,
+            en el centro), Aernout van de Meye y Jochem de Neve. Detrás de ellos está un servidor, sin sombrero, Frans
+            Hendricksz. Bel, encargado del mantenimiento del edificio que hospedaba a la cofradía.
+            <br>
+            Están sentados en torno a una mesa cubierta por un paño rojo. Detrás de ellos, sobre la pared, hay un óleo
+            en el que se representa el tema del faro, símbolo del buen ejemplo y del camino a seguir.
+        </p>
+        {%endif%}
     </div>
+
 
 
 

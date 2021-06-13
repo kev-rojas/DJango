@@ -61,35 +61,39 @@
     </nav>
     <br>
 
-    <img id="obra" src="{% static 'core/img/venus-de-milo.jpg'%}">
-    
+    <center>
+        <img id="obra" src="{% static 'core/img/venus-de-milo.jpg'%}">
+    </center>
+    <br>
     <div class="container">
-        <div class="row">
-            <ul class="list-group">
-                <li class="list-group-item" style="background-color: #8B9494 ;">Información de la Escultura</li>
-                <li class="list-group-item">Nombre: Venus de Milo</li>
-                <li class="list-group-item">Autor: Alejandro de Antioquía</li>
-                <li class="list-group-item">Año: 130 a. C.-100 a. C.</li>
-            </ul>
+        {%if nombreOb == true%}
+        {% csrf_token %}
+        <h3 id="til">INFORMACIÓN DE LA OBRA</h3>
+        <ul class="list-group">
+            <li class="list-group-item">Nombre: {{venus.nombreOb}}</li>
+            <li class="list-group-item">Autor: {{venus.autor}}</li>
+            <li class="list-group-item">Año: {{venus.año}}</li>
+            <li class="list-group-item">Material: {{venus.tecnica}}</li>
+            <li class="list-group-item">Tamaño: {{venus.tamaño}}</li>
+        </ul>
+        <br>
+        <p id="info">
+            La Afrodita de Milo (en griego, Αφροδίτη της Μήλου), más conocida como Venus de Milo, es una de las estatuas
+            más representativas del periodo helenístico de la escultura griega, y una de las más famosas esculturas de
+            la antigua Grecia. Fue creada en algún momento entre los años 130 a. C. y 100 a. C., y se cree que
+            representa a Afrodita (denominada Venus en la mitología romana), diosa del amor y la belleza;​ mide,
+            aproximadamente, 211 cm de alto.
             <br>
-            <div>
-                <br>
-                <p id="info">
-                    La Afrodita de Milo (en griego, Αφροδίτη της Μήλου), más conocida como Venus de Milo, es una de las estatuas
-                    más representativas del periodo helenístico de la escultura griega, y una de las más famosas esculturas de
-                    la antigua Grecia. Fue creada en algún momento entre los años 130 a. C. y 100 a. C., y se cree que
-                    representa a Afrodita (denominada Venus en la mitología romana), diosa del amor y la belleza;​ mide,
-                    aproximadamente, 211 cm de alto.
-        
-                    Esta estatua fue encontrada en Milo, desenterrada por un campesino y vendida a Francia entre
-                    1819 y 1820. El precio que el campesino pedía por la escultura era demasiado alto, y Dumont d'Urville
-                    —viajero que realizó una parada en este lugar—,​ no llevaba el dinero suficiente, por lo que recurrió a un
-                    embajador francés en Constantinopla, quien accedió a comprarla. Sin embargo, anteriormente el campesino
-                    había acordado venderla a los turcos, lo que inició un conflicto por la posesión de la estatua
-                </p>
-            </div>
-        </div>
+            Esta estatua fue encontrada en Milo, desenterrada por un campesino y vendida a Francia entre
+            1819 y 1820. El precio que el campesino pedía por la escultura era demasiado alto, y Dumont d'Urville
+            —viajero que realizó una parada en este lugar—,​ no llevaba el dinero suficiente, por lo que recurrió a un
+            embajador francés en Constantinopla, quien accedió a comprarla. Sin embargo, anteriormente el campesino
+            había acordado venderla a los turcos, lo que inició un conflicto por la posesión de la estatua
+        </p>
+        {%endif%}
     </div>
+
+
 
 </body>
 

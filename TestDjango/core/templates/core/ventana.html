@@ -62,35 +62,37 @@
     </nav>
     <br>
 
-    <img id="obra" src="{% static 'core/img/arte cubista5.jpg'%}">
-    
+    <center>
+        <img id="obra" src="{% static 'core/img/arte cubista5.jpg'%}">
+    </center>
+    <br>
     <div class="container">
-        <div class="row">
-            <ul class="list-group">
-                <li class="list-group-item" style="background-color: #8B9494 ;">Información de la Obra</li>
-                <li class="list-group-item">Nombre: La Ventana Abierta</li>
-                <li class="list-group-item">Autor: Juan Gris</li>
-                <li class="list-group-item">Año: 1921</li>
-            </ul>
+        {%if nombreOb == true%}
+        {% csrf_token %}
+        <h3 id="til">INFORMACIÓN DE LA OBRA</h3>
+        <ul class="list-group">
+            <li class="list-group-item">Nombre: {{vent.nombreOb}}</li>
+            <li class="list-group-item">Autor: {{vent.autor}}</li>
+            <li class="list-group-item">Año: {{vent.año}}</li>
+            <li class="list-group-item">Tecnica: {{vent.tecnica}}</li>
+            <li class="list-group-item">Tamaño: {{vent.tamaño}}</li>
+        </ul>
+        <br>
+        <p id="info">
+            En este cuadro de la serie Ventanas abiertas, Juan Gris representa diferentes objetos basándose en las
+            formas geométricas, una de las características básicas del cubismo.
             <br>
-        
-            <div>
-                <br>
-                <p id="info">
-                    En este cuadro de la serie Ventanas abiertas, Juan Gris representa diferentes objetos basándose en las
-                    formas geométricas, una de las características básicas del cubismo.
-        
-                    En este caso podemos reconocer una guitarra, los portones abiertos de la ventana y una botella, entre otros
-                    elementos. Lo que destaca de esta obra es la vista al exterior. Aunque en este caso no existe conexión entre
-                    el interior y el paisaje exterior.
-        
-                    Estas 6 obras del cubismo son una buena representación de las características de este movimiento. Picasso,
-                    Braque o Gris son nombres clave en este estilo ya que, con el cubismo, abrieron las puertas a nuevos estilos
-                    alejados del realismo o el arte figurativo, como el surrealismo o las abstracciones.
-                </p>
-            </div>
-        </div>
+            En este caso podemos reconocer una guitarra, los portones abiertos de la ventana y una botella, entre otros
+            elementos. Lo que destaca de esta obra es la vista al exterior. Aunque en este caso no existe conexión entre
+            el interior y el paisaje exterior.
+            <br>
+            Estas 6 obras del cubismo son una buena representación de las características de este movimiento. Picasso,
+            Braque o Gris son nombres clave en este estilo ya que, con el cubismo, abrieron las puertas a nuevos estilos
+            alejados del realismo o el arte figurativo, como el surrealismo o las abstracciones.
+        </p>
+        {%endif%}
     </div>
+
 
 </body>
 

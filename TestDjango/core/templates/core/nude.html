@@ -61,36 +61,38 @@
     </nav>
     <br>
 
-    <img id="obra" src="{% static 'core/img/arte-contemporáneo2.jpg'%}">
-    
+    <center>
+        <img id="obra" src="{% static 'core/img/arte-contemporáneo2.jpg'%}">
+    </center>
+    <br>
     <div class="container">
-        <div class="row">
-            <ul class="list-group">
-                <li class="list-group-item" style="background-color: #8B9494 ;">Información de la Obra</li>
-                <li class="list-group-item">Nombre: Nude with Joyous Painting </li>
-                <li class="list-group-item">Autor: Roy Lichtenstein’s</li>
-                <li class="list-group-item">Año: 1994</li>
-                <li class="list-group-item">Técnica: Óleo y Magna sobre lienzo</li>
-            </ul>
+        {%if nombreOb == true%}
+        {% csrf_token %}
+        <h3 id="til">INFORMACIÓN DE LA OBRA</h3>
+        <ul class="list-group">
+            <li class="list-group-item">Nombre: {{nude.nombreOb}}</li>
+            <li class="list-group-item">Autor: {{nude.autor}}</li>
+            <li class="list-group-item">Año: {{nude.año}}</li>
+            <li class="list-group-item">Tecnica: {{nude.tecnica}}</li>
+            <li class="list-group-item">Tamaño: {{nude.tamaño}}</li>
+        </ul>
+        <br>
+        <p id="info">
+            Con su serie "Desnudos", el artista pop abordó uno de los géneros más antiguos de la historia del arte. La
+            especialista Ana Maria Celis explica por qué este trabajo de 1994, vendido en la pionera venta de ONE por $
+            46,242,500, revela a un artista en completo dominio de su oficio.
             <br>
-        
-            <div>
-                <br>
-                <p id="info">
-                    Con su serie "Desnudos", el artista pop abordó uno de los géneros más antiguos de la historia del arte. La
-                    especialista Ana Maria Celis explica por qué este trabajo de 1994, vendido en la pionera venta de ONE por $
-                    46,242,500, revela a un artista en completo dominio de su oficio.
-        
-                    Con su célebre serie "Nudes" de mediados de la década de 1990, la carrera de Roy Lichtenstein completó el
-                    círculo. Sus 20 pinturas lo vieron regresar a las heroínas del cómic que lo ayudaron a impulsarlo a la fama,
-                    y ​​a la vanguardia del movimiento del arte pop, a principios de la década de 1960.
-        
-                    El 10 de julio, Nude with Joyous Painting (1994), un trabajo destacado de la serie de escala monumental, se
-                    ofrecerá en ONE, un nuevo formato de venta en Christie's que conecta Hong Kong, París, Londres y Nueva York.
-                </p>
-            </div>
-        </div>
+            Con su célebre serie "Nudes" de mediados de la década de 1990, la carrera de Roy Lichtenstein completó el
+            círculo. Sus 20 pinturas lo vieron regresar a las heroínas del cómic que lo ayudaron a impulsarlo a la fama,
+            y ​​a la vanguardia del movimiento del arte pop, a principios de la década de 1960.
+            <br>
+            El 10 de julio, Nude with Joyous Painting (1994), un trabajo destacado de la serie de escala monumental, se
+            ofrecerá en ONE, un nuevo formato de venta en Christie's que conecta Hong Kong, París, Londres y Nueva York.
+        </p>
+        {%endif%}
     </div>
+
+
 
 
 </body>

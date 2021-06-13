@@ -61,34 +61,39 @@
     </nav>
     <br>
 
-    <img id="obra" src="{% static 'core/img/arte conceptual6.jpg'%}">
-    
+    <center>
+        <img id="obra" src="{% static 'core/img/arte conceptual6.jpg'%}">
+    </center>
+    <br>
     <div class="container">
-        <div class="row">
-            <ul class="list-group">
-                <li class="list-group-item" style="background-color: #8B9494 ;">Información de la Obra</li>
-                <li class="list-group-item">Nombre: La Fuente</li>
-                <li class="list-group-item">Autor: Elsa Von Freytag</li>
-                <li class="list-group-item">Año: 1917</li>
-            </ul>
+        {%if nombreOb == true%}
+        {% csrf_token %}
+        <h3 id="til">INFORMACIÓN DE LA OBRA</h3>
+        <ul class="list-group">
+            <li class="list-group-item">Nombre: {{lafu.nombreOb}}</li>
+            <li class="list-group-item">Autor: {{lafu.autor}}</li>
+            <li class="list-group-item">Año: {{lafu.año}}</li>
+            <li class="list-group-item">Tecnica: {{lafu.tecnica}}</li>
+            <li class="list-group-item">Tamaño: {{lafu.tamaño}}</li>
+        </ul>
+        <br>
+        <p id="info">
+            La Fuente es una obra de Elsa von Freytag. "La fuente" es una pieza denominada readymade, (también
+            objeto encontrado, del francés objet trouvé) el arte realizado mediante el uso de objetos ya existentes
+            que normalmente no se consideran artísticos. Con esta obra, se inició una auténtica revolución en el mundo
+            del arte (introduciendo el vanguardismo) al demostrar que cualquier objeto mundano podía considerarse una
+            obra de arte con tal de que el artista lo quitara de su contexto original (en este caso, un baño) y lo
+            situara en un nuevo contexto adecuado (en este caso, una galería o un museo) y la declarara como tal.
+            Además, la obra ha sido interpretada de infinidad de maneras, incluso como órganos sexuales femeninos.
             <br>
-            <div>
-                <br>
-                <p id="info">
-                    La Fuente es una obra de Elsa von Freytag. "La fuente" es una pieza denominada readymade, (también
-                    objeto encontrado, del francés objet trouvé) el arte realizado mediante el uso de objetos ya existentes
-                    que normalmente no se consideran artísticos. Con esta obra, se inició una auténtica revolución en el mundo
-                    del arte (introduciendo el vanguardismo) al demostrar que cualquier objeto mundano podía considerarse una
-                    obra de arte con tal de que el artista lo quitara de su contexto original (en este caso, un baño) y lo
-                    situara en un nuevo contexto adecuado (en este caso, una galería o un museo) y la declarara como tal.
-                    Además, la obra ha sido interpretada de infinidad de maneras, incluso como órganos sexuales femeninos.
-        
-                    Las bases de la muestra de arte a la que Duchamp presentó la pieza de Elsa von Freytag establecía que todas
-                    las obras serían aceptadas, pero la Fuente fue rechazada y retirada rápidamente. 
-                </p>
-            </div>
-        </div>
+            Las bases de la muestra de arte a la que Duchamp presentó la pieza de Elsa von Freytag establecía que todas
+            las obras serían aceptadas, pero la Fuente fue rechazada y retirada rápidamente. 
+        </p>
+        {%endif%}
     </div>
+
+
+
 
  
 </body>

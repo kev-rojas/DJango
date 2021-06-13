@@ -62,7 +62,35 @@
     </nav>
     <br>
 
-    <img id="obra" src="{% static 'core/img/salvator2.jpg'%}">
+    <center>
+        <img id="obra" src="{% static 'core/img/salvator2.jpg'%}">
+    </center>
+    <br>
+    <div class="container">
+        {%if nombreOb == true%}
+        {% csrf_token %}
+        <h3 id="til">INFORMACIÓN DE LA OBRA</h3>
+        <ul class="list-group">
+            <li class="list-group-item">Nombre: {{salva.nombreOb}}</li>
+            <li class="list-group-item">Autor: {{salva.autor}}</li>
+            <li class="list-group-item">Año: {{salva.año}}</li>
+            <li class="list-group-item">Material: {{salva.tecnica}}</li>
+            <li class="list-group-item">Tamaño: {{salva.tamaño}}</li>
+        </ul>
+        <br>
+        <p id="info">
+            Salvator Mundi es una pintura de Cristo como Salvator Mundi («Cristo como salvador del mundo») atribuida a
+            Leonardo da Vinci, datada en torno al año 1500. La pintura muestra a Cristo, con un vestido renacentista,
+            dando una bendición con la mano derecha levantada y dedos cruzados mientras sostiene una esfera de roca
+            cristalina en su mano izquierda, señalando su papel como salvador del mundo y maestro del cosmos, y
+            representando la 'esfera celeste' los cielos, como se percibió durante el Renacimiento.​ Alrededor de
+            otras 20 versiones de la obra son conocidas, y se atribuyen a estudiantes y seguidores de Leonardo. 
+        </p>
+        {%endif%}
+    </div>
+
+
+
     
     <div class="container">
         <div class="row">

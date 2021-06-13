@@ -61,36 +61,39 @@
     </nav>
     <br>
 
-    <img id="obra" src="{% static 'core/img/mascara.jpg'%}">
-    
+    <center>
+        <img id="obra" src="{% static 'core/img/mascara.jpg'%}">
+    </center>
+    <br>
     <div class="container">
-        <div class="row">
-            <ul class="list-group">
-                <li class="list-group-item" style="background-color: #8B9494 ;">Información de la Orfebreria</li>
-                <li class="list-group-item">Nombre: Mascara funeraria Lambayeque</li>
-                <li class="list-group-item">Autor: Cultura Peruana</li>
-                <li class="list-group-item">Año: Siglo VIII a XV</li>
-            </ul>
+        {%if nombreOb == true%}
+        {% csrf_token %}
+        <h3 id="til">INFORMACIÓN DE LA OBRA</h3>
+        <ul class="list-group">
+            <li class="list-group-item">Nombre: {{masca.nombreOb}}</li>
+            <li class="list-group-item">Autor: {{masca.autor}}</li>
+            <li class="list-group-item">Año: {{masca.año}}</li>
+            <li class="list-group-item">Material: {{masca.tecnica}}</li>
+            <li class="list-group-item">Tamaño: {{masca.tamaño}}</li>
+        </ul>
+        <br>
+        <p id="info">
+            La máscara funeraria está elaborada de una lámina de oro martillada y recortada con decoración repujada.
+            Retrata un rostro antropomorfo estilizado, con grandes ojos almendrados, de los que penden cuentas de resina
+            de algarrobo, cuarzo o esmeraldas, ensartadas en delgados tubos o alambres; la nariz y boca es pequeña;
+            lleva además narigueras y flecos nasales, así como orejeras circulares. Está pintada con cinabrio (sulfuro
+            de mercurio), que le da una tonalidad rojiza.
             <br>
-            <div>
-                <br>
-                <p id="info">
-                    La máscara funeraria está elaborada de una lámina de oro martillada y recortada con decoración repujada.
-                    Retrata un rostro antropomorfo estilizado, con grandes ojos almendrados, de los que penden cuentas de resina
-                    de algarrobo, cuarzo o esmeraldas, ensartadas en delgados tubos o alambres; la nariz y boca es pequeña;
-                    lleva además narigueras y flecos nasales, así como orejeras circulares. Está pintada con cinabrio (sulfuro
-                    de mercurio), que le da una tonalidad rojiza.
-        
-                    Han sido halladas en las tumbas de personajes que evidentemente tuvieron una posición elevada en la sociedad
-                    lambayeque, como es el caso del llamado Señor de Sicán, descubierta en 1991.
-        
-                    Este tipo de máscara funeraria llamó mucho la atención al arqueólogo Izumi Shimada, quien se dedicó a su
-                    estudio. Se cree que es la representación de la misma divinidad que se halla caracterizada profusamente en
-                    el arte lambayeque. 
-                </p>
-            </div>
-        </div>
+            Han sido halladas en las tumbas de personajes que evidentemente tuvieron una posición elevada en la sociedad
+            lambayeque, como es el caso del llamado Señor de Sicán, descubierta en 1991.
+            <br>
+            Este tipo de máscara funeraria llamó mucho la atención al arqueólogo Izumi Shimada, quien se dedicó a su
+            estudio. Se cree que es la representación de la misma divinidad que se halla caracterizada profusamente en
+            el arte lambayeque. 
+        </p>
+        {%endif%}
     </div>
+
 
 </body>
 

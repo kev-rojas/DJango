@@ -62,31 +62,45 @@
     </nav>
     <br>
 
-    <img id="obra" src="{% static 'core/img/tormenta.jpg'%}">
-
+    <center>
+        <img id="obra" src="{% static 'core/img/tormenta.jpg'%}">
+    </center>
+    <br>
     <div class="container">
-        <div class="row">
-            <ul class="list-group">
-                <li class="list-group-item" style="background-color: #8B9494 ;">Información de la Obra</li>
-                <li class="list-group-item">Nombre: La tormenta en el mar de Galilea</li>
-                <li class="list-group-item">Autor: Rembrant van Rijin</li>
-                <li class="list-group-item">Año: 1633</li>
-                <li class="list-group-item">Técnica: Óleo</li>
-                <li class="list-group-item">Tamaño: 160cm x 128cm</li>
-            </ul>
+        {%if nombreOb == true%}
+        {% csrf_token %}
+        <h3 id="til">INFORMACIÓN DE LA OBRA</h3>
+        <ul class="list-group">
+            <li class="list-group-item">Nombre: {{tor.nombreOb}}</li>
+            <li class="list-group-item">Autor: {{tor.autor}}</li>
+            <li class="list-group-item">Año: {{tor.año}}</li>
+            <li class="list-group-item">Tecnica: {{tor.tecnica}}</li>
+            <li class="list-group-item">Tamaño: {{tor.tamaño}}</li>
+        </ul>
+        <br>
+        <p id="info">
+            La pintura muestra uno de los primeros milagros de Jesús, concretamente el narrado en el evangelio de San
+            Marcos, capítulo cuarto, cuando Jesús calmó las aguas en una tormenta en el Lago Galilea. Se trata de la
+            única marina del genial pintor holandés. Es una obra de juventud en la que Rembrandt se autorretrata en una
+            de las catorce personas que ocupan el bote, concretamente el que sujeta la cuerda del mástil y mira hacia el
+            espectador.
             <br>
-            <div>
-                <br>
-                <p id="info">
-                    La pintura muestra uno de los primeros milagros de Jesús, concretamente el narrado en el evangelio de San
-                    Marcos, capítulo cuarto, cuando Jesús calmó las aguas en una tormenta en el Lago Galilea. Se trata de la
-                    única marina del genial pintor holandés. Es una obra de juventud en la que Rembrandt se autorretrata en una
-                    de las catorce personas que ocupan el bote, concretamente el que sujeta la cuerda del mástil y mira hacia el
-                    espectador.
-                </p>
-            </div>
-        </div>
+            En la obra se visibiliza un bote inestable por la tormenta en el mar de Galilea. Aparece Jesús rodeado por
+            sus apóstoles y la presencia de otro personaje, se trata de Rembrandt en la parte central del cuadro.
+            <br>
+            En esta escena, Jesús, se distingue por su rostro sereno y tranquilo, les pide a sus apóstoles que
+            demuestren su fe ante el peligro. A la izquierda, Rembrandt presenta a un grupo de discípulos que se
+            encuentran luchando contra la tormenta; a la derecha se ubica otro grupo que rodea a Jesús y se muestran más
+            tranquilos ante la situación.
+            <br>
+            En el cuadro, no se refleja el momento exacto en el que ocurre el milagro. En cambio, es posible observar
+            una situación de crisis, que retrata el momento en que Jesús se muestra tranquilo ante la tempestad e invita
+            a sus apóstoles a no sentirse amenazados.
+        </p>
+        {%endif%}
     </div>
+
+
 
 
 

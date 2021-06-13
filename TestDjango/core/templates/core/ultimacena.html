@@ -61,37 +61,32 @@
     </nav>
     <br>
 
-    <img id="obra" src="{% static 'core/img/cena.jpg'%}">
-    
+    <center>   
+        <img id="obra" src="{% static 'core/img/cena.jpg'%}">
+    </center>
+    <br>
     <div class="container">
-        <div class="row">
-            <ul class="list-group">
-                <li class="list-group-item" style="background-color: #8B9494 ;">Información de la Obra</li>
-                <li class="list-group-item">Nombre: La Ultima Cena</li>
-                <li class="list-group-item">Autor: Leonardo da Vinci</li>
-                <li class="list-group-item">Año: 1495 - 1498</li>
-                <li class="list-group-item">Técnica: Temple y óleo sobre yeso</li>
-                <li class="list-group-item">Tamaño: 880cm x 460cm</li>
-            </ul>
-            <br>
-            <div>
-                <br>
-                <p id="info">
-                    La última cena (en italiano: Il cenacolo o L’ultima cena) es una pintura mural original de Leonardo da Vinci
-                    ejecutada entre 1495 y 1498. Se encuentra en la pared sobre la que se pintó originalmente, en el
-                    refectorio del convento dominico de Santa Maria delle Grazie, en Milán (Italia),​ declarado Patrimonio de
-                    la Humanidad por la Unesco en 1980.​ La pintura fue elaborada para su patrón, el duque Ludovico Sforza de
-                    Milán. No es un fresco tradicional, sino un mural ejecutado al temple y óleo sobre dos capas de preparación
-                    de yeso extendidas sobre enlucido. 
-                </p>
-            </div>
-        </div>
+        {%if nombreOb == true%}
+        {% csrf_token %}
+        <h3 id="til">INFORMACIÓN DE LA OBRA</h3>
+        <ul class="list-group">
+            <li class="list-group-item">Nombre: {{cena.nombreOb}}</li>
+            <li class="list-group-item">Autor: {{cena.autor}}</li>
+            <li class="list-group-item">Año: {{cena.año}}</li>
+            <li class="list-group-item">Tecnica: {{cena.tecnica}}</li>
+            <li class="list-group-item">Tamaño: {{cena.tamaño}}</li>
+        </ul>
+        <br>
+        <p id="info">
+            La última cena (en italiano: Il cenacolo o L’ultima cena) es una pintura mural original de Leonardo da Vinci
+            ejecutada entre 1495 y 1498. Se encuentra en la pared sobre la que se pintó originalmente, en el
+            refectorio del convento dominico de Santa Maria delle Grazie, en Milán (Italia),​ declarado Patrimonio de
+            la Humanidad por la Unesco en 1980.​ La pintura fue elaborada para su patrón, el duque Ludovico Sforza de
+            Milán. No es un fresco tradicional, sino un mural ejecutado al temple y óleo sobre dos capas de preparación
+            de yeso extendidas sobre enlucido. 
+        </p>
+        {%endif%}
     </div>
-
-
-
-
-
 
 
 

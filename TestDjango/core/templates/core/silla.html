@@ -62,7 +62,41 @@
     </nav>
     <br>
 
-    <img id="obra" src="{% static 'core/img/arte conceptual4.jpg'%}">
+    <center>
+        <img id="obra" src="{% static 'core/img/arte conceptual4.jpg'%}">
+    </center>
+    <br>
+    <div class="container">
+        {%if nombreOb == true%}
+        {% csrf_token %}
+        <h3 id="til">INFORMACIÓN DE LA OBRA</h3>
+        <ul class="list-group">
+            <li class="list-group-item">Nombre: {{silla.nombreOb}}</li>
+            <li class="list-group-item">Autor: {{silla.autor}}</li>
+            <li class="list-group-item">Año: {{silla.año}}</li>
+            <li class="list-group-item">Tecnica: {{silla.tecnica}}</li>
+            <li class="list-group-item">Tamaño: {{silla.tamaño}}</li>
+        </ul>
+        <br>
+        <p id="info">
+            En su obra Silla de grasa se enfrenta a la concepción tradicional de «ready-made» impuesta por Duchamp, ya
+            que no podemos utilizar esta silla para sentarnos en ella. La grasa, summum del poder calorífico y contraria
+            a la piedra o cualquier elemento sólido relacionado con la escultura, es maleable y solamente puede tener
+            forma durante un tiempo determinado.
+            <br>
+            Una silla de madera es un objeto común muy usado, al que Beuys ha «sentado» grasa hasta una considerable
+            altura, modelando y alisando su superficie superior en declive desde el respaldo hasta el borde del asiento.
+            Repite, esta vez en lo alto de la silla, la forma de cuña de sus «esquinas de grasa»: un triángulo bastante
+            recurrente en Beuys. Pero su geometría no es rígida ni racional, sino blanda, orgánica e irracional porque
+            moviliza nuestras percepciones conscientes. La silla representa aquí una especie de cuerpo, una anatomía
+            humana, el área de los procesos naturales de digestión y defecación y los órganos sexuales. 
+        </p>
+        {%endif%}
+    </div>
+
+
+
+
     
     <div class="container">
         <div class="row">

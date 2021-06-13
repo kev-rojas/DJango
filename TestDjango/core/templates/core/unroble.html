@@ -62,33 +62,35 @@
     </nav>
     <br>
 
-    <img id="obra" src="{% static 'core/img/arte conceptual5.jpg'%}">
-    
+    <center>
+        <img id="obra" src="{% static 'core/img/arte conceptual5.jpg'%}">
+    </center>
+    <br>
     <div class="container">
-        <div class="row">
-            <ul class="list-group">
-                <li class="list-group-item" style="background-color: #8B9494 ;">Información de la Obra</li>
-                <li class="list-group-item">Nombre: Un Roble (An Oak Tree)</li>
-                <li class="list-group-item">Autor: Michael Craig-Martin</li>
-                <li class="list-group-item">Año: 1973</li>
-            </ul>
-            <br>
-            <div>
-                <br>
-                <p id="info">
-                    An Oak Tree es una obra de arte conceptual creada por Michael Craig-Martin en 1973. La pieza, descrita como
-                    un roble , está instalada en dos unidades: una instalación prístina de un vaso de agua en un estante de
-                    vidrio sobre soportes metálicos 253 centímetros del suelo y un texto colgado en la pared. Cuando se exhibió
-                    por primera vez, el texto se entregó como un folleto. El texto toma la forma de una sesión de preguntas y
-                    respuestas sobre la obra de arte, en la que Craig-Martin describe cómo cambiar "un vaso de agua en un roble
-                    adulto sin alterar los accidentes del vaso de agua" y explica que "el roble real está físicamente presente
-                    pero en forma de vaso de agua ". Craig-Martin consideró "la obra de arte de tal manera que revela su único
-                    elemento básico y esencial, la creencia de que es la fe segura del artista en su capacidad para hablar y la
-                    fe voluntaria del espectador en aceptar lo que tiene que hacer". decir". 
-                </p>
-            </div>
-        </div>
+        {%if nombreOb == true%}
+        {% csrf_token %}
+        <h3 id="til">INFORMACIÓN DE LA OBRA</h3>
+        <ul class="list-group">
+            <li class="list-group-item">Nombre: {{roble.nombreOb}}</li>
+            <li class="list-group-item">Autor: {{roble.autor}}</li>
+            <li class="list-group-item">Año: {{roble.año}}</li>
+            <li class="list-group-item">Tecnica: {{roble.tecnica}}</li>
+            <li class="list-group-item">Tamaño: {{roble.tamaño}}</li>
+        </ul>
+        <br>
+        <p id="info">
+            An Oak Tree es una obra de arte conceptual creada por Michael Craig-Martin en 1973. La pieza, descrita como
+            un roble , está instalada en dos unidades: una instalación prístina de un vaso de agua en un estante de
+            vidrio sobre soportes metálicos 253 centímetros del suelo y un texto colgado en la pared. Cuando se exhibió
+            por primera vez, el texto se entregó como un folleto. El texto toma la forma de una sesión de preguntas y
+            respuestas sobre la obra de arte, en la que Craig-Martin describe cómo cambiar "un vaso de agua en un roble
+            adulto sin alterar los accidentes del vaso de agua" y explica que "el roble real está físicamente presente
+            pero en forma de vaso de agua ". Craig-Martin consideró "la obra de arte de tal manera que revela su único
+            elemento básico y esencial, la creencia de que es la fe segura del artista en su capacidad para hablar y la
+            fe voluntaria del espectador en aceptar lo que tiene que hacer". decir". 
+        {%endif%}
     </div>
+
 
 </body>
 

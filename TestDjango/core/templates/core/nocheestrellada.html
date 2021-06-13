@@ -61,31 +61,41 @@
     </nav>
     <br>
 
-    <img id="obra" src="{% static 'core/img/noche.jpg'%}">
-    
+    <center>
+        <img id="obra" src="{% static 'core/img/noche.jpg'%}">
+    </center>
+    <br>
     <div class="container">
-        <div class="row">
-            <ul class="list-group">
-                <li class="list-group-item" style="background-color: #8B9494 ;">Información de la Obra</li>
-                <li class="list-group-item">Nombre: La Noche Estrellada</li>
-                <li class="list-group-item">Autor: Vincent Van Gogh</li>
-                <li class="list-group-item">Año: 1889</li>
-                <li class="list-group-item">Técnica: Óleo y Lienzo</li>
-                <li class="list-group-item">Tamaño: 73.7cm x 92.1cm</li>
-            </ul>
+        {%if nombreOb == true%}
+        {% csrf_token %}
+        <h3 id="til">INFORMACIÓN DE LA OBRA</h3>
+        <ul class="list-group">
+            <li class="list-group-item">Nombre: {{noche.nombreOb}}</li>
+            <li class="list-group-item">Autor: {{noche.autor}}</li>
+            <li class="list-group-item">Año: {{noche.año}}</li>
+            <li class="list-group-item">Tecnica: {{noche.tecnica}}</li>
+            <li class="list-group-item">Tamaño: {{noche.tamaño}}</li>
+        </ul>
+        <br>
+        <p id="info">
+            La noche estrellada es un óleo sobre lienzo del pintor posimpresionista neerlandés Vincent van Gogh .
+            Pintado en junio de 1889, representa la vista desde la ventana orientada al este de su habitación de asilo
+            en Saint-Rémy-de-Provence, justo antes del amanecer, con la adición de un pueblo imaginario.​ Ha
+            estado en la colección permanente del Museo de Arte Moderno de la ciudad de Nueva York desde 1941, adquirida
+            a través de Lillie P. Bliss Bequest . Ampliamente considerada como la obra maestra de Van Gogh, La
+            noche estrellada es una de las pinturas más reconocidas en la historia de la cultura occidental.
             <br>
-            <div>
-                <br>
-                <p id="info">
-                    La noche estrellada es un óleo sobre lienzo del pintor posimpresionista neerlandés Vincent van Gogh .
-                    Pintado en junio de 1889, representa la vista desde la ventana orientada al este de su habitación de asilo
-                    en Saint-Rémy-de-Provence, justo antes del amanecer, con la adición de un pueblo imaginario.​ Ha
-                    estado en la colección permanente del Museo de Arte Moderno de la ciudad de Nueva York desde 1941, adquirida
-                    a través de Lillie P. Bliss Bequest . Ampliamente considerada como la obra maestra de Van Gogh, La
-                    noche estrellada es una de las pinturas más reconocidas en la historia de la cultura occidental.
-                </p>
-            </div>
-        </div>
+            Van Gogh representó la vista en diferentes momentos del día y bajo diversas condiciones climáticas, incluido
+            el amanecer, la salida de la luna, los días llenos de sol, los días nublados, los días ventosos y un día con
+            lluvia. Si bien el personal del hospital no permitió que Van Gogh pintara en su dormitorio, allí pudo hacer
+            bocetos en tinta o carboncillo sobre papel; eventualmente, basaría variaciones más nuevas en versiones
+            anteriores. El elemento pictórico que une todas estas pinturas es la línea diagonal procedente de la derecha
+            que representa las colinas bajas y onduladas de las montañas Alpilles . En quince de las veintiuna
+            versiones, los cipreses son visibles más allá de la pared del fondo que encierra el campo de trigo. Van Gogh
+            amplió la vista en seis de estas pinturas, sobre todo en F717 Campo de trigo con cipreses y La noche
+            estrellada, que acercan los árboles al plano de la imagen .
+        </p>
+        {%endif%}
     </div>
 
 

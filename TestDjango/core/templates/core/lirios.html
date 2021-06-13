@@ -61,30 +61,47 @@
     </nav>
     <br>
 
-    <img id="obra" src="{% static 'core/img/lirios.jpg'%}">
-
+    <center>
+        <img id="obra" src="{% static 'core/img/lirios.jpg'%}">
+    </center>
+    <br>
     <div class="container">
-        <div class="row">
-            <ul class="list-group">
-                <li class="list-group-item" style="background-color: #8B9494 ;">Información de la Obra</li>
-                <li class="list-group-item">Nombre: Lirios</li>
-                <li class="list-group-item">Autor: Vincent Van Gogh</li>
-                <li class="list-group-item">Año: 1889</li>
-                <li class="list-group-item">Técnica: Óleo y Lienzo</li>
-                <li class="list-group-item">Tamaño: 71cm x 93cm</li>
-            </ul>
+        {%if nombreOb == true%}
+        {% csrf_token %}
+        <h3 id="til">INFORMACIÓN DE LA OBRA</h3>
+        <ul class="list-group">
+            <li class="list-group-item">Nombre: {{liri.nombreOb}}</li>
+            <li class="list-group-item">Autor: {{liri.autor}}</li>
+            <li class="list-group-item">Año: {{liri.año}}</li>
+            <li class="list-group-item">Tecnica: {{liri.tecnica}}</li>
+            <li class="list-group-item">Tamaño: {{liri.tamaño}}</li>
+        </ul>
+        <br>
+        <p id="info">
+            Los lirios fueron una de las primeras obras realizadas mientras Vincent van Gogh vivía en el asilo del
+            Monasterio de Saint-Paul-de-Mausole en Saint-Rémy-de-Provence, Francia, en el último año antes de su muerte
+            en 1890.
             <br>
-            <div>
-                <br>
-                <p id="info">
-                    Los lirios es un cuadro al óleo sobre lienzo (71 x 93 cm) realizado en mayo de 1889 por Vincent Van Gogh. Es
-                    una de las muchas pinturas y grabados de lirios creadas a lo largo de su vida. En 1987 fue vendido por
-                    53.900.000 dólares, la cifra más alta jamás pagada por un cuadro. Los lirios fueron una de las primeras
-                    obras realizadas mientras Vincent van Gogh vivía en el asilo del Monasterio de Saint-Paul-de-Mausole en
-                    Saint-Rémy-de-Provence, Francia, en el último año antes de su muerte en 1890.
-            </div>
-        </div>
+            Lo pintó antes de su primer ataque en el asilo. Falta la alta tensión que se ve en sus obras posteriores.
+            Llamó a la pintura "el pararrayos para mi enfermedad" porque sentía que podía evitar volverse loco al seguir
+            pintando.
+            <br>
+            La obra está influenciada por el patrón decorativo de las impresiones xilográficas japonesas ukiyo-e, como
+            muchas de sus obras y las de otros artistas de su época. Las semejanzas se presentan con los bordes bien
+            definidos, puntos de vista inusuales, incluyendo vistas en primer plano, de cerca. El color es aplanado, no
+            modelado de acuerdo con la caída de la luz, aplicando los consejos proporcionados por Paul Gauguin sobre las
+            tonalidades del color.
+            <br>
+            El artista consideraba a esta pintura un estudio, y es así, probablemente, porque no hay dibujos conocidos
+            de ella,​ aunque Theo, su hermano, se lo pensó mejor y rápidamente presentó la obra a la exposición anual
+            de la Société des Artistes Indépendants en septiembre de 1889, junto con Noche estrellada sobre el Ródano.
+            Sobre la exposición, le escribió a Vicente: "Saltan a la vista desde lejos. Los lirios son un hermoso
+            estudio lleno de aire y vida."
+        </p>
+        {%endif%}
     </div>
+
+
 </body>
 
 </html>

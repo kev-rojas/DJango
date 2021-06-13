@@ -62,7 +62,34 @@
     </nav>
     <br>
 
-    <img id="obra" src="{% static 'core/img/tentacion.jpg'%}">
+    <center>
+        <img id="obra" src="{% static 'core/img/tentacion.jpg'%}">
+    </center>
+    <br>
+    <div class="container">
+        {%if nombreOb == true%}
+        {% csrf_token %}
+        <h3 id="til">INFORMACIÓN DE LA OBRA</h3>
+        <ul class="list-group">
+            <li class="list-group-item">Nombre: {{tenta.nombreOb}}</li>
+            <li class="list-group-item">Autor: {{tenta.autor}}</li>
+            <li class="list-group-item">Año: {{tenta.año}}</li>
+            <li class="list-group-item">Tecnica: {{tenta.tecnica}}</li>
+            <li class="list-group-item">Tamaño: {{tenta.tamaño}}</li>
+        </ul>
+        <br>
+        <p id="info">
+            En el cuadro se muestra a San Antonio Abad en un desierto, arrodillado y sosteniendo una cruz hecha con dos
+            varitas para protegerse de las tentaciones que lo atacan, con el antiguo gesto del exorcismo. Estas son
+            representadas por un caballo y una fila de elefantes, todos estos con sus patas alargadas de forma grotesca
+            y cada uno cargando con una tentación. San Antonio aparece representado como un mendigo, desnudo, con el
+            pelo revuelto y apoyado sobre una piedra. Delante de él hay una calavera.
+        </p>
+        {%endif%}
+    </div>
+
+
+
     
     <div class="container">
         <div class="row">

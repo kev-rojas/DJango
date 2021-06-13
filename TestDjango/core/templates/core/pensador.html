@@ -62,7 +62,38 @@
     </nav>
     <br>
 
-    <img id="obra" src="{% static 'core/img/el-pensador.jpg'%}">
+    <center>
+        <img id="obra" src="{% static 'core/img/el-pensador.jpg'%}">
+    </center>
+    <br>
+    <div class="container">
+        {%if nombreOb == true%}
+        {% csrf_token %}
+        <h3 id="til">INFORMACIÓN DE LA OBRA</h3>
+        <ul class="list-group">
+            <li class="list-group-item">Nombre: {{pen.nombreOb}}</li>
+            <li class="list-group-item">Autor: {{pen.autor}}</li>
+            <li class="list-group-item">Año: {{pen.año}}</li>
+            <li class="list-group-item">Material: {{pen.tecnica}}</li>
+            <li class="list-group-item">Tamaño: {{pen.tamaño}}</li>
+        </ul>
+        <br>
+        <p id="info">
+            La escultura recibió originalmente el nombre El poeta, ya que representaba al escritor italiano Dante
+            Alighieri, autor de la Divina comedia, obra literaria que sirvió como una de las inspiraciones para la
+            creación de La puerta del Infierno. La escultura recibió originalmente el nombre El poeta, ya que
+            representaba al escritor italiano Dante Alighieri, autor de la Divina comedia, obra literaria que sirvió
+            como una de las inspiraciones para la creación de La puerta del Infierno. Según apunta el investigador
+            François Blanchètiere, El poeta representa un cuerpo torturado y al mismo tiempo un hombre
+            de espíritu libre decidido a trascender mediante la poesía. También de vocación dantesca, la obra
+            personifica a Minos, juez de los infiernos que en la obra del italiano asignaba a los condenados a uno de
+            los nueve círculos en función de sus pecados.
+        </p>
+        {%endif%}
+    </div>
+
+
+
     
     <div class="container">
         <div class="row">

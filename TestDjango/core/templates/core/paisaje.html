@@ -62,8 +62,47 @@
     </nav>
     <br>
 
-    <img id="obra" src="{% static 'core/img/arte cubista3.jpg'%}">
-    
+    <center>
+        <img id="obra" src="{% static 'core/img/arte cubista3.jpg'%}">
+    </center>
+    <br>
+    <div class="container">
+        {%if nombreOb == true%}
+        {% csrf_token %}
+        <h3 id="til">INFORMACIÓN DE LA OBRA</h3>
+        <ul class="list-group">
+            <li class="list-group-item">Nombre: {{pai.nombreOb}}</li>
+            <li class="list-group-item">Autor: {{pai.autor}}</li>
+            <li class="list-group-item">Año: {{pai.año}}</li>
+            <li class="list-group-item">Tecnica: {{pai.tecnica}}</li>
+            <li class="list-group-item">Tamaño: {{pai.tamaño}}</li>
+        </ul>
+        <br>
+        <p id="info">
+            Casas en L'Estaque (título original francés: Maisons à L'Estaque) es una pintura al óleo del pintor francés
+            Georges Braque de 1908 realizada en L'Estaque, cerca de Marsella. Es la imagen que produjo por primera vez
+            el concepto de «cubos» (cubismo). El cuadro se encuentra en la colección del Kunstmuseum de Berna.
+            <br>
+            Se considera a Georges Braque y Pablo Picasso como los primeros artistas en intentar expresar, por medio del
+            cubismo, que una obra de arte no debía ser reducida en su concepción y apariencia, sino que la realidad
+            artística cubista siempre debe encontrar referencias en el mundo natural, aunque alteradas, debe de haber
+            siempre algún tipo de conexión entre la naturaleza y el objeto representado.​ Braque se había trasladado a
+            vivir a París desde 1899 aunque no expuso hasta 1906 en el Salón de los Independientes donde mostró un
+            estilo cercano a las obras de los fauves.​ En el otoño de 1907 visitó el taller de Pablo Picasso, donde
+            pudo ver el cuadro aún no terminado sobre Les Demoiselles d'Avignon, que causó una gran impresión al pintor
+            francés. Entre ambos artistas surgió una gran amistad y comprobaron que los dos tenían una evolución similar
+            en cuanto a la estética de sus pinturas y su admiración por los planos de colores que empleaba Paul Cézanne,
+            muerto en 1906. Esta colaboración entre ambos artistas duró hasta el año 1914, cuando Braque se alistó en el
+            ejército francés para combatir en la Primera guerra mundial. De esa época el propio Braque explica que con
+            Picasso: «Nos veíamos todos los días, discutíamos, ensayábamos las ideas que nos llegaban y comparábamos
+            nuestras obras respectivas.
+        </p>
+        {%endif%}
+    </div>
+
+
+
+
     <div class="container">
         <div class="row">
             <ul class="list-group">
@@ -73,16 +112,19 @@
                 <li class="list-group-item">Año: 1908</li>
             </ul>
             <br>
-        
+
             <div>
                 <br>
                 <p id="info">
-                    En Paisaje en L’Estaque se aprecia la geometría de todos los elementos: a pesar de ser un paisaje, todo está
-                    representado mediante bloques, principalmente. 
-                    
+                    En Paisaje en L’Estaque se aprecia la geometría de todos los elementos: a pesar de ser un paisaje,
+                    todo está
+                    representado mediante bloques, principalmente.
+
                     La obra parece desordenada y caótica, pero esto de debe a la
-                    mezcla de las formas geométricas utilizadas con la representación de los árboles. Éstos están pintados en
-                    colores más oscuros, como verdes y marrones, a diferencia de las construcciones, que son, de nuevo, de color
+                    mezcla de las formas geométricas utilizadas con la representación de los árboles. Éstos están
+                    pintados en
+                    colores más oscuros, como verdes y marrones, a diferencia de las construcciones, que son, de nuevo,
+                    de color
                     ocre.
                 </p>
             </div>

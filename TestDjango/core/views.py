@@ -185,55 +185,123 @@ def frescos(request):
     return render(request,'core/frescos.html',datos)
 
 def ginebra(request):
-    return render(request,'core/ginebra.html')
+    gine=Obra.objects.get(nombreOb='Ginebra de Vinci')
+    datos={
+        'gine': gine
+    }
+    return render(request,'core/ginebra.html',datos)
 
 def guernica(request):
-    return render(request,'core/guernica.html')
+    guer=Obra.objects.get(nombreOb='Guernica')
+    datos={
+        'guer': guer
+    }
+    return render(request,'core/guernica.html',datos)
 
 def guitarrista(request):
-    return render(request,'core/guitarrista.html')
+    guit=Obra.objects.get(nombreOb='El viejo guitarrista ciego')
+    datos={
+        'guit': guit
+    }
+    return render(request,'core/guitarrista.html',datos)
 
 def habitacion(request):
-    return render(request,'core/habitacion.html')
+    habi=Obra.objects.get(nombreOb='La Habitación de Vincent en Árles')
+    datos={
+        'habi': habi
+    }
+    return render(request,'core/habitacion.html',datos)
 
 def hissam(request):
-    return render(request,'core/hissam.html')
+    his=Obra.objects.get(nombreOb='Hissam II')
+    datos={
+        'his': his
+    }
+    return render(request,'core/hissam.html',datos)
 
 def hombrevitruvio(request):
-    return render(request,'core/hombrevitruvio.html')
+    homb=Obra.objects.get(nombreOb='Hombre de Vitruvio')
+    datos={
+        'homb': homb
+    }
+    return render(request,'core/hombrevitruvio.html',datos)
 
 def impresion(request):
-    return render(request,'core/impresion.html')
+    imp=Obra.objects.get(nombreOb='Impresión, sol naciente')
+    datos={
+        'imp': imp
+    }
+    return render(request,'core/impresion.html',datos)
 
 def interchange(request):
-    return render(request,'core/interchange.html')
+    inter=Obra.objects.get(nombreOb='Interchange')
+    datos={
+        'inter': inter
+    }
+    return render(request,'core/interchange.html',datos)
 
 def jardin(request):
-    return render(request,'core/jardin.html')
+    jard=Obra.objects.get(nombreOb='El jardín del artista en Giverny')
+    datos={
+        'jard': jard
+    }
+    return render(request,'core/jardin.html',datos)
 
 def judia(request):
-    return render(request,'core/judia.html')
+    judi=Obra.objects.get(nombreOb='La novia judía')
+    datos={
+        'judi': judi
+    }
+    return render(request,'core/judia.html',datos)
 
 def lafuente(request):
-    return render(request,'core/lafuente.html')
+    lafu=Obra.objects.get(nombreOb='La Fuente')
+    datos={
+        'lafu': lafu
+    }
+    return render(request,'core/lafuente.html',datos)
 
 def leccion(request):
-    return render(request,'core/leccion.html')
+    lecc=Obra.objects.get(nombreOb='Lección de anatomía del Dr. Nicolaes Tulp')
+    datos={
+        'lecc': lecc
+    }
+    return render(request,'core/leccion.html',datos)
 
 def lirios(request):
-    return render(request,'core/lirios.html')
+    liri=Obra.objects.get(nombreOb='Lirios')
+    datos={
+        'liri': liri
+    }
+    return render(request,'core/lirios.html',datos)
 
 def mascara(request):
-    return render(request,'core/mascara.html')
+    masca=Obra.objects.get(nombreOb='Mascara funeraria Lambayeque')
+    datos={
+        'masca': masca
+    }
+    return render(request,'core/mascara.html',datos)
 
 def memoria(request):
-    return render(request,'core/memoria.html')
+    memo=Obra.objects.get(nombreOb='La persistencia de la memoria')
+    datos={
+        'memo': memo
+    }
+    return render(request,'core/memoria.html',datos)
 
 def metamorfosis(request):
-    return render(request,'core/metamorfosis.html')
+    meta=Obra.objects.get(nombreOb='Metamorfosis de Narciso')
+    datos={
+        'meta': meta
+    }
+    return render(request,'core/metamorfosis.html',datos)
 
 def moises(request):
-    return render(request,'core/moises.html')
+    moises=Obra.objects.get(nombreOb='El Moisés')
+    datos={
+        'moises': moises
+    }
+    return render(request,'core/moises.html',datos)
 
 def monalisa(request):
     mona=Obra.objects.get(nombreOb='La Mona Lisa')
@@ -243,16 +311,32 @@ def monalisa(request):
     return render(request,'core/monalisa.html',datos)
 
 def mujerespejo(request):
-    return render(request,'core/mujerespejo.html')
+    chica=Obra.objects.get(nombreOb='Chica frente a un espejo')
+    datos={
+        'chica': chica
+    }
+    return render(request,'core/mujerespejo.html',datos)
 
 def mujerllorando(request):
-    return render(request,'core/mujerllorando.html')
+    mujer=Obra.objects.get(nombreOb='La mujer que llora')
+    datos={
+        'mujer': mujer
+    }
+    return render(request,'core/mujerllorando.html',datos)
 
 def nocheestrellada(request):
-    return render(request,'core/nocheestrellada.html')
+    noche=Obra.objects.get(nombreOb='La Noche Estrellada')
+    datos={
+        'noche': noche
+    }
+    return render(request,'core/nocheestrellada.html',datos)
 
 def nude(request):
-    return render(request,'core/nude.html')
+    nude=Obra.objects.get(nombreOb='Nude with Joyous Painting')
+    datos={
+        'nude': nude
+    }
+    return render(request,'core/nude.html',datos)
 
 def obrasclaude(request):
     return render(request,'core/obrasclaude.html')
@@ -297,13 +381,25 @@ def pagtejidos(request):
     return render(request,'core/pagtejidos.html')
 
 def paisaje(request):
-    return render(request,'core/paisaje.html')
+    pai=Obra.objects.get(nombreOb='Paisaje en L’Estaque')
+    datos={
+        'pai': pai
+    }
+    return render(request,'core/paisaje.html',datos)
 
 def pensador(request):
-    return render(request,'core/pensador.html')
+    pen=Obra.objects.get(nombreOb='El Pensador')
+    datos={
+        'pen': pen
+    }
+    return render(request,'core/pensador.html',datos)
 
 def rabbit(request):
-    return render(request,'core/rabbit.html')
+    rab=Obra.objects.get(nombreOb='Rabbit')
+    datos={
+        'rab': rab
+    }
+    return render(request,'core/rabbit.html',datos)
 
 def registrarse(request):
     datos={'form' : UsuarioForm}
@@ -315,79 +411,175 @@ def registrarse(request):
     return render(request,'core/registrarse.html',datos)
 
 def retorno(request):
-    return render(request,'core/retorno.html')
+    reto=Obra.objects.get(nombreOb='El retorno del hijo pródigo')
+    datos={
+        'reto': reto
+    }
+    return render(request,'core/retorno.html',datos)
 
 def retrato(request):
-    return render(request,'core/retrato.html')
+    retra=Obra.objects.get(nombreOb='Retrato de Pablo Picasso')
+    datos={
+        'retra': retra
+    }
+    return render(request,'core/retrato.html',datos)
 
 def ronda(request):
-    return render(request,'core/ronda.html')
+    ronda=Obra.objects.get(nombreOb='La ronda de anoche')
+    datos={
+        'ronda': ronda
+    }
+    return render(request,'core/ronda.html',datos)
 
 def ruedadebicicleta(request):
-    return render(request,'core/ruedadebicicleta.html')
+    rueda=Obra.objects.get(nombreOb='Una y Tres Sillas')
+    datos={
+        'rueda': rueda
+    }
+    return render(request,'core/ruedadebicicleta.html',datos)
 
 def salvatormundi(request):
-    return render(request,'core/salvatormundi.html')
+    salva=Obra.objects.get(nombreOb='Salvator Mundi')
+    datos={
+        'salva': salva
+    }
+    return render(request,'core/salvatormundi.html',datos)
 
 def señoras(request):
-    return render(request,'core/señoras.html')
+    señoras=Obra.objects.get(nombreOb='Las señoritas de Avignon')
+    datos={
+        'señoras': señoras
+    }
+    return render(request,'core/señoras.html',datos)
 
 def silla(request):
-    return render(request,'core/silla.html')
+    silla=Obra.objects.get(nombreOb='Silla Cubierta de Grasa')
+    datos={
+        'silla': silla
+    }
+    return render(request,'core/silla.html',datos)
 
 def sindicato(request):
-    return render(request,'core/sindicato.html')
+    sindi=Obra.objects.get(nombreOb='Los síndicos de los pañeros')
+    datos={
+        'sindi': sindi
+    }
+    return render(request,'core/sindicato.html',datos)
 
 def sombrilla(request):
-    return render(request,'core/sombrilla.html')
+    somb=Obra.objects.get(nombreOb='Mujer con sombrilla')
+    datos={
+        'somb': somb
+    }
+    return render(request,'core/sombrilla.html',datos)
 
 def soporte(request):
     return render(request,'core/soporte.html')
 
 def sueño(request):
-    return render(request,'core/sueño.html')
+    sue=Obra.objects.get(nombreOb='El sueño')
+    datos={
+        'sue': sue
+    }
+    return render(request,'core/sueño.html',datos)
 
 def telefono(request):
-    return render(request,'core/telefono.html')
+    tele=Obra.objects.get(nombreOb='Teléfono Langosta')
+    datos={
+        'tele': tele
+    }
+    return render(request,'core/telefono.html',datos)
 
 def tentacion(request):
-    return render(request,'core/tentacion.html')
+    tenta=Obra.objects.get(nombreOb='La tentación de San Antonio')
+    datos={
+        'tenta': tenta
+    }
+    return render(request,'core/tentacion.html',datos)
 
 def terraza(request):
-    return render(request,'core/terraza.html')
+    terra=Obra.objects.get(nombreOb='Terraza de Café por la Noche')
+    datos={
+        'terra': terra
+    }
+    return render(request,'core/terraza.html',datos)
 
 def tesoro(request):
-    return render(request,'core/tesoro.html')
+    teso=Obra.objects.get(nombreOb='Trésor de Conques')
+    datos={
+        'teso': teso
+    }
+    return render(request,'core/tesoro.html',datos)
 
 def tipoobras(request):
     return render(request,'core/tipoobras.html')
 
 def tormenta(request):
-    return render(request,'core/tormenta.html')
+    tor=Obra.objects.get(nombreOb='La tormenta en el mar de Galilea')
+    datos={
+        'tor': tor
+    }
+    return render(request,'core/tormenta.html',datos)
 
 def trigal(request):
-    return render(request,'core/trigal.html')
+    tri=Obra.objects.get(nombreOb='Trigal con Cuervos')
+    datos={
+        'tri': tri
+    }
+    return render(request,'core/trigal.html',datos)
 
 def ultimacena(request):
-    return render(request,'core/ultimacena.html')
+    cena=Obra.objects.get(nombreOb='La Ultima Cena')
+    datos={
+        'cena': cena
+    }
+    return render(request,'core/ultimacena.html',datos)
 
 def unaytressillas(request):
-    return render(request,'core/unaytressillas.html')
+    unay=Obra.objects.get(nombreOb='Una y Tres Sillas')
+    datos={
+        'unay': unay
+    }
+    return render(request,'core/unaytressillas.html',datos)
 
 def unroble(request):
-    return render(request,'core/unroble.html')
+    roble=Obra.objects.get(nombreOb='Un Roble (An Oak Tree)')
+    datos={
+        'roble': roble
+    }
+    return render(request,'core/unroble.html',datos)
 
 def ventana(request):
-    return render(request,'core/ventana.html')
+    vent=Obra.objects.get(nombreOb='La Ventana Abierta')
+    datos={
+        'vent': vent
+    }
+    return render(request,'core/ventana.html',datos)
 
 def ventanas(request):
-    return render(request,'core/ventanas.html')
+    ventanas=Obra.objects.get(nombreOb='Ventanas Simultáneas')
+    datos={
+        'ventanas': ventanas
+    }
+    return render(request,'core/ventanas.html',datos)
 
 def venus(request):
-    return render(request,'core/venus.html')
+    venus=Obra.objects.get(nombreOb='Venus de Milo')
+    datos={
+        'venus': venus
+    }
+    return render(request,'core/venus.html',datos)
 
 def visigodo(request):
-    return render(request,'core/visigodo.html')
+    visi=Obra.objects.get(nombreOb='Friso Visigodo')
+    datos={
+        'visi': visi
+    }
+    return render(request,'core/visigodo.html',datos)
 
 def vives(request):
-    return render(request,'core/vives.html')
+    vives=Obra.objects.get(nombreOb='Tiraz de Hixen o Hisam')
+    datos={
+        'vives': vives
+    }
+    return render(request,'core/vives.html',datos)

@@ -60,36 +60,45 @@
         </div>
     </nav>
     <br>
-
-    <img id="obra" src="{% static 'core/img/habitacion.jpg'%}">
-    
+    <center>
+        <img id="obra" src="{% static 'core/img/habitacion.jpg'%}">
+    </center>
+    <br>
     <div class="container">
-        <div class="row">
-            <ul class="list-group">
-                <li class="list-group-item" style="background-color: #8B9494 ;">Información de la Obra</li>
-                <li class="list-group-item">Nombre: La Habitación de Vincent en Árles</li>
-                <li class="list-group-item">Autor: Vincent Van Gogh</li>
-                <li class="list-group-item">Año: 1888</li>
-                <li class="list-group-item">Técnica: Óleo sobre Lienzo</li>
-                <li class="list-group-item">Tamaño: 70.5cm x 90cm</li>
-            </ul>
+        {%if nombreOb == true%}
+        {% csrf_token %}
+        <h3 id="til">INFORMACIÓN DE LA OBRA</h3>
+        <ul class="list-group">
+            <li class="list-group-item">Nombre: {{habi.nombreOb}}</li>
+            <li class="list-group-item">Autor: {{habi.autor}}</li>
+            <li class="list-group-item">Año: {{habi.año}}</li>
+            <li class="list-group-item">Tecnica: {{habi.tecnica}}</li>
+            <li class="list-group-item">Tamaño: {{habi.tamaño}}</li>
+        </ul>
+        <br>
+        <p id="info">
+            El dormitorio en Arlés es un cuadro de Vincent Van Gogh que representa el dormitorio del pintor durante su
+            estancia en la ciudad francesa de Arlés, un motivo sobre el que pintó tres cuadros casi idénticos. El
+            primero, se conserva en el Museo Van Gogh de Ámsterdam, fue ejecutado en octubre de 1888 y se deterioró en
+            una inundación ocurrida durante la hospitalización del pintor. Cerca de un año después, realizó el que hoy
+            se encuentra en el Art Institute de Chicago; al mismo tiempo hizo otra, hoy en el Museo de Orsay, para su
+            familia en Holanda y que es la única de tamaño más reducido.
             <br>
-            <div>
-                <br>
-                <p id="info">
-                    El dormitorio en Arlés es un cuadro de Vincent Van Gogh que representa el dormitorio del pintor durante su
-                    estancia en la ciudad francesa de Arlés, un motivo sobre el que pintó tres cuadros casi idénticos. El
-                    primero, se conserva en el Museo Van Gogh de Ámsterdam, fue ejecutado en octubre de 1888 y se deterioró en
-                    una inundación ocurrida durante la hospitalización del pintor. Cerca de un año después, realizó el que hoy
-                    se encuentra en el Art Institute de Chicago; al mismo tiempo hizo otra, hoy en el Museo de Orsay, para su
-                    familia en Holanda y que es la única de tamaño más reducido.
-        
-        
-                </p>
-            </div>
-        </div>
+            En una carta dirigida a su hermano Theo, Vincent explica lo que le incita a pintar una obra semejante:
+            quiere expresar la tranquilidad y resaltar la sencillez de su dormitorio mediante el simbolismo de los
+            colores. Para ello, describe: «los muros lila pálido, el suelo de un rojo gastado y apagado, las sillas y la
+            cama amarillo de cromo, las almohadas y la sábana verde limón muy pálido, la manta roja sangre, la mesa de
+            aseo anaranjada, la palangana azul, la ventana verde", afirmando: "Había querido expresar un reposo absoluto
+            mediante todos estos tonos diversos». Mediante estos diferentes tonos, Van Gogh hace referencia a Japón, a
+            sus crespones y a sus estampas. Se justifica de este modo: «Los Japoneses han vivido en interiores muy
+            sencillos y que grandes artistas han vivido en este país». Pese a que, para los japoneses, una habitación
+            decorada con cuadros y muebles no parezca realmente sencilla, para Vincent es «un dormitorio vacío con una
+            cama de madera y dos sillas». Alcanza, a pesar de todo, una cierta austeridad, por su composición
+            constituida casi únicamente de líneas rectas y por la combinación rigurosa de superficies de color que
+            compensan la inestabilidad
+        </p>
+        {%endif%}
     </div>
-
 
 
 
