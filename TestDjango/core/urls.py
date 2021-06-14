@@ -92,10 +92,10 @@ from .views import visigodo
 from .views import vives
 
 urlpatterns=[
-    #path('',home,name="home"),
-    #path('form_vehiculo',form_vehiculo,name="form_vehiculo"),
-    #path('form_modvehiculo/<id>',form_modvehiculo,name="form_modvehiculo"),
-    #path('form_delvehiculo/<id>',form_delvehiculo,name="form_delvehiculo"),
+    path('',home,name="home"),
+    path('form_vehiculo',form_vehiculo,name="form_vehiculo"),
+    path('form_modvehiculo/<id>',form_modvehiculo,name="form_modvehiculo"),
+    path('form_delvehiculo/<id>',form_delvehiculo,name="form_delvehiculo"),
     #path('pagina_test', test,name="test")
     path('',inicio,name="inicio"),
     path('artistas',artistas,name="artistas"),

@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
 from .models import vehiculo
 from .forms import vehiculoForm
-from .models import Usuario, Obra
-from .forms import UsuarioForm
+from .models import Usuario, Obra, Contacto
+from .forms import UsuarioForm, ContactoFrom
 #-------------------------------------------------------------------
 
 #def de ejemplos
@@ -10,7 +10,7 @@ from .forms import UsuarioForm
 def home(request):
     #return render(request,'core/home.html')
     #traer todos los vehiculos en la tabla
-    vehiculos=vehiculo.objects.all
+    vehiculos=Usuario.objects.all
     #variable que pasa los datos del vehiculo al template
     datos={
         'vehiculos': vehiculos
@@ -18,26 +18,26 @@ def home(request):
     return render(request, 'core/home.html', datos)
 
 def form_vehiculo(request):
-    dato={'form' : vehiculoForm}
+    dato={'form' : UsuarioForm}
     if request.method=='POST':
-        formulario=vehiculoForm(request.POST)
+        formulario=UsuarioForm(request.POST)
         if formulario.is_valid:
             formulario.save()
             dato['mensaje']="Guardado correctamente"
     return render(request, 'core/form_vehiculo.html',dato)
 
 def form_modvehiculo(request,id):
-    vehiculos=vehiculo.objects.get(patente='AABB11')
-    datos={'form':vehiculoForm(instance=vehiculos)}
+    vehiculos=Usuario.objects.get(email=id)
+    datos={'form':UsuarioForm(instance=vehiculos)}
     if request.method=='POST':
-        formulario=vehiculoForm(data=request.POST, instance=vehiculos)
+        formulario=UsuarioForm(data=request.POST, instance=vehiculos)
         if formulario.is_valid:
             formulario.save()
             datos['mensaje']="Modificado correctamente"
     return render(request, 'core/form_modvehiculo.html',datos)
 
 def form_delvehiculo(request,id):
-    vehiculos=vehiculo.objects.get(patente=id)
+    vehiculos=Usuario.objects.get(email=id)
     vehiculos.delete()
     return redirect(to="home")
 
@@ -47,7 +47,13 @@ def form_delvehiculo(request,id):
 #def iniciales del proyecto
 
 def inicio(request):
-    return render(request,'core/inicio.html')
+    datos={'form' : ContactoFrom}
+    if request.method=='POST':
+        formulario=ContactoFrom(request.POST)
+        if formulario.is_valid:
+            formulario.save()
+            datos['mensaje']="Enviado Correctamente"
+    return render(request,'core/inicio.html',datos)
 
 def artistas(request):
     return render(request,'core/artistas.html')
