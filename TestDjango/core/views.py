@@ -5,46 +5,32 @@ from .models import Usuario, Obra, Contacto
 from .forms import UsuarioForm, ContactoFrom
 #-------------------------------------------------------------------
 
-#def de ejemplos
 
-def home(request):
-    #return render(request,'core/home.html')
-    #traer todos los vehiculos en la tabla
-    vehiculos=Usuario.objects.all
-    #variable que pasa los datos del vehiculo al template
+
+def lista_usuarios(request):
+    usua=Usuario.objects.all
     datos={
-        'vehiculos': vehiculos
+        'usua': usua
     }
-    return render(request, 'core/home.html', datos)
+    return render(request, 'core/lista_usuarios.html', datos)
 
-def form_vehiculo(request):
-    dato={'form' : UsuarioForm}
+def mod_usuario(request,id):
+    usua=Usuario.objects.get(email=id)
+    datos={'form':UsuarioForm(instance=usua)}
     if request.method=='POST':
-        formulario=UsuarioForm(request.POST)
-        if formulario.is_valid:
-            formulario.save()
-            dato['mensaje']="Guardado correctamente"
-    return render(request, 'core/form_vehiculo.html',dato)
-
-def form_modvehiculo(request,id):
-    vehiculos=Usuario.objects.get(email=id)
-    datos={'form':UsuarioForm(instance=vehiculos)}
-    if request.method=='POST':
-        formulario=UsuarioForm(data=request.POST, instance=vehiculos)
+        formulario=UsuarioForm(data=request.POST, instance=usua)
         if formulario.is_valid:
             formulario.save()
             datos['mensaje']="Modificado correctamente"
-    return render(request, 'core/form_modvehiculo.html',datos)
+    return render(request, 'core/mod_usuario.html',datos)
 
-def form_delvehiculo(request,id):
-    vehiculos=Usuario.objects.get(email=id)
-    vehiculos.delete()
-    return redirect(to="home")
-
-#--------------------------------------------------------------------------------------------------
+def del_usuario(request,id):
+    usua=Usuario.objects.get(email=id)
+    usua.delete()
+    return redirect(to="lista_usuarios")
 
 
-#def iniciales del proyecto
+
 
 def inicio(request):
     datos={'form' : ContactoFrom}

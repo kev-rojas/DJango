@@ -32,7 +32,7 @@ class Obra(models.Model):
     tecnica = models.CharField(max_length=50, verbose_name= 'Técnica')
     tamaño = models.CharField(max_length=20, verbose_name='Tamaño')
 
-    def str(self):
+    def __str__(self):
         return self.nombreOb
 #
 class Usuario(models.Model):
@@ -40,12 +40,12 @@ class Usuario(models.Model):
     email = models.EmailField(max_length=100, primary_key=True, verbose_name= 'Email')
     contraseña = models.CharField(max_length=30, verbose_name='Contraseña')
 
-    def str(self):
+    def __str__(self):
         return self.email
 
 class Contacto(models.Model):
     nombre = models.ForeignKey(Usuario, on_delete=models.CASCADE)
     mensaje = models.CharField(max_length=200, verbose_name= 'mensaje')
 
-    def str(self):
+    def __str__(self):
         return self.nombre

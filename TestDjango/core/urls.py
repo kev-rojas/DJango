@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import home, form_vehiculo, form_modvehiculo, form_delvehiculo
+from .views import lista_usuarios, mod_usuario, del_usuario
 
 
 from .views import inicio
@@ -92,12 +92,11 @@ from .views import visigodo
 from .views import vives
 
 urlpatterns=[
-    path('',home,name="home"),
-    path('form_vehiculo',form_vehiculo,name="form_vehiculo"),
-    path('form_modvehiculo/<id>',form_modvehiculo,name="form_modvehiculo"),
-    path('form_delvehiculo/<id>',form_delvehiculo,name="form_delvehiculo"),
-    #path('pagina_test', test,name="test")
     path('',inicio,name="inicio"),
+    path('lista_usuarios',lista_usuarios,name="lista_usuarios"),
+    path('mod_usuario/<id>',mod_usuario,name="mod_usuario"),
+    path('del_usuario/<id>',del_usuario,name="del_usuario"),
+    #-----------------------------------------------------------------------------
     path('artistas',artistas,name="artistas"),
     path('tipoobras', tipoobras,name="tipoobras"),
     path('inicarSesion',inicarSesion,name="inicarSesion"),
