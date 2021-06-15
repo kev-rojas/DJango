@@ -20,7 +20,7 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
 
-    <script src="{% static 'core/js/formulario.js'%}">
+    <script src="{% static 'core/js/confirmarRegistro.js'%}">
     </script>
 
 </head>
@@ -82,14 +82,15 @@
               <label id="texFor">Contraseña</label>
               <input type="password" class="form-control" {{form.contraseña}}>
             </div>
-            <input type="submit" class="btn btn-primary" id="crear" value="Crear Cuenta">
-            <div class="container" id="men">
+            <input type="submit" class="btn btn-primary" id="crear" value="Crear Cuenta" onclick="return confiRegistro()">
+            <!--<div class="container">
                 <div class="alert alert-success" role="alert">
                     {{mensaje}}
                 </div>
-            </div>
+            </div>-->
         </form>
     </center>
+    <br>
 
 </body>
 

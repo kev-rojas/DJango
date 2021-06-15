@@ -4,6 +4,7 @@ function confiModificar()
 
     if (respuesta == true)
     {
+        var respuesta = alert("Usuario Modificado")
         return true;
     }
     else

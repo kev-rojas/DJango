@@ -4,6 +4,7 @@ function confiEliminar()
 
     if (respuesta == true)
     {
+        var respuesta = alert("Usuario Eliminado")
         return true;
     }
     else
