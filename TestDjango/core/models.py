@@ -22,7 +22,7 @@ class vehiculo(models.Model):
     def __str__(self):
         return self.patente
 
-
+#------------------------------------------------------------------------------------------------------
 #modelos proyecto
 
 class Obra(models.Model):
