@@ -1,5 +1,7 @@
 from django.urls import path
 from .views import lista_usuarios, mod_usuario, del_usuario
+from django.conf import settings
+from django.conf.urls.static import static
 
 
 from .views import inicio
@@ -187,3 +189,4 @@ urlpatterns=[
     path('vives',vives,name="vives"),
 ]
 
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
