@@ -5,6 +5,8 @@ from .models import Usuario, Obra, Contacto
 from .forms import UsuarioForm, ContactoFrom
 #-------------------------------------------------------------------
 
+def consumeapi(request):
+    return render(request, 'core/consumeapi.html')
 
 
 def lista_usuarios(request):
