@@ -62,7 +62,9 @@
     <br>
 
     <center>
-        <img id="obra" src="{% static 'core/img/arte-contemporáneo2.jpg'%}">
+        {% if nude.imagen %}
+            <img id="obra" src="{{ nude.imagen.url }}">
+        {% endif %}
     </center>
     <br>
     <div class="container">

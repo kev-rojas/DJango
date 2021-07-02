@@ -63,7 +63,9 @@
     <br>
 
     <center>
-        <img id="obra" src="{% static 'core/img/arte cubista3.jpg'%}">
+        {% if pai.imagen %}
+            <img id="obra" src="{{ pai.imagen.url }}">
+        {% endif %}
     </center>
     <br>
     <div class="container">

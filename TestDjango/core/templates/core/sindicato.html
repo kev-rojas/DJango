@@ -24,7 +24,6 @@
 
 <body>
     {% load static %}
-    {% load static %}
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <img class="Logo" src="{% static 'core/img/logotipo2.jpg'%}" width="185" height="150" alt="">
         <a class="navbar-brand" href="#"></a>
@@ -63,7 +62,9 @@
     <br>
 
     <center>
-        <img id="obra" src="{% static 'core/img/sindicato.jpg'%}">
+        {% if sindi.imagen %}
+            <img id="obra" src="{{ sindi.imagen.url }}">
+        {% endif %}
     </center>
     <br>
     <div class="container">

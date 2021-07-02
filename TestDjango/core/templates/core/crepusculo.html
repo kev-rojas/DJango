@@ -61,7 +61,9 @@
     </nav>
     <br>
     <center>
-        <img id="obra" src="{% static 'core/img/Crepusculo_en_venecia.jpg'%}">
+        {% if cre.imagen %}
+            <img id="obra" src="{{ cre.imagen.url }}">
+        {% endif %}
     </center>
     <br>
     <div class="container">

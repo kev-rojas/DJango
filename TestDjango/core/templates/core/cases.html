@@ -61,7 +61,9 @@
     </nav>
     <br>
     <center>
-        <img id="obra" src="{% static 'core/img/arte cubista1.jpg'%}">
+        {% if cas.imagen %}
+            <img id="obra" src="{{ cas.imagen.url }}">
+        {% endif %}
     </center>
     <br>
     <div class="container">

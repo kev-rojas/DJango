@@ -62,7 +62,9 @@
     <br>
 
     <center>
-        <img id="obra" src="{% static 'core/img/arte conceptual6.jpg'%}">
+        {% if lafu.imagen %}
+            <img id="obra" src="{{ lafu.imagen.url }}">
+        {% endif %}
     </center>
     <br>
     <div class="container">

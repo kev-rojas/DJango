@@ -63,7 +63,9 @@
     <br>
 
     <center>
-        <img id="obra" src="{% static 'core/img/arte conceptual1.jpg'%}">
+        {% if rueda.imagen %}
+            <img id="obra" src="{{ rueda.imagen.url }}">
+        {% endif %}
     </center>
     <br>
     <div class="container">

@@ -62,7 +62,9 @@
     <br>
 
     <center>
-        <img id="obra" src="{% static 'core/img/metamorfosis.jpg'%}">
+        {% if meta.imagen %}
+            <img id="obra" src="{{ meta.imagen.url }}">
+        {% endif %}
     </center>
     <br>
     <div class="container">

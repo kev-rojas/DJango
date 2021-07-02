@@ -63,7 +63,9 @@
     <br>
 
     <center>
-        <img id="obra" src="{% static 'core/img/telefono.jpg'%}">
+        {% if tele.imagen %}
+            <img id="obra" src="{{ tele.imagen.url }}">
+        {% endif %}
     </center>
     <br>
     <div class="container">

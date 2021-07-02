@@ -62,7 +62,9 @@
     <br>
 
     <center>
-        <img id="obra" src="{% static 'core/img/arte abstracto3.jpg'%}">
+        {% if inter.imagen %}
+            <img id="obra" src="{{ inter.imagen.url }}">
+        {% endif %}
     </center>
     <br>
     <div class="container">

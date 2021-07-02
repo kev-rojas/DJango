@@ -63,7 +63,9 @@
     <br>
 
     <center>
-        <img id="obra" src="{% static 'core/img/arte-contemporáneo3.jpg'%}">
+        {% if crabapi.imagen %}
+            <img id="obra" src="{{ crabapi.imagen.url }}">
+        {% endif %}
     </center>
     <br>
     <div class="container">

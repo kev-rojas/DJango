@@ -63,7 +63,9 @@
     <br>
 
     <center>
-        <img id="obra" src="{% static 'core/img/orfebreria carolingio.jpg'%}">
+        {% if teso.imagen %}
+            <img id="obra" src="{{ teso.imagen.url }}">
+        {% endif %}
     </center>
     <br>
     <div class="container">

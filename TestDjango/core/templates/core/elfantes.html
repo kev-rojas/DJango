@@ -61,7 +61,9 @@
     </nav>
     <br>
     <center>
-        <img id="obra" src="{% static 'core/img/elefantes.jpg'%}">
+        {% if ele.imagen %}
+            <img id="obra" src="{{ ele.imagen.url }}">
+        {% endif %}
     </center>
     <br>
     <div class="container">

@@ -63,7 +63,9 @@
     <br>
 
     <center>
-        <img id="obra" src="{% static 'core/img/cafe.jpg'%}">
+        {% if terra.imagen %}
+            <img id="obra" src="{{ terra.imagen.url }}">
+        {% endif %}
     </center>
     <br>
     <div class="container">

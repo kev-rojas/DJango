@@ -24,7 +24,6 @@
 
 <body>
     {% load static %}
-    {% load static %}
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <img class="Logo" src="{% static 'core/img/logotipo2.jpg'%}" width="185" height="150" alt="">
         <a class="navbar-brand" href="#"></a>
@@ -63,7 +62,9 @@
     <br>
 
     <center>
-        <img id="obra" src="{% static 'core/img/tentacion.jpg'%}">
+        {% if tenta.imagen %}
+            <img id="obra" src="{{ tenta.imagen.url }}">
+        {% endif %}
     </center>
     <br>
     <div class="container">
@@ -90,30 +91,7 @@
 
 
 
-    
-    <div class="container">
-        <div class="row">
-            <ul class="list-group">
-                <li class="list-group-item" style="background-color: #8B9494 ;">Información de la Obra</li>
-                <li class="list-group-item">Nombre: La tentación de San Antonio</li>
-                <li class="list-group-item">Autor: Salvador Dalí</li>
-                <li class="list-group-item">Año: 1946</li>
-                <li class="list-group-item">Técnica: Óleo sobre Lienzo</li>
-                <li class="list-group-item">Tamaño: 90cm x 119.5cm</li>
-            </ul>
-            <br>
-            <div>
-                <br>
-                <p id="info">
-                    En el cuadro se muestra a San Antonio Abad en un desierto, arrodillado y sosteniendo una cruz hecha con dos
-                    varitas para protegerse de las tentaciones que lo atacan, con el antiguo gesto del exorcismo. Estas son
-                    representadas por un caballo y una fila de elefantes, todos estos con sus patas alargadas de forma grotesca
-                    y cada uno cargando con una tentación. San Antonio aparece representado como un mendigo, desnudo, con el
-                    pelo revuelto y apoyado sobre una piedra. Delante de él hay una calavera.
-                </p>
-            </div>
-        </div>
-    </div>
+
 
 
 
