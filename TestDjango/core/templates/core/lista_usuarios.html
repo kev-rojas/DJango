@@ -80,8 +80,7 @@
                 </thead>
                 
                 <tbody>
-                    {%for ve in usua%}
-                    <img src="{{ve.imagen}}">
+                    {% for ve in usua %}
                     <tr>
                         <td>{{ve.nombre}}</td>
                         <td>{{ve.email}}</td>
@@ -89,7 +88,7 @@
                         <td><a href="{% url 'mod_usuario' ve.email %}">Modificar</a></td> 
                         <td><a href="{% url 'del_usuario' ve.email %}" onclick="return confiEliminar()">Eliminar</a></td> 
                     </tr>
-                    {%endfor%}
+                    {% endfor %}
                 </tbody>
         </table>
     </div> 

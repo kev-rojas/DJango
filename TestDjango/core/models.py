@@ -31,6 +31,7 @@ class Obra(models.Model):
     año = models.CharField(max_length=20, verbose_name='Año')
     tecnica = models.CharField(max_length=50, verbose_name= 'Técnica')
     tamaño = models.CharField(max_length=20, verbose_name='Tamaño')
+    imagen = models.ImageField(upload_to="Imagenes",null=True)
 
     def __str__(self):
         return self.nombreOb
@@ -39,7 +40,7 @@ class Usuario(models.Model):
     nombre = models.CharField(max_length=30, verbose_name='Nombre')
     email = models.EmailField(max_length=100, primary_key=True, verbose_name= 'Email')
     contraseña = models.CharField(max_length=30, verbose_name='Contraseña')
-    imagen = models.ImageField(null=True)
+    
 
     def __str__(self):
         return self.email
