@@ -94,3 +94,13 @@
     margin-right: 300px;
     margin-left: 300px;
 }
+
+.redes{
+    height: 200px;
+    padding: 30px;
+    background-color: #FAF717;
+}
+
+.sociales li{
+    display: inline-block;
+}
