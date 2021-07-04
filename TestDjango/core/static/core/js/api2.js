@@ -3,7 +3,7 @@ const aplication = document.querySelector('.container')
 const url = 'http://127.0.0.1:8000/api/lista_usua'
 
 fetch(url)
-.then(res => res.json())
+.then(response => response.json())
 .then(data => {
     data.forEach(usuario =>{
         const n = document.createElement('n')
