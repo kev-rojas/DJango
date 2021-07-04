@@ -24,13 +24,14 @@ def mod_usuario(request,id):
         formulario=UsuarioForm(data=request.POST, instance=usua)
         if formulario.is_valid:
             formulario.save()
+            messages.success(request, "Modificado Correctamente")
             return redirect(to="lista_usuarios")
-            #datos['mensaje']="Modificado correctamente"
     return render(request, 'core/mod_usuario.html',datos)
 
 def del_usuario(request,id):
     usua=Usuario.objects.get(email=id)
     usua.delete()
+    messages.success(request, "Eliminado Correctamente")
     return redirect(to="lista_usuarios")
 
 
