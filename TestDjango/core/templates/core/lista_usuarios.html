@@ -87,7 +87,7 @@
             <h1>Listado de Usuarios</h1>
         </div>
         <br>
-        <table class="table" border="3">
+        <table class="table" border="3" id="Usuario">
                 <thead>
                     <tr>
                         <th scope="col">Nombre</th>
@@ -100,20 +100,35 @@
                 
                 <tbody>
                     {% for ve in usua %}
-                    <tr>
-                        <td>{{ve.nombre}}</td>
-                        <td>{{ve.email}}</td>
-                        <td>{{ve.contraseña}}</td>
-                        <td>
-                            <a href="{% url 'mod_usuario' ve.email %}" class="btn btn-info btn-sm">Modificar</a>
-                            <a href="{% url 'del_usuario' ve.email %}"class="btn btn-info btn-sm" onclick="return confiEliminar()">Eliminar</a>
-                        </td> 
-                    </tr>
+                    <td>
+                    <a href="{% url 'mod_usuario' ve.email %}" class="btn btn-info btn-sm">Modificar</a>
+                    <a href="{% url 'del_usuario' ve.email %}"class="btn btn-info btn-sm" onclick="return confiEliminar()">Eliminar</a>
+                    </td>
                     {% endfor %}
                 </tbody>
         </table>
     </div> 
 
+
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js "></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js "></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js "></script>
+    <script src="{% static 'core/js/api.js' %}"></script>       
+
+    <script>
+        $(document).ready(function () {
+            $.getJSON('http://127.0.0.1:8000/api/lista_usua', function (data) {
+                var Usuario = data;
+                $.each(Usuario, function (i, item) {
+                    $('#Usuario').append("<tr> <td>" + item.nombre + "</td> <td>" +
+                        item.email + "</td> <td>" + item.contraseña  + "</td> </tr>");
+                });
+            }).fail(function () {
+                console.log('Error al consumir la API!');
+            });
+        });
+    </script>    
     
 
 </body>

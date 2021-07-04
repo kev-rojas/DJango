@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'core',
     'rest_usuario',
+    'rest_obra',
     'rest_framework.authtoken'
 ]
 
