@@ -3,6 +3,7 @@ from .models import vehiculo
 from .forms import vehiculoForm
 from .models import Usuario, Obra, Contacto
 from .forms import UsuarioForm, ContactoFrom
+from django.contrib import messages
 #-------------------------------------------------------------------
 
 def consumeapi(request):
@@ -23,7 +24,8 @@ def mod_usuario(request,id):
         formulario=UsuarioForm(data=request.POST, instance=usua)
         if formulario.is_valid:
             formulario.save()
-            datos['mensaje']="Modificado correctamente"
+            return redirect(to="lista_usuarios")
+            #datos['mensaje']="Modificado correctamente"
     return render(request, 'core/mod_usuario.html',datos)
 
 def del_usuario(request,id):

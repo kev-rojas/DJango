@@ -53,7 +53,7 @@
 
     <script>
         $(document).ready(function () {
-            $.getJSON('http://127.0.0.1:8000/api/lista_usua', function (data) {
+            $.getJSON(url, function (data) {
                 var Usuario = data;
                 $.each(Usuario, function (i, item) {
                     $('#Usuario').append("<tr><td>" + item.nombre + "</td><td>" +
