@@ -50,7 +50,11 @@ def artistas(request):
     return render(request,'core/artistas.html')
 
 def inicarSesion(request):
-    return render(request,'core/inicarSesion.html')
+    usua=Usuario.objects.all
+    datos={
+        'usua': usua
+    }
+    return render(request,'core/inicarSesion.html', datos)
 
 def almuerzo(request):
     almuerzo=Obra.objects.get(nombreOb='Almuerzo sobre la hierba')
@@ -404,7 +408,8 @@ def registrarse(request):
         formulario=UsuarioForm(request.POST)
         if formulario.is_valid:
             formulario.save()
-            datos['mensaje']="Registrado Correctamente"
+            messages.success(request, "Registrado Correctamente")
+            return redirect(to="inicarSesion")
     return render(request,'core/registrarse.html',datos)
 
 def retorno(request):
