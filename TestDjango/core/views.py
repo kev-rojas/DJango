@@ -9,6 +9,11 @@ from django.contrib import messages
 def consumeapi(request):
     return render(request, 'core/consumeapi.html')
 
+def consumeapi2(request):
+    return render(request, 'core/consumeapi2.html')
+
+#------------------------------------------------------------------
+
 
 def lista_usuarios(request):
     usua=Usuario.objects.all

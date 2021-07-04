@@ -1,6 +1,7 @@
 $(document).ready(function() {
     //alert('paso1')
-    let url = "http://127.0.0.1:8000/api/lista_usua"
+    const url = "http://127.0.0.1:8000/api/lista_usua"
+    fetch(url)
     $.getJSON(url, function(data) {
         console.log(data)
         var Usuario = data;        

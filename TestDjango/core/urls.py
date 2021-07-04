@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import consumeapi, lista_usuarios, mod_usuario, del_usuario
+from .views import consumeapi, consumeapi2,lista_usuarios, mod_usuario, del_usuario
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -99,6 +99,7 @@ urlpatterns=[
     path('mod_usuario/<id>',mod_usuario,name="mod_usuario"),
     path('del_usuario/<id>',del_usuario,name="del_usuario"),
     path('consumeapi', consumeapi, name="consumeapi"),
+    path('consumeapi2', consumeapi2, name="consumeapi2"),
     #-----------------------------------------------------------------------------
     path('artistas',artistas,name="artistas"),
     path('tipoobras', tipoobras,name="tipoobras"),
