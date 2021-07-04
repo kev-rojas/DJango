@@ -7,14 +7,7 @@ from django.contrib import messages
 #-------------------------------------------------------------------
 
 def consumeapi(request):
-    usua=Usuario.objects.all
-    datos={
-        'usua': usua
-    }
-    return render(request, 'core/consumeapi.html',datos)
-
-def consumeapi2(request):
-    return render(request, 'core/consumeapi2.html')
+    return render(request, 'core/consumeapi.html')
 
 #------------------------------------------------------------------
 
