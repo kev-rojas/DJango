@@ -7,9 +7,9 @@ from django.contrib import messages
 #-------------------------------------------------------------------
 
 def consumeapi(request):
-    ball=Obra.objects.get(nombreOb='Ballon Dog (Orange)')
+    mona=Obra.objects.get(nombreOb='La Mona Lisa')
     datos={
-        'ball': ball
+        'mona': mona
     }
     return render(request, 'core/consumeapi.html',datos)
 
