@@ -1,6 +1,7 @@
 from django import forms
+from django.db.models.base import Model
 from django.forms import ModelForm, fields
-from .models import vehiculo
+from .models import Obra, vehiculo
 from .models import Usuario
 from .models import Contacto
 
@@ -11,6 +12,11 @@ class vehiculoForm(ModelForm):
         fields=["patente", "marca", "modelo", "categoria"]
 
 #------------------------------------------------------------------
+
+class ObraForm(ModelForm):
+    class Meta:
+        model = Obra
+        fields = ["nombreOb", "autor", "año", "tecnica", "tamaño", "imagen"]
 
 class UsuarioForm(ModelForm):
     class Meta:

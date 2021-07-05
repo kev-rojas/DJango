@@ -1,8 +1,6 @@
 from django.shortcuts import render, redirect
-from .models import vehiculo
-from .forms import vehiculoForm
 from .models import Usuario, Obra, Contacto
-from .forms import UsuarioForm, ContactoFrom
+from .forms import UsuarioForm, ContactoFrom, ObraForm
 from django.contrib import messages
 #-------------------------------------------------------------------
 
@@ -14,6 +12,15 @@ def consumeapi(request):
     return render(request, 'core/consumeapi.html',datos)
 
 #------------------------------------------------------------------
+def mod_obra(request,id):
+    ob=Obra.objects.get(nombreOb=id)
+    datos={'form':ObraForm(instance=ob)}
+    if request.method=='POST':
+        formulario=ObraForm(data=request.POST, instance=ob)
+        if formulario.is_valid:
+            formulario.save()
+            messages.success(request, "Modificado Correctamente")
+    return render(request, 'core/mod_obra.html',datos)
 
 
 def lista_usuarios(request):
