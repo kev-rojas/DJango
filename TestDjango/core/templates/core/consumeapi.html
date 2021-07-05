@@ -28,7 +28,10 @@
         <div class="row">
             <h3>Uso de api</h3>
         </div>
-        <div class="row">
+        <ul class="list-group" id="Obra">
+
+        </ul>
+        <!--<div class="row">
             <table class="table" id="Obra">
                 <thead>
                     <tr>
@@ -41,8 +44,9 @@
 
                 </tbody>
             </table>
-        </div>
+        </div>-->
     </div>
+
     <div>
         <a href="{% url 'listado_obra' %}">Ir a la api</a>
     </div>
@@ -59,8 +63,9 @@
             $.getJSON('http://127.0.0.1:8000/api/listado_obra', function (data) {
                 var Obra = data;
                 $.each(Obra, function (i, item) {
-                    $('#Obra').append("<tr><td>" + item.nombreOb + "</td><td>" +
-                        item.autor + "</td><td>" + item.año  + "</td><td>");
+                    $('#Obra').append("<li class='list-group-item'>Nombre:  " + item.nombreOb + "</li>" +
+                                    "<li class='list-group-item'>Autor:  " + item.autor + "</li>" + 
+                                    "<li class='list-group-item'>Año:  " + item.año + "</li>");
                 });
             }).fail(function () {
                 console.log('Error al consumir la API!');
