@@ -29,7 +29,7 @@
             <h3>Uso de api</h3>
         </div>
         <div class="row">
-            <table class="table" id="Usuario">
+            <table class="table" id="Obra">
                 <thead>
                     <tr>
                         <th scope="col">Nombre</th>
@@ -44,7 +44,7 @@
         </div>
     </div>
     <div>
-        <a href="{% url 'lista_usua' %}">Ir a la api</a>
+        <a href="{% url 'listado_obra' %}">Ir a la api</a>
     </div>
     
 
@@ -57,7 +57,7 @@
         $(document).ready(function () {
             $.getJSON('http://127.0.0.1:8000/api/listado_obra', function (data) {
                 var Obra = data;
-                $.each(Usuario, function (i, item) {
+                $.each(Obra, function (i, item) {
                     $('#Obra').append("<tr><td>" + item.nombreOb + "</td><td>" +
                         item.autor + "</td><td>" + item.año  + "</td></tr>");
                 });

@@ -7,7 +7,11 @@ from django.contrib import messages
 #-------------------------------------------------------------------
 
 def consumeapi(request):
-    return render(request, 'core/consumeapi.html')
+    ball=Obra.objects.get(nombreOb='Ballon Dog (Orange)')
+    datos={
+        'ball': ball
+    }
+    return render(request, 'core/consumeapi.html',datos)
 
 #------------------------------------------------------------------
 
