@@ -8,6 +8,9 @@ from rest_framework.serializers import Serializer
 from core.models import Obra
 from .serializers import ObraSerializer
 
+from rest_framework.authentication import TokenAuthentication
+from rest_framework.permissions import IsAuthenticated 
+
 # Create your views here.
 
 @csrf_exempt
@@ -33,6 +36,7 @@ def listado_obra(request):
 
 
 @api_view(['GET','PUT','DELETE'])
+#@permission_classes((IsAuthenticated,))
 def detalle_obra(request, id):
     """
     GET, UPDATE AND DELETE
