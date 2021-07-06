@@ -11,6 +11,9 @@ def consumeapi(request):
     }
     return render(request, 'core/consumeapi.html',datos)
 
+def login(request):
+    return render(request,'registration/login.html')    
+
 #------------------------------------------------------------------
 def mod_obra(request,id):
     ob=Obra.objects.get(nombreOb=id)

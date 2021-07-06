@@ -87,7 +87,8 @@
         <img id="usuario" src="{% static 'core/img/usuario.jpg'%}" width="350" height="300">
     <br>
     <center>
-        <form name="form" class="formulario" onSubmit="return validar()">
+        <form name="form" method="POST" class="formulario" onSubmit="return validar()">
+            {% csrf_token %}
             <div class="form-group">
               <label for="exampleInputEmail1" id="texFor">Correo Electrónico</label>
               <input id="email" type="email" class="form-control" name="email">

@@ -60,12 +60,14 @@
     
     <script>
         $(document).ready(function () {
-            $.getJSON('http://127.0.0.1:8000/api/listado_obra', function (data) {
+            $.getJSON('http://127.0.0.1:8000/api/detalle_obra', function (data) {
                 var Obra = data;
                 $.each(Obra, function (i, item) {
                     $('#Obra').append("<li class='list-group-item'>Nombre:  " + item.nombreOb + "</li>" +
                                     "<li class='list-group-item'>Autor:  " + item.autor + "</li>" + 
-                                    "<li class='list-group-item'>Año:  " + item.año + "</li>");
+                                    "<li class='list-group-item'>Año:  " + item.año + "</li>" +
+                                    "<br>" +
+                                    "<img id='obra' src='" + item.imagen + "'>");
                 });
             }).fail(function () {
                 console.log('Error al consumir la API!');
