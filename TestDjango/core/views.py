@@ -9,10 +9,7 @@ def consumeapi(request):
     datos={
         'mona': mona
     }
-    return render(request, 'core/consumeapi.html',datos)
-
-def login(request):
-    return render(request,'registration/login.html')    
+    return render(request, 'core/consumeapi.html',datos)  
 
 #------------------------------------------------------------------
 def mod_obra(request,id):
