@@ -1,0 +1,26 @@
+.menu-content{
+	width: 100px;
+	height: 100px;
+	position: fixed;
+	bottom: 20px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.menu-item{
+	width: 100px;
+	height: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	position: absolute;
+	border-radius: 50%;
+	bottom: 0;
+	left: 70px;
+}
+
+.menu-item img{
+	width: 25px;
+	height: 25px;
+}
