@@ -31,25 +31,10 @@
         <ul class="list-group" id="Obra">
 
         </ul>
-        <!--<div class="row">
-            <table class="table" id="Obra">
-                <thead>
-                    <tr>
-                        <th scope="col">Nombre</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">Contraseña</th>
-                    </tr>
-                </thead>
-                <tbody>
 
-                </tbody>
-            </table>
-        </div>-->
     </div>
 
-    <div>
-        <a href="{% url 'listado_obra' %}">Ir a la api</a>
-    </div>
+
     
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js "></script>
@@ -63,9 +48,11 @@
             $.getJSON('http://127.0.0.1:8000/api/listado_obra', function (data) {
                 var Obra = data;
                 $.each(Obra, function (i, item) {
-                    $('#Obra').append("<li class='list-group-item'>Nombre:  " + item.nombreOb + "</li>" +
+                    $('#Obra').append("<br>"+"<li class='list-group-item'>Nombre:  " + item.nombreOb + "</li>" +
                                     "<li class='list-group-item'>Autor:  " + item.autor + "</li>" + 
                                     "<li class='list-group-item'>Año:  " + item.año + "</li>" +
+                                    "<li class='list-group-item'>Año:  " + item.tecnica + "</li>" +
+                                    "<li class='list-group-item'>Año:  " + item.tamaño + "</li>" +
                                     "<br>" +
                                     "<img id='obra' src='" + item.imagen + "'>");
                 });
